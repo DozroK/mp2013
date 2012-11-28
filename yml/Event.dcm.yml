@@ -1,0 +1,43 @@
+Event:
+    type: entity
+    table: event
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 255
+            fixed: false
+            nullable: true
+        lang:
+            type: string
+            length: 2
+            fixed: true
+            nullable: true
+        type:
+            type: string
+            length: 255
+            fixed: false
+            nullable: true
+        description:
+            type: text
+            nullable: true
+        image:
+            type: text
+            nullable: true
+    manyToOne:
+        place:
+            targetEntity: Place
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                place_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

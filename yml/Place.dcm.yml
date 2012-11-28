@@ -1,0 +1,30 @@
+Place:
+    type: entity
+    table: place
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        postalCode:
+            type: string
+            length: 5
+            fixed: true
+            nullable: true
+            column: postal_code
+        latitude:
+            type: decimal
+            nullable: true
+        longitude:
+            type: decimal
+            nullable: true
+        addressLocality:
+            type: string
+            length: 58
+            fixed: false
+            nullable: true
+            column: address_locality
+    lifecycleCallbacks: {  }

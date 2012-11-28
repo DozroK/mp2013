@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdt:export xmlns:fn_old="http://www.w3.org/2004/10/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cdt="http://www.visitprovence.com/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rep="internal" xmlns:set="http://exslt.org/sets" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:ac="http://www.elypsia.fr/axis/content/1.0">
+<object jcr:uuid="3e2a7041-d539-4aa0-ae40-160055b1db13" name="13EVT033510">
+<cdt:InformationGenerales>
+<cdt:NomAnnonce>
+<fr>Fête de l'eau</fr>
+<en>Fête de l'eau</en>
+<de>Fête de l'eau</de>
+<it>Fête de l'eau</it>
+<nl>Fête de l'eau</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="c0975be6-17f4-474f-a403-964f0287a7af">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="ff539fc1-bc11-4589-a7dd-c42dfc405357">
+<fr>Art et culture</fr>
+<en>Art et culture</en>
+<es>Art et culture</es>
+<de>Art et culture</de>
+<it>Art et culture</it>
+<nl>Art et culture</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="bfc1b320-db07-46b9-8838-ddf0e722d29e">
+<fr>Art et culture divers</fr>
+<en>Theatre</en>
+<es>Teatro</es>
+<de>Kunst</de>
+<it>Arte e cultura</it>
+<nl>Kunst en cultuur, divers</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:Organisateur jcr:uuid="189971e6-27ec-44b0-9b50-4fa1e6a59fc7">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Direction des Evènements</fr>
+<en>Direction des Evènements et du Protocole</en>
+<de>Direction des Evènements et du Protocole</de>
+<it>Direction des Evènements et du Protocole</it>
+<nl>Direction des Evènements et du Protocole</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Administration</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="380db228-e96f-4350-a3e9-26aea31c674c">
+<fr>Administration - service culture</fr>
+<en>Administration - cultural service</en>
+<es>Administración - servicio cultural</es>
+<de>Verwaltung - Kulturabteilung</de>
+<it>Amministrazione - servizio cultura</it>
+<nl>Overheid - culturele dienst</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 42 02 48 30</cdt:Telephone>
+<cdt:Fax>04 42 56 06 13</cdt:Fax>
+<cdt:Adresse>
+<cdt:LigneAdresse1>Le palio</cdt:LigneAdresse1>
+<cdt:IndicateurCedex>false</cdt:IndicateurCedex>
+<cdt:CodePostal>13800</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="9091f8d1-7cf6-4491-af33-a18450eefd35">
+<cdt:NomVille>Istres</cdt:NomVille>
+<cdt:Latitude>43.512718</cdt:Latitude>
+<cdt:Longitude>4.987964</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="4b5ed93e-3226-4740-b8de-19ce700bd568">ISTRES</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.5212157</cdt:Latitude>
+<cdt:Longitude>4.9454803</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="clabbe" cdt:ctime="2008-11-18T09:36:40.685+01:00" cdt:muser="ccasado" cdt:mtime="2012-02-27T14:26:53.110+01:00"/>
+</cdt:Organisateur>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuLibre>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="9091f8d1-7cf6-4491-af33-a18450eefd35">
+<cdt:NomVille>Istres</cdt:NomVille>
+<cdt:Latitude>43.512718</cdt:Latitude>
+<cdt:Longitude>4.987964</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:Description>
+<fr>Etang de l'Olivier</fr>
+</cdt:Description>
+</cdt:LieuLibre>
+</cdt:LieuEvenement>
+<cdt:TypePeriodicite>
+<cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
+<fr>Ponctuel</fr>
+<en>Ad hoc</en>
+<es>Ponctuel</es>
+<de>einmalig</de>
+<it>Puntuale</it>
+<nl>Ponctuel</nl>
+</cdt:TypePeriodicite>
+</cdt:TypePeriodicite>
+<cdt:TypePortee>
+<cdt:TypePortee jcr:uuid="9a1ea326-986d-4632-abdb-9fc6366aa8f1">
+<fr>départementale</fr>
+<en>départementale</en>
+<es>départementale</es>
+<de>départementale</de>
+<it>départementale</it>
+<nl>départementale</nl>
+</cdt:TypePortee>
+</cdt:TypePortee>
+<cdt:GrandeManifestation>false</cdt:GrandeManifestation>
+</cdt:InformationGenerales>
+<cdt:Contacts/>
+<cdt:ClassementCharteLabel>
+<cdt:Label>
+<cdt:Label>
+<cdt:TypeLabel jcr:uuid="e00de27d-2c29-4b7b-879c-6e4ab94f97f4">
+<fr>Programme MP2013</fr>
+</cdt:TypeLabel>
+</cdt:Label>
+</cdt:Label>
+</cdt:ClassementCharteLabel>
+<cdt:ProgrammeDescriptif>
+<cdt:DescriptifValorisant>
+<fr>Fin juin, la Fête de l’Eau propose des spectacles à vocation
+ludique et pédagogique, des animations musicales et artistiques toute la journée au bord de l’étang de l’Olivier. 
+Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégié des deux représentations du projet TERSIS. Cette comédie musicale réunira l'ensemble des pratiques amateurs de la ville autour d'un encadrement professionnel. ce spectacle de masse promet de faire date.</fr>
+</cdt:DescriptifValorisant>
+</cdt:ProgrammeDescriptif>
+<cdt:PeriodesEtDates>
+<cdt:AValider>false</cdt:AValider>
+<cdt:Recurrente>false</cdt:Recurrente>
+<cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
+<cdt:DateEnClair>
+<fr>Du 28 au 30 juin</fr>
+</cdt:DateEnClair>
+<cdt:Definitions>
+<cdt:Fermeture>false</cdt:Fermeture>
+<cdt:Debut>2013-06-28T00:00:00.000+02:00</cdt:Debut>
+<cdt:Fin>2013-06-30T00:00:00.000+02:00</cdt:Fin>
+<cdt:JoursNommes>
+<cdt:SelectionLundi>false</cdt:SelectionLundi>
+<cdt:SelectionMardi>false</cdt:SelectionMardi>
+<cdt:SelectionMercredi>false</cdt:SelectionMercredi>
+<cdt:SelectionJeudi>false</cdt:SelectionJeudi>
+<cdt:SelectionVendredi>false</cdt:SelectionVendredi>
+<cdt:SelectionSamedi>false</cdt:SelectionSamedi>
+<cdt:SelectionDimanche>false</cdt:SelectionDimanche>
+</cdt:JoursNommes>
+</cdt:Definitions>
+</cdt:PeriodesEtDates>
+<cdt:Tarification/>
+<cdt:Reservation/>
+<cdt:AccueilClientele/>
+<cdt:ParkingAccesLocalisation>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.51723315156087</cdt:Latitude>
+<cdt:Longitude>4.986569881439209</cdt:Longitude>
+</cdt:SituationGeographique>
+</cdt:ParkingAccesLocalisation>
+<cdt:InformationsGestion>
+<cdt:InformationsCDT>
+<cdt:IndicateurAnnonceFestiv>false</cdt:IndicateurAnnonceFestiv>
+<cdt:ExportVisitprovence>false</cdt:ExportVisitprovence>
+<cdt:ReserverVisitprovence>false</cdt:ReserverVisitprovence>
+<cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
+</cdt:InformationsCDT>
+<cdt:InformationsSpecifiques>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
+<cdt:AdherentOTSaintesMaries>false</cdt:AdherentOTSaintesMaries>
+<cdt:AdherentOTPaysAubagne>false</cdt:AdherentOTPaysAubagne>
+<cdt:AdherentOTStRemyDeProvence>false</cdt:AdherentOTStRemyDeProvence>
+<cdt:AdherentOTTarascon>false</cdt:AdherentOTTarascon>
+<cdt:SelectionPNRA>false</cdt:SelectionPNRA>
+<cdt:Episode>
+<cdt:TypeEpisode jcr:uuid="b2eb0aec-e755-4d1d-946f-c49d44fc35e6">
+<fr>Episode 2 : Marseille Provence à ciel ouvert</fr>
+<en>Marseille Provence open sky</en>
+</cdt:TypeEpisode>
+</cdt:Episode>
+</cdt:InformationsSpecifiques>
+<cdt:Audit cdt:cuser="clabbe" cdt:ctime="2012-10-26T15:00:19.842+02:00" cdt:muser="sitd" cdt:mtime="2012-11-15T20:20:07.630+01:00"/>
+<cdt:Contributeurs>
+<cdt:Contributeur cdt:nom="Bouches du Rhône Tourisme" cdt:url="http://www.visitprovence.com"/>
+</cdt:Contributeurs>
+</cdt:InformationsGestion>
+
+</object>
+</cdt:export>
