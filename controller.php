@@ -1,51 +1,68 @@
 <?php
- 
-// c.php
-function test()
+class Controller
 {
 
-include_once("bootstrap.php");
-//var_dump($em);
-$filename = "./cdt_Evenement.xml";
-$langs = array("en","fr");
-$content = file_get_contents($filename);
-$xml = new SimpleXMLElement($content);
-
-/* Premier test
-$x = $xml->object[0]->children('cdt', true)->InformationGenerales->NomAnnonce->children()->fr[0];
-echo($x);
-*/
-
-// Il faut commencer par Place
-
-$place = new Entity\Place();
-$em->persist($place);
-
-$place->setAddressLocality($xml->object[0]->children('cdt', true)->InformationGenerales->LieuEvenement->LieuLibre->Ville->Ville->NomVille);
-
-$place->setLatitude($xml->object[0]->children('cdt', true)->InformationGenerales->LieuEvenement->LieuLibre->Ville->Ville->Latitude);
-
-$place->setLongitude($xml->object[0]->children('cdt', true)->InformationGenerales->LieuEvenement->LieuLibre->Ville->Ville->Longitude);
-
-
-
-$place->getId();
-
-//Maintenant event
-foreach ($langs as $lang) {
-    $events[$lang] = new Entity\Event();
-    $em->persist($events[$lang]);
-
-    $events[$lang]->setPlace($place);
-
-    $events[$lang]->setName($xml->object[0]->children('cdt', true)->InformationGenerales->NomAnnonce->children()->$lang);
-    $events[$lang]->setLang($lang);
-    $events[$lang]->setDescription($xml->object[0]->children('cdt', true)->ProgrammeDescriptif->DescriptifValorisant->children()->$lang);
+    public function __construct() {
+        include_once("bootstrap.php");
+        $this->em = $em;
+    }
+    
+    public function index() {
+    
+    }
+    
+    public function truncate() {
+    $this->em->query('TRUNCATE TABLE event');
+    $this->em->query('TRUNCATE TABLE place');
+    echo "truncate done";
+    }
+    
+    
+    public function load()
+    {
+    
+    
+    if (!is_object($this->em)) {
+    echo '$this->em est pas un objet';
+    }
+    
+    $filename = "./cdt_Evenement.xml";
+    $langs = array("en","fr");
+    $content = file_get_contents($filename);
+    include_once("./lib/cdtxml.php");
+    $xml = new CdtXml($content);
+    if (!is_object($xml)) {
+        echo '$xml est pas un objet';
+    }
+    // Il faut commencer par Place
+    
+    for ($i = 1; $xml->hasObject($i);$i++) {
+        $place[$i] = new Entity\Place();
+        $this->em->persist($place[$i]);
+    
+        // Ville
+        $place[$i]->setAddressLocality($xml->getAddressLocality($i));
+        $place[$i]->setPostalCode($xml->getPostalCode($i));
+            
+        $place[$i]->setLatitude($xml->getLatitude($i));
+        $place[$i]->setLongitude($xml->getLongitude($i));
+    
+        //Maintenant event
+        foreach ($langs as $lang) {
+            $events[$i][$lang] = new Entity\Event();
+            $this->em->persist($events[$i][$lang]);
+        
+            $events[$i][$lang]->setPlace($place[$i]);
+        
+            $events[$i][$lang]->setName($xml->getEventName($i, $lang));
+            $events[$i][$lang]->setLang($lang);
+        
+            $events[$i][$lang]->setType($xml->getEventType($i, $lang));
+            $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
+            $events[$i][$lang]->setImage($xml->getImage($i));        
+        }
+    }
+    $this->em->flush();
+    
+    }
 }
-
-$em->flush();
-
-return "--".$xml->object[0]->children('cdt', true)->InformationGenerales->NomAnnonce->children()->fr."--";
-
-}
-  

@@ -47,3 +47,5 @@ $em = EntityManager::create(
     ),
     $config
 );
+
+include_once("./helper.php");

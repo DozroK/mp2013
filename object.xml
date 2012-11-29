@@ -1,0 +1,348 @@
+<object jcr:uuid="90e5c655-45f3-4c81-9f85-831c37be3a19" name="13EVT033951">
+<cdt:InformationGenerales>
+<cdt:NomAnnonce>
+<fr>Reliques de Saint CÃ©saire</fr>
+<en>Reliques de Saint CÃ©saire</en>
+<de>Reliques de Saint CÃ©saire</de>
+<it>Reliques de Saint CÃ©saire</it>
+<nl>Reliques de Saint CÃ©saire</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="09f22ddd-cb7a-4059-beb8-32f3aecdf431">
+<fr>Expositions - RÃ©trospectives</fr>
+<en>Expositions - RÃ©trospectives</en>
+<es>Expositions - RÃ©trospectives</es>
+<de>Expositions - RÃ©trospectives</de>
+<it>Expositions - RÃ©trospectives</it>
+<nl>Expositions - RÃ©trospectives</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="ab1766d8-43ba-4191-8414-5be85d14ac4a">
+<fr>Exposition</fr>
+<en>Exposition</en>
+<es>Exposition</es>
+<de>Exposition</de>
+<it>Exposition</it>
+<nl>Exposition</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="1a6ecd29-3606-42f6-a7fe-0bd3ec32a266">
+<fr>ConfÃ©rences - Colloques - CongrÃ¨s</fr>
+<en>Conference - meeting</en>
+<es>ConfÃ©rences - Colloques - CongrÃ¨s</es>
+<de>Konferenz - Kongress - Kolloquium</de>
+<it>Conferenze - Convegni - Congressi</it>
+<nl>ConfÃ©rences - Colloques - CongrÃ¨s</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="7e1ff26b-0de9-4f8c-8b19-631bec6e3e2f">
+<fr>Colloque</fr>
+<en>Conference</en>
+<es>Coloquio</es>
+<de>Kolloquium</de>
+<it>Convegno</it>
+<nl>Colloquium</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="3dc75250-d2da-4b19-9a4c-0a434143caaa">
+<fr>EvÃ©nements culturels</fr>
+<en>EvÃ©nements culturels</en>
+<es>EvÃ©nements culturels</es>
+<de>EvÃ©nements culturels</de>
+<it>EvÃ©nements culturels</it>
+<nl>EvÃ©nements culturels</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="fe2fb2a8-e464-45e0-bd35-47e42999b7bf">
+<fr>Concert</fr>
+<en>Concert</en>
+<es>ConcursoConcierto</es>
+<de>Konzert</de>
+<it>Concerto</it>
+<nl>Concert</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="775c6764-437a-43eb-8a0a-171faf834611">
+<fr>Personnes cÃ©lÃ¨bres</fr>
+<en>Personnes cÃ©lÃ¨bres</en>
+<es>Personnes cÃ©lÃ¨bres</es>
+<de>Personnes cÃ©lÃ¨bres</de>
+<it>Personnes cÃ©lÃ¨bres</it>
+<nl>Personnes cÃ©lÃ¨bres</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="d5dae8cd-b8ee-459f-9d21-294c66a77f6c">
+<fr>Hommes et femmes cÃ©lÃ¨bres</fr>
+<en>Famous men and women</en>
+<es>Hombres cÃ©lebres</es>
+<de>BerÃ¼hmte Frauen und MÃ¤nner der Region</de>
+<it>Uomini e donne famose</it>
+<nl>Beroemde mannen en vrouwen</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:Organisateur jcr:uuid="9ede9c1b-26c5-4039-9fda-6f6554bf3587">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Association Marseille Provence 2013</fr>
+<en>Association Marseille Provence 2013</en>
+<de>Association Marseille Provence 2013</de>
+<it>Association Marseille Provence 2013</it>
+<nl>Association Marseille Provence 2013</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Association</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="3ee92736-76e9-46c1-810b-38d77e4722bf">
+<fr>Association culturelle</fr>
+<en>Cultural organization</en>
+<es>AsociaciÃ³n cultural</es>
+<de>Kulturverein</de>
+<it>Associazione culturale</it>
+<nl>Culturele vereniging</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 91 13 20 13</cdt:Telephone>
+<cdt:Fax>04 91 95 88 94</cdt:Fax>
+<cdt:Mail>contact@marseille-provence2013.fr</cdt:Mail>
+<cdt:AdresseWeb>http://www.mp2013.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:LigneAdresse1>Maison DiamantÃ©e</cdt:LigneAdresse1>
+<cdt:Numero>1</cdt:Numero>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Villeneuve-Bargemon</cdt:NomVoie>
+<cdt:LigneAdresse3>CS 2013</cdt:LigneAdresse3>
+<cdt:IndicateurCedex>true</cdt:IndicateurCedex>
+<cdt:Cedex>1</cdt:Cedex>
+<cdt:CodePostal>13201</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="dbf7e8e1-b2a0-45f4-a2eb-1315e2f6bd1d">
+<cdt:NomVille>Marseille</cdt:NomVille>
+<cdt:Latitude>43.298344</cdt:Latitude>
+<cdt:Longitude>5.383221</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="202d5e36-a414-4a19-9b20-7783249997e1">MARSEILLE</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="76128257-789f-4043-b32f-3b17adb7ce67">
+<cdt:NomQuartier>
+Vieux Port/OpÃ©ra/Vieille ville/St-Victor/Pharo
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.312046</cdt:Latitude>
+<cdt:Longitude>5.391146</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="sbenimeli" cdt:ctime="2008-06-23T09:53:37.232+02:00" cdt:muser="mp2013" cdt:mtime="2012-07-04T18:31:24.682+02:00"/>
+</cdt:Organisateur>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuAnnonce jcr:uuid="7d315f04-0eb7-4330-94a9-bb958afadacc">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>CloÃ®tre Saint Trophime</fr>
+<en>Cloister of St. Trophime</en>
+<es>Claustro de San Trï¿½ï¿½fimo</es>
+<de>Kloster St. Trophime</de>
+<it>Chiostro di Saint-Trophime</it>
+<nl>Klooster van St. Falperra</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Monument</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="afeea420-16cc-47e7-8df4-550382ff9865">
+<fr>CloÃ®tre</fr>
+<en>Cloister</en>
+<es>Claustro</es>
+<de>Kreuzgang</de>
+<it>Chiostro</it>
+<nl>Kloostergang</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 90 49 59 05</cdt:Telephone>
+<cdt:AdresseWeb>http://www.patrimoine.ville-arles.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>De la Republique</cdt:NomVoie>
+<cdt:IndicateurCedex>false</cdt:IndicateurCedex>
+<cdt:CodePostal>13200</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="a47df376-67c4-4c11-a466-4a6866c57da2">
+<cdt:NomVille>Arles</cdt:NomVille>
+<cdt:Latitude>43.676651</cdt:Latitude>
+<cdt:Longitude>4.627804</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="49973961-af9b-4eef-9e45-403e9827d8e0">ARLES</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="32668564-a268-4b2b-a93e-315e33b18e56">
+<cdt:NomQuartier>
+Centre historique d'Arles
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.676346</cdt:Latitude>
+<cdt:Longitude>4.627441</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="llescos" cdt:ctime="1991-12-01T00:00:00.000+01:00" cdt:muser="mlouvet" cdt:mtime="2012-11-20T15:36:31.398+01:00" cdt:IndicateurAnnonceSupprimee="false"/>
+</cdt:LieuAnnonce>
+</cdt:LieuEvenement>
+<cdt:TypePeriodicite>
+<cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
+<fr>Ponctuel</fr>
+<en>Ad hoc</en>
+<es>Ponctuel</es>
+<de>einmalig</de>
+<it>Puntuale</it>
+<nl>Ponctuel</nl>
+</cdt:TypePeriodicite>
+</cdt:TypePeriodicite>
+<cdt:TypePortee>
+<cdt:TypePortee jcr:uuid="2b184590-69d2-4d68-a63c-c0c154ef66fc">
+<fr>nationale</fr>
+<en>nationale</en>
+<es>nationale</es>
+<de>nationale</de>
+<it>nationale</it>
+<nl>nationale</nl>
+</cdt:TypePortee>
+</cdt:TypePortee>
+<cdt:GrandeManifestation>false</cdt:GrandeManifestation>
+</cdt:InformationGenerales>
+<cdt:Contacts/>
+<cdt:ClassementCharteLabel>
+<cdt:Label>
+<cdt:Label>
+<cdt:TypeLabel jcr:uuid="e00de27d-2c29-4b7b-879c-6e4ab94f97f4">
+<fr>Programme MP2013</fr>
+</cdt:TypeLabel>
+</cdt:Label>
+</cdt:Label>
+</cdt:ClassementCharteLabel>
+<cdt:ProgrammeDescriptif>
+<cdt:DescriptifValorisant>
+<fr>Une exposition des reliques de saint CÃ©saire d'Arles est prÃ©sentÃ©e de faÃ§on pÃ©renne dans le cloÃ®tre Saint Trophime, une autre tÃ©moigne de la vie de saint CÃ©saire (septembre-octobre) toutes deux mettent en valeur l'importance historique et religieuse des reliques. Elles sont enrichies d'un concert et d'un colloque (11 au 13 octobre).</fr>
+</cdt:DescriptifValorisant>
+</cdt:ProgrammeDescriptif>
+<cdt:PeriodesEtDates>
+<cdt:AValider>false</cdt:AValider>
+<cdt:Recurrente>false</cdt:Recurrente>
+<cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
+<cdt:DateEnClair>
+<fr>Du 1er septembre au 31 octobre</fr>
+</cdt:DateEnClair>
+<cdt:Definitions>
+<cdt:Fermeture>false</cdt:Fermeture>
+<cdt:Debut>2013-09-01T00:00:00.000+02:00</cdt:Debut>
+<cdt:Fin>2013-10-31T00:00:00.000+01:00</cdt:Fin>
+<cdt:JoursNommes>
+<cdt:SelectionLundi>false</cdt:SelectionLundi>
+<cdt:SelectionMardi>false</cdt:SelectionMardi>
+<cdt:SelectionMercredi>false</cdt:SelectionMercredi>
+<cdt:SelectionJeudi>false</cdt:SelectionJeudi>
+<cdt:SelectionVendredi>false</cdt:SelectionVendredi>
+<cdt:SelectionSamedi>false</cdt:SelectionSamedi>
+<cdt:SelectionDimanche>false</cdt:SelectionDimanche>
+</cdt:JoursNommes>
+</cdt:Definitions>
+</cdt:PeriodesEtDates>
+<cdt:Tarification/>
+<cdt:Reservation/>
+<cdt:AccueilClientele/>
+<cdt:ParkingAccesLocalisation>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.676346</cdt:Latitude>
+<cdt:Longitude>4.627441</cdt:Longitude>
+</cdt:SituationGeographique>
+</cdt:ParkingAccesLocalisation>
+<cdt:InformationsGestion>
+<cdt:InformationsCDT>
+<cdt:IndicateurAnnonceFestiv>false</cdt:IndicateurAnnonceFestiv>
+<cdt:ExportVisitprovence>false</cdt:ExportVisitprovence>
+<cdt:ReserverVisitprovence>false</cdt:ReserverVisitprovence>
+<cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
+</cdt:InformationsCDT>
+<cdt:InformationsSpecifiques>
+<cdt:DescriptifSpecifique>
+<fr>Coproduction : Association Les Amis de saint Trophime, Marseille-Provence 2013</fr>
+</cdt:DescriptifSpecifique>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
+<cdt:AdherentOTSaintesMaries>false</cdt:AdherentOTSaintesMaries>
+<cdt:AdherentOTPaysAubagne>false</cdt:AdherentOTPaysAubagne>
+<cdt:AdherentOTStRemyDeProvence>false</cdt:AdherentOTStRemyDeProvence>
+<cdt:AdherentOTTarascon>false</cdt:AdherentOTTarascon>
+<cdt:SelectionPNRA>false</cdt:SelectionPNRA>
+<cdt:Episode>
+<cdt:TypeEpisode jcr:uuid="905b4dc6-3059-4daa-b64d-08c80cae12dd">
+<fr>Episode 3 : Marseille Provence aux milles visages</fr>
+<en>Marseille Provence land of diversity</en>
+</cdt:TypeEpisode>
+</cdt:Episode>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="9c60a405-06a4-44fd-b34e-6a6164fced53">
+<fr>Expositions / MusÃ©es</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="559708c0-9be3-4c97-bfff-ab373132c1a6">
+<fr>Concerts / Musique</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="0f66534a-0b40-4a18-b06b-53b7282a41e1">
+<fr>Rencontres / Colloques</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+</cdt:InformationsSpecifiques>
+<cdt:Audit cdt:cuser="fisnard" cdt:ctime="2012-11-12T15:33:44.073+01:00" cdt:muser="fisnard" cdt:mtime="2012-11-12T15:33:44.073+01:00"/>
+<cdt:Contributeurs>
+<cdt:Contributeur cdt:nom="Bouches du RhÃ´ne Tourisme" cdt:url="http://www.visitprovence.com"/>
+</cdt:Contributeurs>
+</cdt:InformationsGestion>
+</object>
