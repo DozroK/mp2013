@@ -11,10 +11,17 @@ class Controller
     
     }
     
+    public function getfile() {
+        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
+        $file = fopen(__DIR__."/cdt_Evenement.xml", 'w');
+        fwrite($file, $content);
+    }
+
     public function truncate() {
-    $this->em->query('TRUNCATE TABLE event');
-    $this->em->query('TRUNCATE TABLE place');
-    echo "truncate done";
+
+        $this->em->createQuery('delete from Entity\Event')->execute();
+        $this->em->createQuery('delete from Entity\Place')->execute();
+
     }
     
     public function phpinfo() {
