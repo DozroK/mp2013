@@ -21,6 +21,7 @@ class Controller
 
         $this->em->createQuery('delete from Entity\Event')->execute();
         $this->em->createQuery('delete from Entity\Place')->execute();
+        return "truncate OK";
 
     }
     
