@@ -5,10 +5,6 @@
   <title>MP2013 API opendata - Accueil</title>
 </head>
 <body>
-<ul>
-<li><a href = "load">load</a></li>
-<li><a href = "phpinfo">phpinfo</a></li>
-<li><a href = "truncate">truncate</a></li>
-</ul>
+<?php phpinfo(); ?>
 </body>
 </html>

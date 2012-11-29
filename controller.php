@@ -17,7 +17,9 @@ class Controller
     echo "truncate done";
     }
     
+    public function phpinfo() {
     
+    }
     public function load()
     {
     
