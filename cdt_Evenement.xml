@@ -1,118 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cdt:export xmlns:fn_old="http://www.w3.org/2004/10/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cdt="http://www.visitprovence.com/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rep="internal" xmlns:set="http://exslt.org/sets" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:ac="http://www.elypsia.fr/axis/content/1.0">
-<object jcr:uuid="3e2a7041-d539-4aa0-ae40-160055b1db13" name="13EVT033510">
+<object jcr:uuid="90e5c655-45f3-4c81-9f85-831c37be3a19" name="13EVT033951">
 <cdt:InformationGenerales>
 <cdt:NomAnnonce>
-<fr>Fête de l'eau</fr>
-<en>Fête de l'eau</en>
-<de>Fête de l'eau</de>
-<it>Fête de l'eau</it>
-<nl>Fête de l'eau</nl>
+<fr>Reliques de Saint Césaire</fr>
+<en>Reliques de Saint Césaire</en>
+<de>Reliques de Saint Césaire</de>
+<it>Reliques de Saint Césaire</it>
+<nl>Reliques de Saint Césaire</nl>
 </cdt:NomAnnonce>
 <cdt:EvenementType>
 <cdt:Type_niv1>
-<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
-<fr>Manifestations divers</fr>
-<en>Miscellaneous</en>
-<es>Manifestations divers</es>
-<de>Verschiedenes</de>
-<it>Altre manifestazioni</it>
-<nl>Manifestations divers</nl>
+<cdt:Type jcr:uuid="09f22ddd-cb7a-4059-beb8-32f3aecdf431">
+<fr>Expositions - Rétrospectives</fr>
+<en>Expositions - Rétrospectives</en>
+<es>Expositions - Rétrospectives</es>
+<de>Expositions - Rétrospectives</de>
+<it>Expositions - Rétrospectives</it>
+<nl>Expositions - Rétrospectives</nl>
 </cdt:Type>
 </cdt:Type_niv1>
 <cdt:Type_niv2>
-<cdt:Type jcr:uuid="c0975be6-17f4-474f-a403-964f0287a7af">
-<fr>Manifestations divers</fr>
-<en>Miscellaneous</en>
-<es>Manifestations divers</es>
-<de>Verschiedenes</de>
-<it>Altre manifestazioni</it>
-<nl>Manifestations divers</nl>
+<cdt:Type jcr:uuid="ab1766d8-43ba-4191-8414-5be85d14ac4a">
+<fr>Exposition</fr>
+<en>Exposition</en>
+<es>Exposition</es>
+<de>Exposition</de>
+<it>Exposition</it>
+<nl>Exposition</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="1a6ecd29-3606-42f6-a7fe-0bd3ec32a266">
+<fr>Conférences - Colloques - Congrès</fr>
+<en>Conference - meeting</en>
+<es>Conférences - Colloques - Congrès</es>
+<de>Konferenz - Kongress - Kolloquium</de>
+<it>Conferenze - Convegni - Congressi</it>
+<nl>Conférences - Colloques - Congrès</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="7e1ff26b-0de9-4f8c-8b19-631bec6e3e2f">
+<fr>Colloque</fr>
+<en>Conference</en>
+<es>Coloquio</es>
+<de>Kolloquium</de>
+<it>Convegno</it>
+<nl>Colloquium</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="3dc75250-d2da-4b19-9a4c-0a434143caaa">
+<fr>Evénements culturels</fr>
+<en>Evénements culturels</en>
+<es>Evénements culturels</es>
+<de>Evénements culturels</de>
+<it>Evénements culturels</it>
+<nl>Evénements culturels</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="fe2fb2a8-e464-45e0-bd35-47e42999b7bf">
+<fr>Concert</fr>
+<en>Concert</en>
+<es>ConcursoConcierto</es>
+<de>Konzert</de>
+<it>Concerto</it>
+<nl>Concert</nl>
 </cdt:Type>
 </cdt:Type_niv2>
 </cdt:EvenementType>
 <cdt:ThemeEvenement>
 <cdt:Theme_niv1>
-<cdt:Theme jcr:uuid="ff539fc1-bc11-4589-a7dd-c42dfc405357">
-<fr>Art et culture</fr>
-<en>Art et culture</en>
-<es>Art et culture</es>
-<de>Art et culture</de>
-<it>Art et culture</it>
-<nl>Art et culture</nl>
+<cdt:Theme jcr:uuid="775c6764-437a-43eb-8a0a-171faf834611">
+<fr>Personnes célèbres</fr>
+<en>Personnes célèbres</en>
+<es>Personnes célèbres</es>
+<de>Personnes célèbres</de>
+<it>Personnes célèbres</it>
+<nl>Personnes célèbres</nl>
 </cdt:Theme>
 </cdt:Theme_niv1>
 <cdt:Theme_niv2>
-<cdt:Theme jcr:uuid="bfc1b320-db07-46b9-8838-ddf0e722d29e">
-<fr>Art et culture divers</fr>
-<en>Theatre</en>
-<es>Teatro</es>
-<de>Kunst</de>
-<it>Arte e cultura</it>
-<nl>Kunst en cultuur, divers</nl>
+<cdt:Theme jcr:uuid="d5dae8cd-b8ee-459f-9d21-294c66a77f6c">
+<fr>Hommes et femmes célèbres</fr>
+<en>Famous men and women</en>
+<es>Hombres célebres</es>
+<de>Berühmte Frauen und Männer der Region</de>
+<it>Uomini e donne famose</it>
+<nl>Beroemde mannen en vrouwen</nl>
 </cdt:Theme>
 </cdt:Theme_niv2>
 </cdt:ThemeEvenement>
-<cdt:Organisateur jcr:uuid="189971e6-27ec-44b0-9b50-4fa1e6a59fc7">
+<cdt:Organisateur jcr:uuid="9ede9c1b-26c5-4039-9fda-6f6554bf3587">
 <cdt:InformationsGenerales>
 <cdt:NomAnnonce>
-<fr>Direction des Evènements</fr>
-<en>Direction des Evènements et du Protocole</en>
-<de>Direction des Evènements et du Protocole</de>
-<it>Direction des Evènements et du Protocole</it>
-<nl>Direction des Evènements et du Protocole</nl>
+<fr>Association Marseille Provence 2013</fr>
+<en>Association Marseille Provence 2013</en>
+<de>Association Marseille Provence 2013</de>
+<it>Association Marseille Provence 2013</it>
+<nl>Association Marseille Provence 2013</nl>
 </cdt:NomAnnonce>
 <cdt:ActiviteOrganisme>
-<cdt:Type>cdt:Administration</cdt:Type>
+<cdt:Type>cdt:Association</cdt:Type>
 <cdt:SousType>
-<cdt:SousTypeActivite jcr:uuid="380db228-e96f-4350-a3e9-26aea31c674c">
-<fr>Administration - service culture</fr>
-<en>Administration - cultural service</en>
-<es>Administración - servicio cultural</es>
-<de>Verwaltung - Kulturabteilung</de>
-<it>Amministrazione - servizio cultura</it>
-<nl>Overheid - culturele dienst</nl>
+<cdt:SousTypeActivite jcr:uuid="3ee92736-76e9-46c1-810b-38d77e4722bf">
+<fr>Association culturelle</fr>
+<en>Cultural organization</en>
+<es>Asociación cultural</es>
+<de>Kulturverein</de>
+<it>Associazione culturale</it>
+<nl>Culturele vereniging</nl>
 </cdt:SousTypeActivite>
 </cdt:SousType>
 </cdt:ActiviteOrganisme>
-<cdt:Telephone>04 42 02 48 30</cdt:Telephone>
-<cdt:Fax>04 42 56 06 13</cdt:Fax>
+<cdt:Telephone>04 91 13 20 13</cdt:Telephone>
+<cdt:Fax>04 91 95 88 94</cdt:Fax>
+<cdt:Mail>contact@marseille-provence2013.fr</cdt:Mail>
+<cdt:AdresseWeb>http://www.mp2013.fr</cdt:AdresseWeb>
 <cdt:Adresse>
-<cdt:LigneAdresse1>Le palio</cdt:LigneAdresse1>
-<cdt:IndicateurCedex>false</cdt:IndicateurCedex>
-<cdt:CodePostal>13800</cdt:CodePostal>
+<cdt:LigneAdresse1>Maison Diamantée</cdt:LigneAdresse1>
+<cdt:Numero>1</cdt:Numero>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Villeneuve-Bargemon</cdt:NomVoie>
+<cdt:LigneAdresse3>CS 2013</cdt:LigneAdresse3>
+<cdt:IndicateurCedex>true</cdt:IndicateurCedex>
+<cdt:Cedex>1</cdt:Cedex>
+<cdt:CodePostal>13201</cdt:CodePostal>
 <cdt:Ville>
-<cdt:Ville jcr:uuid="9091f8d1-7cf6-4491-af33-a18450eefd35">
-<cdt:NomVille>Istres</cdt:NomVille>
-<cdt:Latitude>43.512718</cdt:Latitude>
-<cdt:Longitude>4.987964</cdt:Longitude>
+<cdt:Ville jcr:uuid="dbf7e8e1-b2a0-45f4-a2eb-1315e2f6bd1d">
+<cdt:NomVille>Marseille</cdt:NomVille>
+<cdt:Latitude>43.298344</cdt:Latitude>
+<cdt:Longitude>5.383221</cdt:Longitude>
 </cdt:Ville>
 </cdt:Ville>
 <cdt:BureauDistributeur>
-<cdt:BureauDistributeur jcr:uuid="4b5ed93e-3226-4740-b8de-19ce700bd568">ISTRES</cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="202d5e36-a414-4a19-9b20-7783249997e1">MARSEILLE</cdt:BureauDistributeur>
 </cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="76128257-789f-4043-b32f-3b17adb7ce67">
+<cdt:NomQuartier>
+Vieux Port/Opéra/Vieille ville/St-Victor/Pharo
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
 </cdt:Adresse>
 </cdt:InformationsGenerales>
 <cdt:SituationGeographique>
-<cdt:Latitude>43.5212157</cdt:Latitude>
-<cdt:Longitude>4.9454803</cdt:Longitude>
+<cdt:Latitude>43.312046</cdt:Latitude>
+<cdt:Longitude>5.391146</cdt:Longitude>
 </cdt:SituationGeographique>
-<cdt:Audit cdt:cuser="clabbe" cdt:ctime="2008-11-18T09:36:40.685+01:00" cdt:muser="ccasado" cdt:mtime="2012-02-27T14:26:53.110+01:00"/>
+<cdt:Audit cdt:cuser="sbenimeli" cdt:ctime="2008-06-23T09:53:37.232+02:00" cdt:muser="mp2013" cdt:mtime="2012-07-04T18:31:24.682+02:00"/>
 </cdt:Organisateur>
 <cdt:LieuEvenement>
 <cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
-<cdt:LieuLibre>
+<cdt:LieuAnnonce jcr:uuid="7d315f04-0eb7-4330-94a9-bb958afadacc">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Cloître Saint Trophime</fr>
+<en>Cloister of St. Trophime</en>
+<es>Claustro de San Tr��fimo</es>
+<de>Kloster St. Trophime</de>
+<it>Chiostro di Saint-Trophime</it>
+<nl>Klooster van St. Falperra</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Monument</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="afeea420-16cc-47e7-8df4-550382ff9865">
+<fr>Cloître</fr>
+<en>Cloister</en>
+<es>Claustro</es>
+<de>Kreuzgang</de>
+<it>Chiostro</it>
+<nl>Kloostergang</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 90 49 59 05</cdt:Telephone>
+<cdt:AdresseWeb>http://www.patrimoine.ville-arles.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>De la Republique</cdt:NomVoie>
+<cdt:IndicateurCedex>false</cdt:IndicateurCedex>
+<cdt:CodePostal>13200</cdt:CodePostal>
 <cdt:Ville>
-<cdt:Ville jcr:uuid="9091f8d1-7cf6-4491-af33-a18450eefd35">
-<cdt:NomVille>Istres</cdt:NomVille>
-<cdt:Latitude>43.512718</cdt:Latitude>
-<cdt:Longitude>4.987964</cdt:Longitude>
+<cdt:Ville jcr:uuid="a47df376-67c4-4c11-a466-4a6866c57da2">
+<cdt:NomVille>Arles</cdt:NomVille>
+<cdt:Latitude>43.676651</cdt:Latitude>
+<cdt:Longitude>4.627804</cdt:Longitude>
 </cdt:Ville>
 </cdt:Ville>
-<cdt:Description>
-<fr>Etang de l'Olivier</fr>
-</cdt:Description>
-</cdt:LieuLibre>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="49973961-af9b-4eef-9e45-403e9827d8e0">ARLES</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="32668564-a268-4b2b-a93e-315e33b18e56">
+<cdt:NomQuartier>
+Centre historique d'Arles
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.676346</cdt:Latitude>
+<cdt:Longitude>4.627441</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="llescos" cdt:ctime="1991-12-01T00:00:00.000+01:00" cdt:muser="mlouvet" cdt:mtime="2012-11-20T15:36:31.398+01:00" cdt:IndicateurAnnonceSupprimee="false"/>
+</cdt:LieuAnnonce>
 </cdt:LieuEvenement>
 <cdt:TypePeriodicite>
 <cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
@@ -125,13 +244,13 @@
 </cdt:TypePeriodicite>
 </cdt:TypePeriodicite>
 <cdt:TypePortee>
-<cdt:TypePortee jcr:uuid="9a1ea326-986d-4632-abdb-9fc6366aa8f1">
-<fr>départementale</fr>
-<en>départementale</en>
-<es>départementale</es>
-<de>départementale</de>
-<it>départementale</it>
-<nl>départementale</nl>
+<cdt:TypePortee jcr:uuid="2b184590-69d2-4d68-a63c-c0c154ef66fc">
+<fr>nationale</fr>
+<en>nationale</en>
+<es>nationale</es>
+<de>nationale</de>
+<it>nationale</it>
+<nl>nationale</nl>
 </cdt:TypePortee>
 </cdt:TypePortee>
 <cdt:GrandeManifestation>false</cdt:GrandeManifestation>
@@ -148,9 +267,7 @@
 </cdt:ClassementCharteLabel>
 <cdt:ProgrammeDescriptif>
 <cdt:DescriptifValorisant>
-<fr>Fin juin, la Fête de l’Eau propose des spectacles à vocation
-ludique et pédagogique, des animations musicales et artistiques toute la journée au bord de l’étang de l’Olivier. 
-Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégié des deux représentations du projet TERSIS. Cette comédie musicale réunira l'ensemble des pratiques amateurs de la ville autour d'un encadrement professionnel. ce spectacle de masse promet de faire date.</fr>
+<fr>Une exposition des reliques de saint Césaire d'Arles est présentée de façon pérenne dans le cloître Saint Trophime, une autre témoigne de la vie de saint Césaire (septembre-octobre) toutes deux mettent en valeur l'importance historique et religieuse des reliques. Elles sont enrichies d'un concert et d'un colloque (11 au 13 octobre).</fr>
 </cdt:DescriptifValorisant>
 </cdt:ProgrammeDescriptif>
 <cdt:PeriodesEtDates>
@@ -158,12 +275,12 @@ Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégi�
 <cdt:Recurrente>false</cdt:Recurrente>
 <cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
 <cdt:DateEnClair>
-<fr>Du 28 au 30 juin</fr>
+<fr>Du 1er septembre au 31 octobre</fr>
 </cdt:DateEnClair>
 <cdt:Definitions>
 <cdt:Fermeture>false</cdt:Fermeture>
-<cdt:Debut>2013-06-28T00:00:00.000+02:00</cdt:Debut>
-<cdt:Fin>2013-06-30T00:00:00.000+02:00</cdt:Fin>
+<cdt:Debut>2013-09-01T00:00:00.000+02:00</cdt:Debut>
+<cdt:Fin>2013-10-31T00:00:00.000+01:00</cdt:Fin>
 <cdt:JoursNommes>
 <cdt:SelectionLundi>false</cdt:SelectionLundi>
 <cdt:SelectionMardi>false</cdt:SelectionMardi>
@@ -180,8 +297,8 @@ Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégi�
 <cdt:AccueilClientele/>
 <cdt:ParkingAccesLocalisation>
 <cdt:SituationGeographique>
-<cdt:Latitude>43.51723315156087</cdt:Latitude>
-<cdt:Longitude>4.986569881439209</cdt:Longitude>
+<cdt:Latitude>43.676346</cdt:Latitude>
+<cdt:Longitude>4.627441</cdt:Longitude>
 </cdt:SituationGeographique>
 </cdt:ParkingAccesLocalisation>
 <cdt:InformationsGestion>
@@ -192,6 +309,341 @@ Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégi�
 <cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
 </cdt:InformationsCDT>
 <cdt:InformationsSpecifiques>
+<cdt:DescriptifSpecifique>
+<fr>Coproduction : Association Les Amis de saint Trophime, Marseille-Provence 2013</fr>
+</cdt:DescriptifSpecifique>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
+<cdt:AdherentOTSaintesMaries>false</cdt:AdherentOTSaintesMaries>
+<cdt:AdherentOTPaysAubagne>false</cdt:AdherentOTPaysAubagne>
+<cdt:AdherentOTStRemyDeProvence>false</cdt:AdherentOTStRemyDeProvence>
+<cdt:AdherentOTTarascon>false</cdt:AdherentOTTarascon>
+<cdt:SelectionPNRA>false</cdt:SelectionPNRA>
+<cdt:Episode>
+<cdt:TypeEpisode jcr:uuid="905b4dc6-3059-4daa-b64d-08c80cae12dd">
+<fr>Episode 3 : Marseille Provence aux milles visages</fr>
+<en>Marseille Provence land of diversity</en>
+</cdt:TypeEpisode>
+</cdt:Episode>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="9c60a405-06a4-44fd-b34e-6a6164fced53">
+<fr>Expositions / Musées</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="559708c0-9be3-4c97-bfff-ab373132c1a6">
+<fr>Concerts / Musique</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="0f66534a-0b40-4a18-b06b-53b7282a41e1">
+<fr>Rencontres / Colloques</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+</cdt:InformationsSpecifiques>
+<cdt:Audit cdt:cuser="fisnard" cdt:ctime="2012-11-12T15:33:44.073+01:00" cdt:muser="fisnard" cdt:mtime="2012-11-12T15:33:44.073+01:00"/>
+<cdt:Contributeurs>
+<cdt:Contributeur cdt:nom="Bouches du Rhône Tourisme" cdt:url="http://www.visitprovence.com"/>
+</cdt:Contributeurs>
+</cdt:InformationsGestion>
+</object>
+<object jcr:uuid="20b5c01c-3e04-472d-875c-20b454da2548" name="13EVT033835">
+<cdt:InformationGenerales>
+<cdt:NomAnnonce>
+<fr>Festins de Méditerranée : Histoires de cuisine en sept épisodes</fr>
+<en>Festins de Méditerranée : Histoires de cuisine en sept épisodes</en>
+<de>Festins de Méditerranée : Histoires de cuisine en sept épisodes</de>
+<it>Festins de Méditerranée : Histoires de cuisine en sept épisodes</it>
+<nl>Festins de Méditerranée : Histoires de cuisine en sept épisodes</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="36e2d180-9bd9-4c0d-ab88-22ca35252c6f">
+<fr>Dégustation - repas</fr>
+<en>Tasting, eating and drinking</en>
+<es>Comida degustación</es>
+<de>Probieren, Essen und Trinken</de>
+<it>Degustazione</it>
+<nl>Proeven - maaltijd</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="f7c1e14d-5940-4c71-a62b-d623822dce48">
+<fr>Tables et vins</fr>
+<en>Gastronomy</en>
+<es>Tables et vins</es>
+<de>Gastronomy</de>
+<it>Gastronomy</it>
+<nl>Tables et vins</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="e4b27f9e-2ade-4f4c-b7ee-0d5c05e7f456">
+<fr>Produits régionaux</fr>
+<en>Local food producer</en>
+<es>Productores del terruño</es>
+<de>Regionalprodukte</de>
+<it>Prodotti locali</it>
+<nl>Streekproducten</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:EvenementPere jcr:uuid="6f7ea4db-5830-4b4d-80ec-ff86b863535f">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Festins de Méditerranée : Histoires de cuisine en sept épisodes</fr>
+<en>Mediterranean banquets</en>
+<de>Festins de Méditerranée</de>
+<it>Festins de Méditerranée</it>
+<nl>Festins de Méditerranée</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="36e2d180-9bd9-4c0d-ab88-22ca35252c6f">
+<fr>Dégustation - repas</fr>
+<en>Tasting, eating and drinking</en>
+<es>Comida degustación</es>
+<de>Probieren, Essen und Trinken</de>
+<it>Degustazione</it>
+<nl>Proeven - maaltijd</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="f7c1e14d-5940-4c71-a62b-d623822dce48">
+<fr>Tables et vins</fr>
+<en>Gastronomy</en>
+<es>Tables et vins</es>
+<de>Gastronomy</de>
+<it>Gastronomy</it>
+<nl>Tables et vins</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="e4b27f9e-2ade-4f4c-b7ee-0d5c05e7f456">
+<fr>Produits régionaux</fr>
+<en>Local food producer</en>
+<es>Productores del terruño</es>
+<de>Regionalprodukte</de>
+<it>Prodotti locali</it>
+<nl>Streekproducten</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuLibre>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="a47df376-67c4-4c11-a466-4a6866c57da2">
+<cdt:NomVille>Arles</cdt:NomVille>
+<cdt:Latitude>43.676651</cdt:Latitude>
+<cdt:Longitude>4.627804</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:Description>
+<fr>Lieu à déterminer</fr>
+</cdt:Description>
+</cdt:LieuLibre>
+</cdt:LieuEvenement>
+<cdt:DescriptifValorisant>
+<fr>Sept villes s'animent en cuisine l'espace d'une journée. Au pied du Garlaban, en bord d'étang, près d'un port, sur les bords du Rhône ou en plein centre-ville, les Festins de Méditerranée sont sept rendez-vous populaires qui racontent la Méditerranée et son art de vivre. À chaque festin, 500 convives sont attendus pour un repas réalisé par des chefs. Citons déjà Armand Arnal (Arles), Sébastien Richard (Istres), Francis Robin (Salon), Fabien Morreale (Martigues), Marc Veyrat (Aubagne). À chaque repas, sa thématique méditerranéenne, sa recette phare, son produit star. On y découvre aussi des producteurs du territoire, des artisans locaux, des bars colorés (à jus, à eau, à vin et à huile d'olive). Des associations comme de nombreux cuisiniers nous attendent avec des tapas sucrées, salées, des recettes d'ici et d'ailleurs des petites bouchées à découvrir tous azimuts. En fonction des spécificités locales, chaque ville propose des activités centrées sur des ateliers mais aussi des débats sur l'alimentation aujourd'hui. Festins de Méditerranée, c'est aussi l'art de siester sous les platanes, des flâneries à la belle étoile en écoutant du fado et des guinguettes au son des Djs méditerranéens pour finir la nuit en beauté.</fr>
+<en>For one day only, discover six culinary traditions reflecting
+Mediterranean lifestyles – on the slopes of the Garlaban, the shores of a lake, the quays of a port, the banks of the Rhône or in the city centre. What’s cooking? Sweet appetizers, salty tapas, local recipes and international flavours, prepared by restaurant owners, associations, chefs and local producers. Mediterranean Banquets is a day-long picnic: after taking part in workshops, visitors can take a well-deserved musical siesta before meeting up with neighbours over dinner and dancing the night away to Mediterranean DJs. Mediterranean culinary traditions will be showcased at six popular gatherings in six towns and cities.</en>
+</cdt:DescriptifValorisant>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.676675</cdt:Latitude>
+<cdt:Longitude>4.627502</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="mp2013" cdt:ctime="2012-07-19T14:35:36.851+02:00" cdt:muser="fisnard" cdt:mtime="2012-11-16T10:13:54.858+01:00"/>
+</cdt:EvenementPere>
+<cdt:Organisateur jcr:uuid="9ede9c1b-26c5-4039-9fda-6f6554bf3587">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Association Marseille Provence 2013</fr>
+<en>Association Marseille Provence 2013</en>
+<de>Association Marseille Provence 2013</de>
+<it>Association Marseille Provence 2013</it>
+<nl>Association Marseille Provence 2013</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Association</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="3ee92736-76e9-46c1-810b-38d77e4722bf">
+<fr>Association culturelle</fr>
+<en>Cultural organization</en>
+<es>Asociación cultural</es>
+<de>Kulturverein</de>
+<it>Associazione culturale</it>
+<nl>Culturele vereniging</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 91 13 20 13</cdt:Telephone>
+<cdt:Fax>04 91 95 88 94</cdt:Fax>
+<cdt:Mail>contact@marseille-provence2013.fr</cdt:Mail>
+<cdt:AdresseWeb>http://www.mp2013.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:LigneAdresse1>Maison Diamantée</cdt:LigneAdresse1>
+<cdt:Numero>1</cdt:Numero>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Villeneuve-Bargemon</cdt:NomVoie>
+<cdt:LigneAdresse3>CS 2013</cdt:LigneAdresse3>
+<cdt:IndicateurCedex>true</cdt:IndicateurCedex>
+<cdt:Cedex>1</cdt:Cedex>
+<cdt:CodePostal>13201</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="dbf7e8e1-b2a0-45f4-a2eb-1315e2f6bd1d">
+<cdt:NomVille>Marseille</cdt:NomVille>
+<cdt:Latitude>43.298344</cdt:Latitude>
+<cdt:Longitude>5.383221</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="202d5e36-a414-4a19-9b20-7783249997e1">MARSEILLE</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="76128257-789f-4043-b32f-3b17adb7ce67">
+<cdt:NomQuartier>
+Vieux Port/Opéra/Vieille ville/St-Victor/Pharo
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.312046</cdt:Latitude>
+<cdt:Longitude>5.391146</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="sbenimeli" cdt:ctime="2008-06-23T09:53:37.232+02:00" cdt:muser="mp2013" cdt:mtime="2012-07-04T18:31:24.682+02:00"/>
+</cdt:Organisateur>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuLibre>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="23f39d15-379b-4ce2-9bba-c09d491b0340">
+<cdt:NomVille>Saint Rémy de Provence</cdt:NomVille>
+<cdt:Latitude>43.788591</cdt:Latitude>
+<cdt:Longitude>4.830037</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:Description>
+<fr>Lieu à déterminer</fr>
+</cdt:Description>
+</cdt:LieuLibre>
+</cdt:LieuEvenement>
+<cdt:TypePeriodicite>
+<cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
+<fr>Ponctuel</fr>
+<en>Ad hoc</en>
+<es>Ponctuel</es>
+<de>einmalig</de>
+<it>Puntuale</it>
+<nl>Ponctuel</nl>
+</cdt:TypePeriodicite>
+</cdt:TypePeriodicite>
+<cdt:TypePortee>
+<cdt:TypePortee jcr:uuid="2b184590-69d2-4d68-a63c-c0c154ef66fc">
+<fr>nationale</fr>
+<en>nationale</en>
+<es>nationale</es>
+<de>nationale</de>
+<it>nationale</it>
+<nl>nationale</nl>
+</cdt:TypePortee>
+</cdt:TypePortee>
+<cdt:GrandeManifestation>false</cdt:GrandeManifestation>
+</cdt:InformationGenerales>
+<cdt:Contacts/>
+<cdt:ClassementCharteLabel>
+<cdt:Label>
+<cdt:Label>
+<cdt:TypeLabel jcr:uuid="e00de27d-2c29-4b7b-879c-6e4ab94f97f4">
+<fr>Programme MP2013</fr>
+</cdt:TypeLabel>
+</cdt:Label>
+</cdt:Label>
+</cdt:ClassementCharteLabel>
+<cdt:ProgrammeDescriptif>
+<cdt:DescriptifValorisant>
+<fr>Sept villes s'animent en cuisine l'espace d'une journée. Au pied du Garlaban, en bord d'étang, près d'un port, sur les bords du Rhône ou en plein centre-ville, les Festins de Méditerranée sont sept rendez-vous populaires qui racontent la Méditerranée et son art de vivre. À chaque festin, 500 convives sont attendus pour un repas réalisé par des chefs. Citons déjà Armand Arnal (Arles), Sébastien Richard (Istres), Francis Robin (Salon), Fabien Morreale (Martigues), Marc Veyrat (Aubagne). À chaque repas, sa thématique méditerranéenne, sa recette phare, son produit star. On y découvre aussi des producteurs du territoire, des artisans locaux, des bars colorés (à jus, à eau, à vin et à huile d'olive). Des associations comme de nombreux cuisiniers nous attendent avec des tapas sucrées, salées, des recettes d'ici et d'ailleurs des petites bouchées à découvrir tous azimuts. En fonction des spécificités locales, chaque ville propose des activités centrées sur des ateliers mais aussi des débats sur l'alimentation aujourd'hui. Festins de Méditerranée, c'est aussi l'art de siester sous les platanes, des flâneries à la belle étoile en écoutant du fado et des guinguettes au son des Djs méditerranéens pour finir la nuit en beauté.</fr>
+</cdt:DescriptifValorisant>
+</cdt:ProgrammeDescriptif>
+<cdt:PeriodesEtDates>
+<cdt:AValider>false</cdt:AValider>
+<cdt:Recurrente>false</cdt:Recurrente>
+<cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
+<cdt:DateEnClair>
+<fr>Le 13 octobre</fr>
+</cdt:DateEnClair>
+<cdt:Definitions>
+<cdt:Fermeture>false</cdt:Fermeture>
+<cdt:Debut>2013-10-13T00:00:00.000+02:00</cdt:Debut>
+<cdt:Fin>2013-10-13T00:00:00.000+02:00</cdt:Fin>
+<cdt:JoursNommes>
+<cdt:SelectionLundi>false</cdt:SelectionLundi>
+<cdt:SelectionMardi>false</cdt:SelectionMardi>
+<cdt:SelectionMercredi>false</cdt:SelectionMercredi>
+<cdt:SelectionJeudi>false</cdt:SelectionJeudi>
+<cdt:SelectionVendredi>false</cdt:SelectionVendredi>
+<cdt:SelectionSamedi>false</cdt:SelectionSamedi>
+<cdt:SelectionDimanche>false</cdt:SelectionDimanche>
+</cdt:JoursNommes>
+</cdt:Definitions>
+</cdt:PeriodesEtDates>
+<cdt:Tarification/>
+<cdt:Reservation/>
+<cdt:AccueilClientele/>
+<cdt:ParkingAccesLocalisation>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.788652</cdt:Latitude>
+<cdt:Longitude>4.831343</cdt:Longitude>
+</cdt:SituationGeographique>
+</cdt:ParkingAccesLocalisation>
+<cdt:InformationsGestion>
+<cdt:InformationsCDT>
+<cdt:IndicateurAnnonceFestiv>false</cdt:IndicateurAnnonceFestiv>
+<cdt:ExportVisitprovence>false</cdt:ExportVisitprovence>
+<cdt:ReserverVisitprovence>false</cdt:ReserverVisitprovence>
+<cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
+</cdt:InformationsCDT>
+<cdt:InformationsSpecifiques>
+<cdt:DescriptifSpecifique>
+<fr>Coproduction : Marseille-Provence 2013. En partenariat avec les Villes d'Aubagne, d'Arles, de Gardanne, de Port-de-Bouc, d'Istres, de Salon-de-Provence et de Saint-Rémy-de-Provence.</fr>
+</cdt:DescriptifSpecifique>
 <cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
 <cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
 <cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
@@ -206,12 +658,625 @@ Pour sa troisième édition en 2013, la Fête de l'Eau sera le cadre privilégi�
 <en>Marseille Provence open sky</en>
 </cdt:TypeEpisode>
 </cdt:Episode>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="45edf675-0f7f-4fe3-bd3f-4bd59056ee7a">
+<fr>Festivals et Grands rassemblements</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Typologie>
+<cdt:Typologie jcr:uuid="547d1f35-e619-4b6e-9595-7a886fa097fd">
+<fr>Cuisine</fr>
+</cdt:Typologie>
+</cdt:Typologie>
 </cdt:InformationsSpecifiques>
-<cdt:Audit cdt:cuser="clabbe" cdt:ctime="2012-10-26T15:00:19.842+02:00" cdt:muser="sitd" cdt:mtime="2012-11-15T20:20:07.630+01:00"/>
+<cdt:Audit cdt:cuser="fisnard" cdt:ctime="2012-11-09T09:18:59.695+01:00" cdt:muser="fisnard" cdt:mtime="2012-11-21T11:35:15.409+01:00"/>
 <cdt:Contributeurs>
 <cdt:Contributeur cdt:nom="Bouches du Rhône Tourisme" cdt:url="http://www.visitprovence.com"/>
 </cdt:Contributeurs>
 </cdt:InformationsGestion>
-
+</object>
+<object jcr:uuid="e2ea6779-959f-442f-a6be-517a22957276" name="13EVT034143">
+<cdt:InformationGenerales>
+<cdt:NomAnnonce>
+<fr>Les paravents</fr>
+<en>Les paravents</en>
+<de>Les paravents</de>
+<it>Les paravents</it>
+<nl>Les paravents</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="3dc75250-d2da-4b19-9a4c-0a434143caaa">
+<fr>Evénements culturels</fr>
+<en>Evénements culturels</en>
+<es>Evénements culturels</es>
+<de>Evénements culturels</de>
+<it>Evénements culturels</it>
+<nl>Evénements culturels</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="890c13e1-c3ce-461f-8c9b-9e5c9278ab0e">
+<fr>Pièce de théâtre</fr>
+<en>Pièce de théâtre</en>
+<es>Pièce de théâtre</es>
+<de>Pièce de théâtre</de>
+<it>Pièce de théâtre</it>
+<nl>Pièce de théâtre</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="ff539fc1-bc11-4589-a7dd-c42dfc405357">
+<fr>Art et culture</fr>
+<en>Art et culture</en>
+<es>Art et culture</es>
+<de>Art et culture</de>
+<it>Art et culture</it>
+<nl>Art et culture</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="6e5792c4-375b-45b9-8760-88227feef95a">
+<fr>Théâtre</fr>
+<en>Theater</en>
+<es>Teatro</es>
+<de>Theater</de>
+<it>Teatro</it>
+<nl>Theater</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:Organisateur jcr:uuid="9ede9c1b-26c5-4039-9fda-6f6554bf3587">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Association Marseille Provence 2013</fr>
+<en>Association Marseille Provence 2013</en>
+<de>Association Marseille Provence 2013</de>
+<it>Association Marseille Provence 2013</it>
+<nl>Association Marseille Provence 2013</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Association</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="3ee92736-76e9-46c1-810b-38d77e4722bf">
+<fr>Association culturelle</fr>
+<en>Cultural organization</en>
+<es>Asociación cultural</es>
+<de>Kulturverein</de>
+<it>Associazione culturale</it>
+<nl>Culturele vereniging</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 91 13 20 13</cdt:Telephone>
+<cdt:Fax>04 91 95 88 94</cdt:Fax>
+<cdt:Mail>contact@marseille-provence2013.fr</cdt:Mail>
+<cdt:AdresseWeb>http://www.mp2013.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:LigneAdresse1>Maison Diamantée</cdt:LigneAdresse1>
+<cdt:Numero>1</cdt:Numero>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Villeneuve-Bargemon</cdt:NomVoie>
+<cdt:LigneAdresse3>CS 2013</cdt:LigneAdresse3>
+<cdt:IndicateurCedex>true</cdt:IndicateurCedex>
+<cdt:Cedex>1</cdt:Cedex>
+<cdt:CodePostal>13201</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="dbf7e8e1-b2a0-45f4-a2eb-1315e2f6bd1d">
+<cdt:NomVille>Marseille</cdt:NomVille>
+<cdt:Latitude>43.298344</cdt:Latitude>
+<cdt:Longitude>5.383221</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="202d5e36-a414-4a19-9b20-7783249997e1">MARSEILLE</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="76128257-789f-4043-b32f-3b17adb7ce67">
+<cdt:NomQuartier>
+Vieux Port/Opéra/Vieille ville/St-Victor/Pharo
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.312046</cdt:Latitude>
+<cdt:Longitude>5.391146</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="sbenimeli" cdt:ctime="2008-06-23T09:53:37.232+02:00" cdt:muser="mp2013" cdt:mtime="2012-07-04T18:31:24.682+02:00"/>
+</cdt:Organisateur>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuAnnonce jcr:uuid="99c6d58c-8167-4829-b3e4-fd56afa52b65">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Théâtre Comoedia</fr>
+<en>Théâtre Comoedia</en>
+<es>Théâtre Comoedia</es>
+<de>Théâtre Comoedia</de>
+<it>Théâtre Comoedia</it>
+<nl>Théâtre Comoedia</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Theatre</cdt:Type>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 42 18 19 88</cdt:Telephone>
+<cdt:AdresseWeb>http://www.aubagne.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="57078254-cb80-49b9-97e5-523c34bed1e3">
+<fr>Cours</fr>
+<en>Cours</en>
+<es>Cours</es>
+<de>Cours</de>
+<it>Cours</it>
+<nl>Cours</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Foch</cdt:NomVoie>
+<cdt:IndicateurCedex>false</cdt:IndicateurCedex>
+<cdt:CodePostal>13400</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="ede32fce-7001-43f9-8481-d00feb3de0d5">
+<cdt:NomVille>Aubagne</cdt:NomVille>
+<cdt:Latitude>43.293253</cdt:Latitude>
+<cdt:Longitude>5.570281</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="5c021b1e-df84-4374-a67c-378eeb94f3a5">AUBAGNE</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.293665</cdt:Latitude>
+<cdt:Longitude>5.567322</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="vdeconinck" cdt:ctime="1998-12-02T00:00:00.000+01:00" cdt:muser="taperiode" cdt:mtime="2012-01-01T04:32:40.169+01:00" cdt:IndicateurAnnonceSupprimee="false"/>
+</cdt:LieuAnnonce>
+</cdt:LieuEvenement>
+<cdt:TypePeriodicite>
+<cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
+<fr>Ponctuel</fr>
+<en>Ad hoc</en>
+<es>Ponctuel</es>
+<de>einmalig</de>
+<it>Puntuale</it>
+<nl>Ponctuel</nl>
+</cdt:TypePeriodicite>
+</cdt:TypePeriodicite>
+<cdt:TypePortee>
+<cdt:TypePortee jcr:uuid="2b184590-69d2-4d68-a63c-c0c154ef66fc">
+<fr>nationale</fr>
+<en>nationale</en>
+<es>nationale</es>
+<de>nationale</de>
+<it>nationale</it>
+<nl>nationale</nl>
+</cdt:TypePortee>
+</cdt:TypePortee>
+<cdt:GrandeManifestation>false</cdt:GrandeManifestation>
+</cdt:InformationGenerales>
+<cdt:Contacts/>
+<cdt:ClassementCharteLabel>
+<cdt:Label>
+<cdt:Label>
+<cdt:TypeLabel jcr:uuid="e00de27d-2c29-4b7b-879c-6e4ab94f97f4">
+<fr>Programme MP2013</fr>
+</cdt:TypeLabel>
+</cdt:Label>
+</cdt:Label>
+</cdt:ClassementCharteLabel>
+<cdt:ProgrammeDescriptif>
+<cdt:DescriptifValorisant>
+<fr>Cette création du Théâtre de l'Égrégore avec le Théâtre national d'Alger autour d'une mise en scène des Paravents de Jean Genet par Yvan Romeuf constitue un point d'orgue du projet « d'une rive à l'autre » porté par le Théâtre de Lenche.</fr>
+</cdt:DescriptifValorisant>
+</cdt:ProgrammeDescriptif>
+<cdt:PeriodesEtDates>
+<cdt:AValider>false</cdt:AValider>
+<cdt:Recurrente>false</cdt:Recurrente>
+<cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
+<cdt:DateEnClair>
+<fr>Novembre</fr>
+</cdt:DateEnClair>
+<cdt:Definitions>
+<cdt:Fermeture>false</cdt:Fermeture>
+<cdt:Debut>2013-11-01T00:00:00.000+01:00</cdt:Debut>
+<cdt:Fin>2013-11-30T00:00:00.000+01:00</cdt:Fin>
+<cdt:JoursNommes>
+<cdt:SelectionLundi>false</cdt:SelectionLundi>
+<cdt:SelectionMardi>false</cdt:SelectionMardi>
+<cdt:SelectionMercredi>false</cdt:SelectionMercredi>
+<cdt:SelectionJeudi>false</cdt:SelectionJeudi>
+<cdt:SelectionVendredi>false</cdt:SelectionVendredi>
+<cdt:SelectionSamedi>false</cdt:SelectionSamedi>
+<cdt:SelectionDimanche>false</cdt:SelectionDimanche>
+</cdt:JoursNommes>
+</cdt:Definitions>
+</cdt:PeriodesEtDates>
+<cdt:Tarification/>
+<cdt:Reservation/>
+<cdt:AccueilClientele/>
+<cdt:ParkingAccesLocalisation>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.293665</cdt:Latitude>
+<cdt:Longitude>5.567322</cdt:Longitude>
+</cdt:SituationGeographique>
+</cdt:ParkingAccesLocalisation>
+<cdt:InformationsGestion>
+<cdt:InformationsCDT>
+<cdt:IndicateurAnnonceFestiv>false</cdt:IndicateurAnnonceFestiv>
+<cdt:ExportVisitprovence>false</cdt:ExportVisitprovence>
+<cdt:ReserverVisitprovence>false</cdt:ReserverVisitprovence>
+<cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
+</cdt:InformationsCDT>
+<cdt:InformationsSpecifiques>
+<cdt:DescriptifSpecifique>
+<fr>Production : Théâtre de l'Égrégore / Théâtre de Lenche. Coproduction : Marseille-Provence 2013.</fr>
+</cdt:DescriptifSpecifique>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
+<cdt:AdherentOTSaintesMaries>false</cdt:AdherentOTSaintesMaries>
+<cdt:AdherentOTPaysAubagne>false</cdt:AdherentOTPaysAubagne>
+<cdt:AdherentOTStRemyDeProvence>false</cdt:AdherentOTStRemyDeProvence>
+<cdt:AdherentOTTarascon>false</cdt:AdherentOTTarascon>
+<cdt:SelectionPNRA>false</cdt:SelectionPNRA>
+<cdt:Episode>
+<cdt:TypeEpisode jcr:uuid="905b4dc6-3059-4daa-b64d-08c80cae12dd">
+<fr>Episode 3 : Marseille Provence aux milles visages</fr>
+<en>Marseille Provence land of diversity</en>
+</cdt:TypeEpisode>
+</cdt:Episode>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="45edf675-0f7f-4fe3-bd3f-4bd59056ee7a">
+<fr>Festivals et Grands rassemblements</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+</cdt:InformationsSpecifiques>
+<cdt:Audit cdt:cuser="fisnard" cdt:ctime="2012-11-14T15:11:28.572+01:00" cdt:muser="sitd" cdt:mtime="2012-11-16T00:10:01.317+01:00"/>
+<cdt:Contributeurs>
+<cdt:Contributeur cdt:nom="Bouches du Rhône Tourisme" cdt:url="http://www.visitprovence.com"/>
+</cdt:Contributeurs>
+</cdt:InformationsGestion>
+</object>
+<object jcr:uuid="724b0978-0338-47d4-8c8e-8b9a9543c498" name="13EVT033832">
+<cdt:InformationGenerales>
+<cdt:NomAnnonce>
+<fr>Festins de Méditerranée : Histoires de cuisine en sept épisodes</fr>
+<en>Festins de Méditerranée : Histoires de cuisine en sept épisodes</en>
+<de>Festins de Méditerranée : Histoires de cuisine en sept épisodes</de>
+<it>Festins de Méditerranée : Histoires de cuisine en sept épisodes</it>
+<nl>Festins de Méditerranée : Histoires de cuisine en sept épisodes</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="36e2d180-9bd9-4c0d-ab88-22ca35252c6f">
+<fr>Dégustation - repas</fr>
+<en>Tasting, eating and drinking</en>
+<es>Comida degustación</es>
+<de>Probieren, Essen und Trinken</de>
+<it>Degustazione</it>
+<nl>Proeven - maaltijd</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="f7c1e14d-5940-4c71-a62b-d623822dce48">
+<fr>Tables et vins</fr>
+<en>Gastronomy</en>
+<es>Tables et vins</es>
+<de>Gastronomy</de>
+<it>Gastronomy</it>
+<nl>Tables et vins</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="e4b27f9e-2ade-4f4c-b7ee-0d5c05e7f456">
+<fr>Produits régionaux</fr>
+<en>Local food producer</en>
+<es>Productores del terruño</es>
+<de>Regionalprodukte</de>
+<it>Prodotti locali</it>
+<nl>Streekproducten</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:EvenementPere jcr:uuid="6f7ea4db-5830-4b4d-80ec-ff86b863535f">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Festins de Méditerranée : Histoires de cuisine en sept épisodes</fr>
+<en>Mediterranean banquets</en>
+<de>Festins de Méditerranée</de>
+<it>Festins de Méditerranée</it>
+<nl>Festins de Méditerranée</nl>
+</cdt:NomAnnonce>
+<cdt:EvenementType>
+<cdt:Type_niv1>
+<cdt:Type jcr:uuid="79187317-89e4-432d-996b-612aaca75c93">
+<fr>Manifestations divers</fr>
+<en>Miscellaneous</en>
+<es>Manifestations divers</es>
+<de>Verschiedenes</de>
+<it>Altre manifestazioni</it>
+<nl>Manifestations divers</nl>
+</cdt:Type>
+</cdt:Type_niv1>
+<cdt:Type_niv2>
+<cdt:Type jcr:uuid="36e2d180-9bd9-4c0d-ab88-22ca35252c6f">
+<fr>Dégustation - repas</fr>
+<en>Tasting, eating and drinking</en>
+<es>Comida degustación</es>
+<de>Probieren, Essen und Trinken</de>
+<it>Degustazione</it>
+<nl>Proeven - maaltijd</nl>
+</cdt:Type>
+</cdt:Type_niv2>
+</cdt:EvenementType>
+<cdt:ThemeEvenement>
+<cdt:Theme_niv1>
+<cdt:Theme jcr:uuid="f7c1e14d-5940-4c71-a62b-d623822dce48">
+<fr>Tables et vins</fr>
+<en>Gastronomy</en>
+<es>Tables et vins</es>
+<de>Gastronomy</de>
+<it>Gastronomy</it>
+<nl>Tables et vins</nl>
+</cdt:Theme>
+</cdt:Theme_niv1>
+<cdt:Theme_niv2>
+<cdt:Theme jcr:uuid="e4b27f9e-2ade-4f4c-b7ee-0d5c05e7f456">
+<fr>Produits régionaux</fr>
+<en>Local food producer</en>
+<es>Productores del terruño</es>
+<de>Regionalprodukte</de>
+<it>Prodotti locali</it>
+<nl>Streekproducten</nl>
+</cdt:Theme>
+</cdt:Theme_niv2>
+</cdt:ThemeEvenement>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuLibre>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="a47df376-67c4-4c11-a466-4a6866c57da2">
+<cdt:NomVille>Arles</cdt:NomVille>
+<cdt:Latitude>43.676651</cdt:Latitude>
+<cdt:Longitude>4.627804</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:Description>
+<fr>Lieu à déterminer</fr>
+</cdt:Description>
+</cdt:LieuLibre>
+</cdt:LieuEvenement>
+<cdt:DescriptifValorisant>
+<fr>Sept villes s'animent en cuisine l'espace d'une journée. Au pied du Garlaban, en bord d'étang, près d'un port, sur les bords du Rhône ou en plein centre-ville, les Festins de Méditerranée sont sept rendez-vous populaires qui racontent la Méditerranée et son art de vivre. À chaque festin, 500 convives sont attendus pour un repas réalisé par des chefs. Citons déjà Armand Arnal (Arles), Sébastien Richard (Istres), Francis Robin (Salon), Fabien Morreale (Martigues), Marc Veyrat (Aubagne). À chaque repas, sa thématique méditerranéenne, sa recette phare, son produit star. On y découvre aussi des producteurs du territoire, des artisans locaux, des bars colorés (à jus, à eau, à vin et à huile d'olive). Des associations comme de nombreux cuisiniers nous attendent avec des tapas sucrées, salées, des recettes d'ici et d'ailleurs des petites bouchées à découvrir tous azimuts. En fonction des spécificités locales, chaque ville propose des activités centrées sur des ateliers mais aussi des débats sur l'alimentation aujourd'hui. Festins de Méditerranée, c'est aussi l'art de siester sous les platanes, des flâneries à la belle étoile en écoutant du fado et des guinguettes au son des Djs méditerranéens pour finir la nuit en beauté.</fr>
+<en>For one day only, discover six culinary traditions reflecting
+Mediterranean lifestyles – on the slopes of the Garlaban, the shores of a lake, the quays of a port, the banks of the Rhône or in the city centre. What’s cooking? Sweet appetizers, salty tapas, local recipes and international flavours, prepared by restaurant owners, associations, chefs and local producers. Mediterranean Banquets is a day-long picnic: after taking part in workshops, visitors can take a well-deserved musical siesta before meeting up with neighbours over dinner and dancing the night away to Mediterranean DJs. Mediterranean culinary traditions will be showcased at six popular gatherings in six towns and cities.</en>
+</cdt:DescriptifValorisant>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.676675</cdt:Latitude>
+<cdt:Longitude>4.627502</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="mp2013" cdt:ctime="2012-07-19T14:35:36.851+02:00" cdt:muser="fisnard" cdt:mtime="2012-11-16T10:13:54.858+01:00"/>
+</cdt:EvenementPere>
+<cdt:Organisateur jcr:uuid="9ede9c1b-26c5-4039-9fda-6f6554bf3587">
+<cdt:InformationsGenerales>
+<cdt:NomAnnonce>
+<fr>Association Marseille Provence 2013</fr>
+<en>Association Marseille Provence 2013</en>
+<de>Association Marseille Provence 2013</de>
+<it>Association Marseille Provence 2013</it>
+<nl>Association Marseille Provence 2013</nl>
+</cdt:NomAnnonce>
+<cdt:ActiviteOrganisme>
+<cdt:Type>cdt:Association</cdt:Type>
+<cdt:SousType>
+<cdt:SousTypeActivite jcr:uuid="3ee92736-76e9-46c1-810b-38d77e4722bf">
+<fr>Association culturelle</fr>
+<en>Cultural organization</en>
+<es>Asociación cultural</es>
+<de>Kulturverein</de>
+<it>Associazione culturale</it>
+<nl>Culturele vereniging</nl>
+</cdt:SousTypeActivite>
+</cdt:SousType>
+</cdt:ActiviteOrganisme>
+<cdt:Telephone>04 91 13 20 13</cdt:Telephone>
+<cdt:Fax>04 91 95 88 94</cdt:Fax>
+<cdt:Mail>contact@marseille-provence2013.fr</cdt:Mail>
+<cdt:AdresseWeb>http://www.mp2013.fr</cdt:AdresseWeb>
+<cdt:Adresse>
+<cdt:LigneAdresse1>Maison Diamantée</cdt:LigneAdresse1>
+<cdt:Numero>1</cdt:Numero>
+<cdt:Voie>
+<cdt:TypeVoie jcr:uuid="afec9a38-70f8-4076-bfb0-62cdc6b73768">
+<fr>Place</fr>
+<en>Place</en>
+<es>Place</es>
+<de>Platz</de>
+<it>Place</it>
+<nl>Place</nl>
+</cdt:TypeVoie>
+</cdt:Voie>
+<cdt:NomVoie>Villeneuve-Bargemon</cdt:NomVoie>
+<cdt:LigneAdresse3>CS 2013</cdt:LigneAdresse3>
+<cdt:IndicateurCedex>true</cdt:IndicateurCedex>
+<cdt:Cedex>1</cdt:Cedex>
+<cdt:CodePostal>13201</cdt:CodePostal>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="dbf7e8e1-b2a0-45f4-a2eb-1315e2f6bd1d">
+<cdt:NomVille>Marseille</cdt:NomVille>
+<cdt:Latitude>43.298344</cdt:Latitude>
+<cdt:Longitude>5.383221</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:BureauDistributeur>
+<cdt:BureauDistributeur jcr:uuid="202d5e36-a414-4a19-9b20-7783249997e1">MARSEILLE</cdt:BureauDistributeur>
+</cdt:BureauDistributeur>
+<cdt:Quartier>
+<cdt:Quartier jcr:uuid="76128257-789f-4043-b32f-3b17adb7ce67">
+<cdt:NomQuartier>
+Vieux Port/Opéra/Vieille ville/St-Victor/Pharo
+</cdt:NomQuartier>
+</cdt:Quartier>
+</cdt:Quartier>
+</cdt:Adresse>
+</cdt:InformationsGenerales>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.312046</cdt:Latitude>
+<cdt:Longitude>5.391146</cdt:Longitude>
+</cdt:SituationGeographique>
+<cdt:Audit cdt:cuser="sbenimeli" cdt:ctime="2008-06-23T09:53:37.232+02:00" cdt:muser="mp2013" cdt:mtime="2012-07-04T18:31:24.682+02:00"/>
+</cdt:Organisateur>
+<cdt:LieuEvenement>
+<cdt:IndicateurLieuPrincipal>true</cdt:IndicateurLieuPrincipal>
+<cdt:LieuLibre>
+<cdt:Ville>
+<cdt:Ville jcr:uuid="975ac15b-0f13-4f89-b9d9-d87d192de0e0">
+<cdt:NomVille>Gardanne</cdt:NomVille>
+<cdt:Latitude>43.454006</cdt:Latitude>
+<cdt:Longitude>5.469425</cdt:Longitude>
+</cdt:Ville>
+</cdt:Ville>
+<cdt:Description>
+<fr>Lieu à déterminer</fr>
+</cdt:Description>
+</cdt:LieuLibre>
+</cdt:LieuEvenement>
+<cdt:TypePeriodicite>
+<cdt:TypePeriodicite jcr:uuid="5aa4aa56-f076-4816-b475-8e72c1448f33">
+<fr>Ponctuel</fr>
+<en>Ad hoc</en>
+<es>Ponctuel</es>
+<de>einmalig</de>
+<it>Puntuale</it>
+<nl>Ponctuel</nl>
+</cdt:TypePeriodicite>
+</cdt:TypePeriodicite>
+<cdt:TypePortee>
+<cdt:TypePortee jcr:uuid="2b184590-69d2-4d68-a63c-c0c154ef66fc">
+<fr>nationale</fr>
+<en>nationale</en>
+<es>nationale</es>
+<de>nationale</de>
+<it>nationale</it>
+<nl>nationale</nl>
+</cdt:TypePortee>
+</cdt:TypePortee>
+<cdt:GrandeManifestation>false</cdt:GrandeManifestation>
+</cdt:InformationGenerales>
+<cdt:Contacts/>
+<cdt:ClassementCharteLabel>
+<cdt:Label>
+<cdt:Label>
+<cdt:TypeLabel jcr:uuid="e00de27d-2c29-4b7b-879c-6e4ab94f97f4">
+<fr>Programme MP2013</fr>
+</cdt:TypeLabel>
+</cdt:Label>
+</cdt:Label>
+</cdt:ClassementCharteLabel>
+<cdt:ProgrammeDescriptif>
+<cdt:DescriptifValorisant>
+<fr>Sept villes s'animent en cuisine l'espace d'une journée. Au pied du Garlaban, en bord d'étang, près d'un port, sur les bords du Rhône ou en plein centre-ville, les Festins de Méditerranée sont sept rendez-vous populaires qui racontent la Méditerranée et son art de vivre. À chaque festin, 500 convives sont attendus pour un repas réalisé par des chefs. Citons déjà Armand Arnal (Arles), Sébastien Richard (Istres), Francis Robin (Salon), Fabien Morreale (Martigues), Marc Veyrat (Aubagne). À chaque repas, sa thématique méditerranéenne, sa recette phare, son produit star. On y découvre aussi des producteurs du territoire, des artisans locaux, des bars colorés (à jus, à eau, à vin et à huile d'olive). Des associations comme de nombreux cuisiniers nous attendent avec des tapas sucrées, salées, des recettes d'ici et d'ailleurs des petites bouchées à découvrir tous azimuts. En fonction des spécificités locales, chaque ville propose des activités centrées sur des ateliers mais aussi des débats sur l'alimentation aujourd'hui. Festins de Méditerranée, c'est aussi l'art de siester sous les platanes, des flâneries à la belle étoile en écoutant du fado et des guinguettes au son des Djs méditerranéens pour finir la nuit en beauté.</fr>
+</cdt:DescriptifValorisant>
+</cdt:ProgrammeDescriptif>
+<cdt:PeriodesEtDates>
+<cdt:AValider>false</cdt:AValider>
+<cdt:Recurrente>false</cdt:Recurrente>
+<cdt:OuvertTouteLAnnee>false</cdt:OuvertTouteLAnnee>
+<cdt:DateEnClair>
+<fr>Du 18 au 19 mai</fr>
+</cdt:DateEnClair>
+<cdt:Definitions>
+<cdt:Fermeture>false</cdt:Fermeture>
+<cdt:Debut>2013-05-18T00:00:00.000+02:00</cdt:Debut>
+<cdt:Fin>2013-05-19T00:00:00.000+02:00</cdt:Fin>
+<cdt:JoursNommes>
+<cdt:SelectionLundi>false</cdt:SelectionLundi>
+<cdt:SelectionMardi>false</cdt:SelectionMardi>
+<cdt:SelectionMercredi>false</cdt:SelectionMercredi>
+<cdt:SelectionJeudi>false</cdt:SelectionJeudi>
+<cdt:SelectionVendredi>false</cdt:SelectionVendredi>
+<cdt:SelectionSamedi>false</cdt:SelectionSamedi>
+<cdt:SelectionDimanche>false</cdt:SelectionDimanche>
+</cdt:JoursNommes>
+</cdt:Definitions>
+</cdt:PeriodesEtDates>
+<cdt:Tarification/>
+<cdt:Reservation/>
+<cdt:AccueilClientele/>
+<cdt:ParkingAccesLocalisation>
+<cdt:SituationGeographique>
+<cdt:Latitude>43.455669</cdt:Latitude>
+<cdt:Longitude>5.470649</cdt:Longitude>
+</cdt:SituationGeographique>
+</cdt:ParkingAccesLocalisation>
+<cdt:InformationsGestion>
+<cdt:InformationsCDT>
+<cdt:IndicateurAnnonceFestiv>false</cdt:IndicateurAnnonceFestiv>
+<cdt:ExportVisitprovence>false</cdt:ExportVisitprovence>
+<cdt:ReserverVisitprovence>false</cdt:ReserverVisitprovence>
+<cdt:SelectionProTourisme>false</cdt:SelectionProTourisme>
+</cdt:InformationsCDT>
+<cdt:InformationsSpecifiques>
+<cdt:DescriptifSpecifique>
+<fr>Coproduction : Marseille-Provence 2013. En partenariat avec les Villes d'Aubagne, d'Arles, de Gardanne, de Port-de-Bouc, d'Istres, de Salon-de-Provence et de Saint-Rémy-de-Provence.</fr>
+</cdt:DescriptifSpecifique>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:AdherentOTAixEnProvence>false</cdt:AdherentOTAixEnProvence>
+<cdt:CongresOTMarseille>false</cdt:CongresOTMarseille>
+<cdt:AdherentOTSaintesMaries>false</cdt:AdherentOTSaintesMaries>
+<cdt:AdherentOTPaysAubagne>false</cdt:AdherentOTPaysAubagne>
+<cdt:AdherentOTStRemyDeProvence>false</cdt:AdherentOTStRemyDeProvence>
+<cdt:AdherentOTTarascon>false</cdt:AdherentOTTarascon>
+<cdt:SelectionPNRA>false</cdt:SelectionPNRA>
+<cdt:Episode>
+<cdt:TypeEpisode jcr:uuid="b2eb0aec-e755-4d1d-946f-c49d44fc35e6">
+<fr>Episode 2 : Marseille Provence à ciel ouvert</fr>
+<en>Marseille Provence open sky</en>
+</cdt:TypeEpisode>
+</cdt:Episode>
+<cdt:Discipline>
+<cdt:TypeDiscipline jcr:uuid="45edf675-0f7f-4fe3-bd3f-4bd59056ee7a">
+<fr>Festivals et Grands rassemblements</fr>
+</cdt:TypeDiscipline>
+</cdt:Discipline>
+<cdt:Typologie>
+<cdt:Typologie jcr:uuid="547d1f35-e619-4b6e-9595-7a886fa097fd">
+<fr>Cuisine</fr>
+</cdt:Typologie>
+</cdt:Typologie>
+</cdt:InformationsSpecifiques>
+<cdt:Audit cdt:cuser="fisnard" cdt:ctime="2012-11-09T09:07:58.876+01:00" cdt:muser="fisnard" cdt:mtime="2012-11-16T09:54:53.330+01:00"/>
+<cdt:Contributeurs>
+<cdt:Contributeur cdt:nom="Bouches du Rhône Tourisme" cdt:url="http://www.visitprovence.com"/>
+</cdt:Contributeurs>
+</cdt:InformationsGestion>
 </object>
 </cdt:export>
