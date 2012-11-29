@@ -1,5 +1,9 @@
 <?php
 
+use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\Common\Annotations\AnnotationRegistry;
+
+
 require_once __DIR__.'/../externals/doctrine2/lib/vendor/doctrine-common/lib/Doctrine/Common/ClassLoader.php';
 
 $lib = __DIR__ . '/../externals/doctrine2/lib/';
@@ -21,11 +25,15 @@ $classLoader->register();
 
 
 $config = new \Doctrine\ORM\Configuration();
+//stackoverflow.com/questions/9755518/doctrine-2-no-metadata-classes-to-process-by-ormgenerate-repositories
+AnnotationRegistry::registerFile(__DIR__."/../externals/doctrine2/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php");
+$reader = new AnnotationReader();
+$driverImpl = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($reader, array(__DIR__."/../entities/Entity"));
 
 
-$config->setMetadataCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
+//$config->setMetadataCacheImpl(new \Doctrine\Common\Cache\ArrayCache);
 // chemin paramétrable
-$driverImpl = $config->newDefaultAnnotationDriver(array(__DIR__."/../entities/Entity"));
+//$driverImpl = $config->newDefaultAnnotationDriver(array(__DIR__."/../entities/Entity"));
 $config->setMetadataDriverImpl($driverImpl);
 
 $config->setProxyDir(__DIR__ . '/Proxies');
