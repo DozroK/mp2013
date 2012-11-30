@@ -23,6 +23,13 @@ class Event
     /**
      * var string
      *
+     * @ORM\Column(name="id_patio", type="string", length=255, nullable=false)
+     */
+    private $idPatio;
+
+    /**
+     * var string
+     *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;

@@ -7,7 +7,7 @@
 <body>
 <ul>
 <li><a href = "truncate">Vider les tables</a></li>
-<li><a href = "getfile">Mettre à jour le fichier xml</a></li>
+<li><a href = "getfile">Récupérer en local le xml distant</a></li>
 <li><a href = "load">Charger en bdd le xml</a></li>
 <li><a href = "phpinfo">Rapport sur l'installation</a></li>
 </ul>

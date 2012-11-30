@@ -11,4 +11,5 @@ if (!is_callable(array($controller, $function))) {
 }
 
 $view = $controller->$function(); //Controller
+
 @include(__DIR__."/views/".$function.".php"); //View

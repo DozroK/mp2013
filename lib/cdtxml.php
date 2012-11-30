@@ -47,10 +47,9 @@ class CdtXml extends SimpleXMLElement
     {
         $base = "http://www.mp2013.fr/ext/basephotos/";
         $extensions = array("JPG", "jpeg", "JPEG", "jpg", "PNG", "png");
-        $array = $this->xpath("/cdt:export[1]/object[".$index."]");
-        $image = $array[0]->attributes()->name;
+        $idPatio = $this->getIdPatio($index);
         foreach ($extensions as $extension) {
-            $url = $base.$image.".".$extension;
+            $url = $base.$idPatio.".".$extension;
             // très couteux : 
             $header = (get_headers($url));
             if (strpos($header[0],"200") !== false) {
@@ -60,8 +59,10 @@ class CdtXml extends SimpleXMLElement
         return null;
     }
 
-
-
+    public function getIdPatio($index) {
+        $array = $this->xpath("/cdt:export[1]/object[".$index."]");
+        return $array[0]->attributes()->name;
+    }
 
 
 
