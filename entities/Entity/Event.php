@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Event
 {
     /**
-     * var integer
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -21,49 +21,63 @@ class Event
     private $id;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="id_patio", type="string", length=255, nullable=false)
      */
     private $idPatio;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="lang", type="string", length=2, nullable=true)
      */
     private $lang;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="type", type="string", length=255, nullable=true)
      */
     private $type;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
     /**
-     * var string
+     * @var string
      *
      * @ORM\Column(name="image", type="text", nullable=true)
      */
     private $image;
 
     /**
-     * var \Place
+     * @var datetime
+     *
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
+
+    /**
+     * @var \Place
      *
      * @ORM\ManyToOne(targetEntity="Place")
      * @ORM\JoinColumns({

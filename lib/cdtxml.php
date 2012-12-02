@@ -43,6 +43,17 @@ class CdtXml extends SimpleXMLElement
         return $this->getValue($index, $path);
     }
 
+    public function getEventStartDate($index) {
+        $path = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:Debut[1]/node()[1]";
+        return new DateTime($this->getValue($index, $path));
+    }
+
+    public function getEventEndDate($index) {
+        $path = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:Fin[1]/node()[1]";
+        return new DateTime($this->getValue($index, $path));
+    }
+
+
     public function getImage($index)
     {
         $base = "http://www.mp2013.fr/ext/basephotos/";

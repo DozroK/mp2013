@@ -70,6 +70,8 @@ class Controller
             
                 $events[$i][$lang]->setType($xml->getEventType($i, $lang));
                 $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
+                $events[$i][$lang]->setStartDate($xml->getEventStartDate($i));
+                $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
     //            $events[$i][$lang]->setImage($xml->getImage($i));        
             }
         }
@@ -79,7 +81,10 @@ class Controller
 
     public function rdf() {
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
-        $view["event"] = $this->em->getRepository('Entity\Event')->findAll();
+        $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->findAll();
+        foreach ($view["event_stupid_key"] as $key => $value) {
+            $view["event"][$value->getIdPatio()][$value->getLang()] = $value;
+        }
         return $view;
     }
 }
