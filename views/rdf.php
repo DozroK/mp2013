@@ -1,25 +1,39 @@
 <?php header('Content-type: text/xml'); ?>
 <?php echo "<?xml version='1.0'?>" ?>
 <rdf:RDF 
-	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:schema="http://schema.org/"
     xmlns:event="http://schema.org/Event"
     xmlns:place="http://schema.org/Place" 
     xmlns:address="http://schema.org/PostalAddress" 
     xmlns:geo="http://schema.org/GeoCoordinates" 
-    xmlns:org="http://schema.org/Organization" >
-
-    <?php foreach ($view["event"] as $idPatio => $event) { ?>
-
-    <rdf:Description rdf:about="<?php echo $idPatio ?>">
-        <event:name><?php echo htmlspecialchars($event["fr"]->getName(), ENT_QUOTES) ?></event:name>
+    xmlns:org="http://schema.org/Organization" 
+>
+    <!--
+    <license rdf:ressource="http://www.data.gouv.fr/Licence-Ouverte-Open-Licence"/>
     
+    <dc:title xml:lang="fr">API publique des événements de MP2013</dc:title>
+    <dc:title xml:lang="en">Events API publique de MP2013</dc:title>
+    <dc:description xml:lang="fr">Les événements de MP2013</dc:description>
+    <dc:description xml:lang="en">The MP2013 events</dc:description>
+    <dc:format>application/rdf+xml</dc:format>
+    <dc:publisher>Marseille Provence 2013</dc:publisher>
+    <dc:identifier>http://www.mp2013.fr/</dc:identifier>
+    <dc:created>2012-11-30T10:31:00+0100</dc:created>
+    <dc:modified>2012-12-02T16:23:00+0100</dc:modified>
+    -->
+    
+    <?php foreach ($view["event"] as $idPatio => $event) { ?>
+    
+    <rdf:Description rdf:ID="<?php echo $idPatio ?>">
+        <event:name><?php echo htmlspecialchars($event["fr"]->getName(), ENT_QUOTES) ?></event:name>
+        
         <?php foreach ($event as $lang => $localizedEvent) { ?>
             <?php if ($localizedEvent->getType()) { ?>
-                <event:type xml:lang="<?php echo $lang ?>"><?php echo $localizedEvent->getType() ?></event:type>
+        <event:type xml:lang="<?php echo $lang ?>"><?php echo $localizedEvent->getType() ?></event:type>
             <?php } ?>
             <?php if ($localizedEvent->getDescription()) { ?>
-                <event:description xml:lang="<?php echo $lang ?>"><?php echo htmlspecialchars($localizedEvent->getDescription(), ENT_QUOTES) ?></event:description>
+        <event:description xml:lang="<?php echo $lang ?>"><?php echo htmlspecialchars($localizedEvent->getDescription(), ENT_QUOTES) ?></event:description>
             <?php } ?>
         <?php } ?>
         <event:startDate><?php echo $event["fr"]->getStartDate()->format(DateTime::ISO8601) ?></event:startDate>
