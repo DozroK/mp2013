@@ -61,7 +61,7 @@ class Controller
             foreach ($langs as $lang) {
                 $events[$i][$lang] = new Entity\Event();
                 $this->em->persist($events[$i][$lang]);
-            
+                            
                 $events[$i][$lang]->setPlace($place[$i]);
                 $events[$i][$lang]->setIdPatio($xml->getIdPatio($i));
             
@@ -72,7 +72,7 @@ class Controller
                 $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
                 $events[$i][$lang]->setStartDate($xml->getEventStartDate($i));
                 $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
-    //            $events[$i][$lang]->setImage($xml->getImage($i));        
+    //            désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));        
             }
         }
         $this->em->flush();
@@ -83,7 +83,7 @@ class Controller
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
         $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->findAll();
         foreach ($view["event_stupid_key"] as $key => $value) {
-            $view["event"][$value->getIdPatio()][$value->getLang()] = $value;
+            $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
         }
         return $view;
     }

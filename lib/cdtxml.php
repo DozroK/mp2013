@@ -1,7 +1,6 @@
 <?php
 class CdtXml extends SimpleXMLElement
 {
-    private $addressLocality;
 
     public function getAddressLocality($index) {
         $path = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:Ville[1]/cdt:Ville[1]/cdt:NomVille[1]/node()[1]";
@@ -34,7 +33,8 @@ class CdtXml extends SimpleXMLElement
     }
 
     public function getEventType($index, $lang) {
-        $path = "/cdt:InformationsGestion[1]/cdt:InformationsSpecifiques[1]/cdt:Discipline[1]/cdt:TypeDiscipline[1]/".$lang."[1]/node()[1]";
+        // Whichever $lang, we take the "french" path
+        $path = "/cdt:InformationsGestion[1]/cdt:InformationsSpecifiques[1]/cdt:Discipline[1]/cdt:TypeDiscipline[1]/fr[1]/node()[1]";
         return $this->getValue($index, $path);
     }
 
