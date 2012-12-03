@@ -4,7 +4,8 @@ _The Opensource Project to create and develop the public opendata api of all eve
 
 ## Open data
 
-[[./images/logo.png|float]] As part of its plan to open public data (OpenData), the entire event program of [Marseille-Provence 2013](http://www.mp2013.fr), fully stamped, geolocated, and bilingual French and English, will be available as a file in RDF format freely downloadable and a public opendata API.
+<img src="https://raw.github.com/DozroK/mp2013/master/images/logo.png" alt="MP2013" title="MP2013" align="right" />
+As part of its plan to open public data (OpenData), the entire event program of [Marseille-Provence 2013](http://www.mp2013.fr), fully stamped, geolocated, and bilingual French and English, will be available as a file in RDF format freely downloadable and a public opendata API.
 
 Updated daily, you have complete information on programming.
 
