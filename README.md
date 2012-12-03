@@ -24,12 +24,14 @@ The data are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ou
 [DozroK (Creative Assembly)](http://www.dozrok.com/), [Weedo](http://www.weedo.fr/) and [Génération TV](http://www.generation-tv.com/) create a team to develop the opensource API of Marseille Provence 2013.
 
 ### Karim Cassam Chenaï (aka [kcassam](https://github.com/kcassam))
-* Link : http://www.weedo.fr/
-* Mail : kcassam@gmail.com
+* Link: http://www.weedo.fr/
+* Mail: kcassam@gmail.com
+* Twitter: @kaweedo
 
 ### Marc Alcaraz (aka [eKameleon](https://github.com/ekameleon))
-* Link : http://www.dozrok.com
-* Mail : ekameleon@gmail.com
+* Link: http://www.dozrok.com
+* Mail: ekameleon@gmail.com
+* Twitter: @ekameleon
 
 ## Community
 
