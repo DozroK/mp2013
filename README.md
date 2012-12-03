@@ -26,12 +26,12 @@ The data are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ou
 ### Karim Cassam Chenaï (aka [kcassam](https://github.com/kcassam))
 * Link: http://www.weedo.fr/
 * Mail: kcassam@gmail.com
-* Twitter: @kaweedo
+* Twitter: [@kaweedo](https://twitter.com/kaweedo)
 
 ### Marc Alcaraz (aka [eKameleon](https://github.com/ekameleon))
 * Link: http://www.dozrok.com
 * Mail: ekameleon@gmail.com
-* Twitter: @ekameleon
+* Twitter: [@ekameleon](https://twitter.com/ekameleon)
 
 ## Community
 
