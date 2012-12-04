@@ -5,7 +5,11 @@ class Controller
     public function __construct() {
         include_once("bootstrap.php");
         $this->em = $em;
+        if (!is_object($this->em)) {
+            echo '$this->em est pas un objet';
+        }
     }
+
     
     public function index() {
     
@@ -32,9 +36,6 @@ class Controller
     }
     public function load()
     {
-        if (!is_object($this->em)) {
-        echo '$this->em est pas un objet';
-        }
         
         $filename = "./cdt_Evenement.xml";
         $langs = array("en","fr");
