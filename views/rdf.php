@@ -127,6 +127,20 @@
                 <geo:latitude><?php echo $event["fr"]->getPlace()->getLatitude() ?></geo:latitude>
                 <geo:longitude><?php echo $event["fr"]->getPlace()->getLongitude() ?></geo:longitude>
             </place:geo>
+            
+            <!-- opening hours -->
+            
+            <?php
+            foreach ($event["fr"]->getPlace()->getOpeningHours() as $openingHours) {
+            ?>
+            <place:openingHoursSpecification>
+                <openingHours:dayOfWeek> <?php echo $openingHours->get('dayOfWeek'); ?> </openingHours:dayOfWeek>
+                <openingHours:opens> <?php echo $openingHours->get('opens')->format('H:i:s'); ?> </openingHours:opens>
+                <openingHours:closes> <?php echo $openingHours->get('closes')->format('H:i:s'); ?> </openingHours:closes>
+            </place:openingHoursSpecification>
+            <?php
+            }
+            ?>
         </event:location>
     </rdf:Description>
 <?php } ?>

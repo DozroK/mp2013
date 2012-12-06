@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Place
  *
  * @ORM\Table(name="place")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PlaceRepository")
  */
 class Place
 {
@@ -48,7 +48,28 @@ class Place
      * @ORM\Column(name="address_locality", type="string", length=58, nullable=true)
      */
     private $addressLocality;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="OpeningHours", mappedBy="place")
+     */
+    private $openingHours; 
+    
+    public function __construct()
+    {
+        $this->openingHours = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    public function addOpeningHours(openingHours $openingHours)
+    {
+        $this->openingHours[] = $openingHours;
+        return $this;
+    }
 
+    public function removeOpeningHours(openingHours $openingHours)
+    {
+        $this->openingHours->removeElement($openingHours);
+    }
+    
     public function get($property) 
     { 
         return $this->$property; 

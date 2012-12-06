@@ -52,7 +52,37 @@ class CdtXml extends SimpleXMLElement
         $path = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:Fin[1]/node()[1]";
         return new DateTime($this->getValue($index, $path));
     }
-
+    
+    public function getEventOpeningHours($index) {
+        
+        $return = array();
+        
+        $daysInFrench=array("Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche");
+        
+        foreach ($daysInFrench as $day) {
+            
+            $i=1;                       
+            do{                            
+                $openingPath = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:JoursNommes[1]/cdt:Heures$day"."[$i]/cdt:Debut[1]";
+                $closingPath = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:JoursNommes[1]/cdt:Heures$day"."[$i]/cdt:Fin[1]";
+                
+                $opens = $this->getValue($index, $openingPath);
+                $closes = $this->getValue($index, $closingPath);
+                
+                if( isset($closes) and isset($opens) ){
+                        
+                      $return[]=array("day"=>$day,"opens"=>new DateTime($opens),"closes"=>new DateTime($closes));  
+                }
+                
+                $i++;
+                $nextOpeningHoursPath = "/cdt:PeriodesEtDates[1]/cdt:Definitions[1]/cdt:JoursNommes[1]/cdt:Heures$day"."[$i]";
+                $nextOpeningHours = $this->getValue($index,$nextOpeningHoursPath);
+                
+            }while(isset($nextOpeningHours));
+        }
+        
+        return $return;
+    }
 
     public function getImage($index)
     {
