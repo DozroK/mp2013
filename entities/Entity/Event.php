@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Event
  *
  * @ORM\Table(name="event")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="EventRepository")
  */
 class Event
 {
@@ -86,6 +86,27 @@ class Event
      */
     private $place;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Offer", mappedBy="event")
+     */
+    private $offers; 
+    
+    public function __construct()
+    {
+        $this->offers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    public function addOffer(Offer $offer)
+    {
+        $this->offers[] = $offer;
+        return $this;
+    }
+
+    public function removeOffer(Offer $offer)
+    {
+        $this->offers->removeElement($offer);
+    }    
+    
     public function get($property) 
     { 
         return $this->$property; 

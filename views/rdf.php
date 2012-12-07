@@ -13,7 +13,9 @@
     xmlns:geo="http://schema.org/GeoCoordinates" 
     xmlns:organization="http://schema.org/Organization" 
     xmlns:offer="http://schema.org/Offer" 
-    xmlns:openingHours="http://schema.org/OpeningHoursSpecification"  
+    xmlns:openingHours="http://schema.org/OpeningHoursSpecification"
+    xmlns:itemOffered="http://schema.org/Product"
+    xmlns:priceSpecification="http://schema.org/PriceSpecification"
 >
 
     <!-- The licence of the document. -->
@@ -142,6 +144,74 @@
             }
             ?>
         </event:location>
+        
+        <!-- offers for this item -->
+        <event:offers>
+        <?php foreach ($event["fr"]->getOffers() as $offer) {?>        
+            <event:offer>
+                <?php
+                    $itemOfferedEn = $offer->getItemOfferedEn();
+                    $itemOfferedFr = $offer->getItemOfferedFr();
+                    if( !empty($itemOfferedEn) or !empty($itemOfferedFr) ){ ?>
+                    <offer:itemOffered>
+                        <?php 
+                            if(!empty( $itemOfferedEn)){?> 
+                                <itemOffered:name xml:lang="en">
+                                    <?php echo $itemOfferedEn ?>
+                                </itemOffered:name>   
+                            <?}
+                            if(!empty( $itemOfferedFr)){?> 
+                                <itemOffered:name xml:lang="fr">
+                                    <?php echo $itemOfferedFr ?>
+                                </itemOffered:name>                                
+                            <?}
+                        ?>
+                    </offer:itemOffered>
+                <?php } ?> 
+                                
+                <?php if( $value = $offer->getDescriptionEn() and !empty($value) ){ ?>
+                        <offer:description xml:lang="en">
+                            <?php echo $value ?>
+                        </offer:description>
+                <?php } ?>                
+
+                <?php if( $value = $offer->getDescriptionFr() and !empty($value) ){ ?>
+                        <offer:description xml:lang="fr">
+                            <?php echo $value ?>
+                        </offer:description>
+                <?php } ?>   
+
+                <?php if( $value = $offer->getEligibleCustomerType() and !empty($value) ){ ?>
+                        <offer:eligibleCustomerType>
+                            <?php echo $value ?>
+                        </offer:eligibleCustomerType>
+                <?php } ?>
+                
+                <?php
+                    $maxPrice = $offer->getMaxPrice();
+                    $minPrice = $offer->getMinPrice();
+                    if( !empty($maxPrice) or !empty($minPrice) ){ ?>
+                    <offer:priceSpecification>
+                        <?php 
+                            if(!empty($maxPrice)){?> 
+                                <priceSpecification:maxPrice>
+                                    <?php echo $maxPrice ?>
+                                </priceSpecification:maxPrice>   
+                            <?}
+                            if(!empty($minPrice)){?> 
+                                <priceSpecification:minPrice>
+                                    <?php echo $minPrice ?>
+                                </priceSpecification:minPrice>                                
+                            <?}
+                        ?>
+                        <priceSpecification:priceCurrency>
+                            EUR
+                        </priceSpecification:priceCurrency> 
+                    </offer:priceSpecification>
+                <?php } ?>                
+            </event:offer>
+        <?php }?>
+        </event:offers>
     </rdf:Description>
 <?php } ?>
 </rdf:RDF>

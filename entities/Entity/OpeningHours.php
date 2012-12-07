@@ -23,21 +23,21 @@ class OpeningHours
     /**
      * @var string
      *
-     * @ORM\Column(name="day_of_week", type="string", nullable=true)
+     * @ORM\Column(name="day_of_week", type="string", nullable=false)
      */
     private $dayOfWeek;    
     
     /**
      * @var DateTime
      *
-     * @ORM\Column(name="opens", type="time", nullable=true)
+     * @ORM\Column(name="opens", type="time", nullable=false)
      */
     private $opens;
 
     /**
      * @var DateTime
      *
-     * @ORM\Column(name="closes", type="time", nullable=true)
+     * @ORM\Column(name="closes", type="time", nullable=false)
      */
     private $closes;    
     

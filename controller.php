@@ -73,22 +73,22 @@ class Controller
                 $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
                 $events[$i][$lang]->setStartDate($xml->getEventStartDate($i));
                 $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
-    //            désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));        
+    //            désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));      
+                
+                    //Offers 
+                    foreach( $xml->getEventOffers($i) as $offer ){
+                        $this->em->persist($offer);
+                        $offer->setEvent($events[$i][$lang]);
+                    }
             }
             
-              //Opening Hour
-              foreach ($xml->getEventOpeningHours($i) as $key=>$value) {
-                  
-                $openingHours[$i][$key] = new Entity\OpeningHours();
-                $this->em->persist($openingHours[$i][$key]);
-
-                $openingHours[$i][$key]->setPlace($place[$i]);
-                $openingHours[$i][$key]->setCloses($value['closes']);
-                $openingHours[$i][$key]->setDayOfWeek(Entity\OpeningHours::frDayOfWeekToRDFSpec( $value['day']));
-                $openingHours[$i][$key]->setOpens($value['opens']);
-                $openingHours[$i][$key]->setValidFrom($events[$i][$lang]->get('startDate'));
-                $openingHours[$i][$key]->setValidTrough($events[$i][$lang]->get('endDate'));
-              }             
+              //Opening Hours
+              foreach ($xml->getEventOpeningHours($i) as $hours) {               
+                $this->em->persist($hours);
+                $hours->setPlace($place[$i]);
+                $hours->setValidFrom($events[$i][$lang]->get('startDate'));
+                $hours->setValidTrough($events[$i][$lang]->get('endDate'));
+              }      
         }
         $this->em->flush();
         return "load terminé";
@@ -96,7 +96,7 @@ class Controller
 
     public function rdf() {
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
-        $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->findAll();
+        $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
         foreach ($view["event_stupid_key"] as $key => $value) {
             $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
         }

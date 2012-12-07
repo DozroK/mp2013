@@ -1,16 +1,15 @@
 <?php
 namespace Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Place
+ * Offer
  *
- * @ORM\Table(name="place")
- * @ORM\Entity(repositoryClass="PlaceRepository")
+ * @ORM\Table(name="offer")
+ * @ORM\Entity
  */
-class Place
+class Offer
 {
     /**
      * @var integer
@@ -24,50 +23,65 @@ class Place
     /**
      * @var string
      *
-     * @ORM\Column(name="postal_code", type="string", length=5, nullable=true)
+     * @ORM\Column(name="item_offered_fr", type="string", nullable=true)
      */
-    private $postalCode;
-
+    private $itemOfferedFr;
+    
     /**
-     * @var float
+     * @var string
      *
-     * @ORM\Column(name="latitude", type="decimal", nullable=true, precision=10, scale=8)
+     * @ORM\Column(name="item_offered_en", type="string", nullable=true)
      */
-    private $latitude;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="longitude", type="decimal", nullable=true, precision=11, scale=8)
-     */
-    private $longitude;
+    private $itemOfferedEn;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="address_locality", type="string", length=58, nullable=true)
+     * @ORM\Column(name="description_fr", type="string", nullable=true)
      */
-    private $addressLocality;
+    private $descriptionFr;
     
     /**
-     * @ORM\OneToMany(targetEntity="OpeningHours", mappedBy="place")
+     * @var string
+     *
+     * @ORM\Column(name="description_en", type="string", nullable=true)
      */
-    private $openingHours; 
-    
-    public function __construct()
-    {
-        $this->openingHours = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    public function addOpeningHours(OpeningHours $openingHours)
-    {
-        $this->openingHours[] = $openingHours;
-        return $this;
-    }
+    private $descriptionEn;    
 
-    public function removeOpeningHours(OpeningHours $openingHours)
-    {
-        $this->openingHours->removeElement($openingHours);
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eligible_customer_type", type="string",  nullable=true)
+     */
+    private $eligibleCustomerType;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="min_price", type="float", nullable=true)
+     */
+    private $minPrice;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="max_price", type="float", nullable=true)
+     */
+    private $maxPrice;
+
+    /**
+     * @var \Event
+     *
+     * @ORM\ManyToOne(targetEntity="Event", inversedBy="offers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="event_id", referencedColumnName="id")
+     * })
+     */
+    private $event;    
+    
+    public function setEvent($value){
+        $this->event = $value;
+        $value->addOffer($this);
     }
     
     public function get($property) 
@@ -79,7 +93,7 @@ class Place
         $this->$property = $value; 
     } 
 
- 
+    
   /* Notre fameuse fonction _call, appelée lorsque d'une fonction inexistante est demandée
     http://web-de-franck.com/blog/
     */
@@ -98,4 +112,6 @@ class Place
     }
     trigger_error("La méthode $method n’existe pas.");
   }
+
+
 }
