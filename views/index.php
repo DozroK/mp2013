@@ -9,7 +9,8 @@
 <ul>
 <li><a href = "rdf">Accès au RDF</a>. Ce fichier est généré automatiquement tous les matins</li>
 <li><a href = "https://github.com/DozroK/mp2013">Projet sur GitHub</a></li>
-<li><a href = "https://github.com/DozroK/mp2013#readme">Documentation de l'API</a></li>
+<li><a href = "https://github.com/DozroK/mp2013#readme">Documentation du code</a></li>
+<li><a href = "https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal">Documentation du RDF</a></li>
 <li><a href = "http://www.mp2013.fr/">L'évènement : Marseille-Provence 2013, capital européenne de la culture</a></li>
 </ul>
 </body>
