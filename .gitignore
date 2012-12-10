@@ -5,3 +5,5 @@ generated/rdf.xml
 
 .DS_Store
 
+
+*.ini
