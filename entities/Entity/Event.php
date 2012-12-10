@@ -77,6 +77,14 @@ class Event
     private $endDate;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="super_event", type="string", length=36, nullable=true)
+     */
+    private $superEvent;
+
+
+    /**
      * @var \Place
      *
      * @ORM\ManyToOne(targetEntity="Place")

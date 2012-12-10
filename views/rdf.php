@@ -115,6 +115,8 @@
         <?php echo $event["fr"]->getStartDate(); ?>
         <?php echo $event["fr"]->getEndDate(); ?>
         <?php echo $event["fr"]->getImage(); ?>
+        <?php echo $event["fr"]->getSuperEvent(); ?>
+
         <!-- The location of the event or organization. -->
         <event:location>
             <!-- Physical address of the item -->

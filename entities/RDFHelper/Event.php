@@ -67,6 +67,13 @@ class Event extends \Entity\Event
     public function getEndDate() {
         return $this->getMarkup("endDate", $this->event->getEndDate()->format(DateTime::ISO8601));
     }
+    public function getSuperEvent() {
+        if (strlen($this->event->getSuperEvent())>0) {
+            return '<event:superEvent rdf:ressource="#'.$this->event->getSuperEvent().'" />';
+        }
+        return "";
+    }
+
 
     public function getImage() {
         return $this->getMarkup("image", $this->event->getImage());

@@ -150,6 +150,11 @@ class CdtXml extends SimpleXMLElement
         return null;
     }
 
+    public function getSuperEvent($index) {
+        $path = "/cdt:InformationsGestion[1]/cdt:InformationsSpecifiques[1]/cdt:Episode[1]/cdt:TypeEpisode[1]/@jcr:uuid";
+        return $this->getValue($index, $path);
+    }
+
     public function getIdPatio($index) {
         $array = $this->xpath("/cdt:export[1]/object[".$index."]");
         return $array[0]->attributes()->name;

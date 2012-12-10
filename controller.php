@@ -85,7 +85,9 @@ class Controller
                 $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
                 $events[$i][$lang]->setStartDate($xml->getEventStartDate($i));
                 $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
-                //  désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));      
+                $events[$i][$lang]->setSuperEvent($xml->getSuperEvent($i));
+
+                /*  désactivé temporairement car trop couteux  $events[$i][$lang]->setImage($xml->getImage($i));      */
                 //Offers 
                 foreach( $xml->getEventOffers($i) as $offer ){
                     $this->em->persist($offer);
