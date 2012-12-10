@@ -5,7 +5,6 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#" 
     xmlns:dc="http://purl.org/dc/elements/1.1/" 
-    xmlns:license="http://purl.org/dc/terms/LicenseDocument/" 
     xmlns:schema="http://schema.org/" 
     xmlns:event="http://schema.org/Event" 
     xmlns:place="http://schema.org/Place" 
@@ -18,19 +17,17 @@
     xmlns:priceSpecification="http://schema.org/PriceSpecification"
 >
 
-    <!-- The licence of the document. -->
-    <license rdf:ressource="http://www.data.gouv.fr/Licence-Ouverte-Open-Licence"/>
-
     <!-- The dublin core metadatas of the document. -->
-    <dc:title xml:lang="fr">API publique des événements de MP2013</dc:title>
-    <dc:title xml:lang="en">Events API publique de MP2013</dc:title>
-    <dc:description xml:lang="fr">Les événements de MP2013</dc:description>
-    <dc:description xml:lang="en">The MP2013 events</dc:description>   
-    <dc:format>application/rdf+xml</dc:format>    
-    <dc:publisher>Marseille Provence 2013</dc:publisher>
-    <dc:identifier>http://www.mp2013.fr/</dc:identifier>
-    <dc:created>2012-11-30T10:31:00+0100</dc:created>
-    <dc:modified><?php // TODO ?></dc:modified>
+    <rdf:Description rdf:about="http://data.mp2013.fr" >
+        <dc:title>Events API publique de MP2013</dc:title>
+        <dc:description>The MP2013 events</dc:description>   
+        <dc:format>application/rdf+xml</dc:format>
+        <dc:publisher>Marseille Provence 2013</dc:publisher>
+        <dc:identifier>http://www.mp2013.fr/</dc:identifier>
+        <dc:created>2012-11-30T10:31:00+0100</dc:created>
+        <dc:modified><?php // TODO ?></dc:modified>
+        <dc:license>http://www.data.gouv.fr/Licence-Ouverte-Open-Licence</dc:license>
+    </rdf:Description>
     
     <!-- OWL header -->
     <owl:Onthology rdf:about="http://schema.org/docs/schemaorg.owl">
