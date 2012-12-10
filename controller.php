@@ -21,7 +21,7 @@ class Controller
             echo "file_get_contents fail";
             exit;
         }
-        $file = fopen(__DIR__."/cdt_Evenement.xml", 'w');
+        $file = fopen(__DIR__."/xml/cdt_Evenement.xml", 'w');
         if ($file == false) {
             echo "fopen fail";
             exit;
@@ -49,7 +49,7 @@ class Controller
     public function load()
     {
         
-        $filename = __DIR__."/cdt_Evenement.xml";
+        $filename = __DIR__."/xml/cdt_Evenement.xml";
         $langs = array("en","fr");
         $content = file_get_contents($filename);
         include_once(__DIR__."/lib/cdtxml.php");
