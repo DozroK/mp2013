@@ -5,11 +5,12 @@
   <title>MP2013 API opendata - Accueil</title>
 </head>
 <body>
+<p>Bienvenue sur le MP2013 API opendata</p>
 <ul>
-<li><a href = "truncate">Vider les tables</a></li>
-<li><a href = "getfile">Récupérer en local le xml distant</a></li>
-<li><a href = "load">Charger en bdd le xml</a></li>
-<li><a href = "phpinfo">Rapport sur l'installation</a></li>
+<li><a href = "rdf">Accès au RDF</a>. Ce fichier est généré automatiquement tous les matins</li>
+<li><a href = "https://github.com/DozroK/mp2013">Projet sur GitHub</a></li>
+<li><a href = "https://github.com/DozroK/mp2013#readme">Documentation de l'API</a></li>
+<li><a href = "http://www.mp2013.fr/">L'évènement : Marseille-Provence 2013, capital européenne de la culture</a></li>
 </ul>
 </body>
 </html>

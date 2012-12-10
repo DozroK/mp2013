@@ -17,15 +17,27 @@ class Controller
     
     public function getfile() {
         $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
+        if ($content == false) {
+            echo "file_get_contents fail";
+            exit;
+        }
         $file = fopen(__DIR__."/cdt_Evenement.xml", 'w');
-        fwrite($file, $content);
+        if ($file == false) {
+            echo "fopen fail";
+            exit;
+        }
+        if (fwrite($file, $content) == false) {
+            echo "fwrite fail";
+            exit;
+        }
+        echo "OK";
         return "récupération en local du xml distant OK. Vous pouvez maintenant <a href = 'load'>Charger le fichier en bdd</a>";
-
     }
 
     public function truncate() {
-
+        $this->em->createQuery('delete from Entity\Offer')->execute();
         $this->em->createQuery('delete from Entity\Event')->execute();
+        $this->em->createQuery('delete from Entity\OpeningHours')->execute();
         $this->em->createQuery('delete from Entity\Place')->execute();
         return "truncate OK";
 
@@ -37,10 +49,10 @@ class Controller
     public function load()
     {
         
-        $filename = "./cdt_Evenement.xml";
+        $filename = __DIR__."/cdt_Evenement.xml";
         $langs = array("en","fr");
         $content = file_get_contents($filename);
-        include_once("./lib/cdtxml.php");
+        include_once(__DIR__."/lib/cdtxml.php");
         $xml = new CdtXml($content);
         if (!is_object($xml)) {
             echo '$xml est pas un objet';
@@ -73,25 +85,31 @@ class Controller
                 $events[$i][$lang]->setDescription($xml->getEventDescription($i, $lang));
                 $events[$i][$lang]->setStartDate($xml->getEventStartDate($i));
                 $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
-    //            désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));      
-                
-                    //Offers 
-                    foreach( $xml->getEventOffers($i) as $offer ){
-                        $this->em->persist($offer);
-                        $offer->setEvent($events[$i][$lang]);
-                    }
+                //  désactivé temporairement car trop couteux $events[$i][$lang]->setImage($xml->getImage($i));      
+                //Offers 
+                foreach( $xml->getEventOffers($i) as $offer ){
+                    $this->em->persist($offer);
+                    $offer->setEvent($events[$i][$lang]);
+                }
             }
             
-              //Opening Hours
-              foreach ($xml->getEventOpeningHours($i) as $hours) {               
+            //Opening Hours
+            foreach ($xml->getEventOpeningHours($i) as $hours) {               
                 $this->em->persist($hours);
                 $hours->setPlace($place[$i]);
                 $hours->setValidFrom($events[$i][$lang]->get('startDate'));
                 $hours->setValidTrough($events[$i][$lang]->get('endDate'));
-              }      
+            }
         }
         $this->em->flush();
         return "load terminé";
+    }
+
+    public function process() {
+        $this->getfile();
+        $this->truncate();    
+        $this->load();
+        echo __FUNCTION__ . "OK";
     }
 
     public function rdf() {

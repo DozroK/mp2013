@@ -1,6 +1,6 @@
 <?php
 // Very Short MVC Sytème
-require __DIR__.'/controller.php';
+require __DIR__.'/../controller.php';
 $controller = new Controller();
 $function = trim($_SERVER["REQUEST_URI"],"/");
 if (!is_callable(array($controller,$function))) {
@@ -12,4 +12,4 @@ if (!is_callable(array($controller, $function))) {
 
 $view = $controller->$function(); //Controller
 
-@include(__DIR__."/views/".$function.".php"); //View
+@include(__DIR__."/../views/".$function.".php"); //View
