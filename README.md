@@ -9,8 +9,6 @@ As part of its plan to open public data (OpenData), the entire event program of 
 
 Updated daily, you have complete information on programming.
 
-The data are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ouverte-Open-Licence). You can reuse the information provided by [Marseille-Provence 2013](http://www.mp2013.fr) and freedoms as provided by the license.
-
 ## Download
 
 You can download the current version of the RDF document :
@@ -21,7 +19,9 @@ You can download the current version of the RDF document :
 
 ## Licence
 
-**Version: MPL 1.1/GPL 2.0/LGPL 2.1**
+The datas are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ouverte-Open-Licence). You can reuse the information provided by [Marseille-Provence 2013](http://www.mp2013.fr) and freedoms as provided by the license.
+
+The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 
 * Licence MPL 1.1 : http://www.mozilla.org/MPL/MPL-1.1.html
 * Licence GPL 2 : http://www.gnu.org/licenses/gpl-2.0.html
