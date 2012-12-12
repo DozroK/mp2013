@@ -37,6 +37,7 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 * Mail: ekameleon@gmail.com
 * Twitter: [@ekameleon](https://twitter.com/ekameleon)
 
+<a href="http://www.weedo.fr"><img src="https://raw.github.com/DozroK/mp2013/master/images/weedo-logo.png" alt="Weedo - http://www.weedo.fr" title="Weedo" align="right" />
 ### Karim Cassam Chenaï (aka [kcassam](https://github.com/kcassam))
 * Link: http://www.weedo.fr/
 * Mail: kcassam@gmail.com
