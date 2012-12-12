@@ -11,6 +11,14 @@ Updated daily, you have complete information on programming.
 
 The data are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ouverte-Open-Licence). You can reuse the information provided by [Marseille-Provence 2013](http://www.mp2013.fr) and freedoms as provided by the license.
 
+## Download
+
+You can download the current version of the RDF document :
+
+><a href="http://api.mp2013.fr/rdf" title="RDF - MP2013 events"> <img border="0" src="http://www.w3.org/RDF/icons/rdf_w3c_button.32" alt="RDF - MP2013 events / Download"/></a>
+
+**Note :** this document is update all mornings.
+
 ## Licence
 
 **Version: MPL 1.1/GPL 2.0/LGPL 2.1**
