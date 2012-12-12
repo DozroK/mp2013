@@ -31,16 +31,17 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 
 [DozroK (Creative Assembly)](http://www.dozrok.com/), [Weedo](http://www.weedo.fr/) and [Génération TV](http://www.generation-tv.com/) create a team to develop the opensource API of Marseille Provence 2013.
 
+<a href="http://www.generation-tv.com"><img src="https://raw.github.com/DozroK/mp2013/master/images/gtv-logo.png" alt="GTV - http://www.generation-tv.com" title="Génération TV (GTV)" align="right" /></a><a href="http://www.dozrok.com"><img src="https://raw.github.com/DozroK/mp2013/master/images/dozrok-logo.png" alt="DozroK - http://www.dozrok.com" title="DozroK - Creative Assembly" align="right" /></a>
+### Marc Alcaraz (aka [eKameleon](https://github.com/ekameleon))
+* Link: http://www.dozrok.com
+* Mail: ekameleon@gmail.com
+* Twitter: [@ekameleon](https://twitter.com/ekameleon)
+
 ### Karim Cassam Chenaï (aka [kcassam](https://github.com/kcassam))
 * Link: http://www.weedo.fr/
 * Mail: kcassam@gmail.com
 * Twitter: [@kaweedo](https://twitter.com/kaweedo)
 
-<a href="http://www.dozrok.com"><img src="https://raw.github.com/DozroK/mp2013/master/images/dozrok-logo.png" alt="DozroK - http://www.dozrok.com" title="DozroK - Creative Assembly" align="right" /><a href="http://www.generation-tv.com"><img src="https://raw.github.com/DozroK/mp2013/master/images/gtv-logo.png" alt="GTV - http://www.generation-tv.com" title="Génération TV (GTV)" align="right" />
-### Marc Alcaraz (aka [eKameleon](https://github.com/ekameleon))
-* Link: http://www.dozrok.com
-* Mail: ekameleon@gmail.com
-* Twitter: [@ekameleon](https://twitter.com/ekameleon)
 
 ## Community
 
