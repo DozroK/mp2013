@@ -27,6 +27,11 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 * Licence GPL 2 : http://www.gnu.org/licenses/gpl-2.0.html
 * Licence LGPL 2.1 : http://www.gnu.org/licenses/lgpl-2.1.html
 
+## In progress
+
+This API and documentation are in progress… for the moment you can read the specific wiki pages :
+* [RDF DOM Proposal](https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal)
+
 ## About
 
 [DozroK (Creative Assembly)](http://www.dozrok.com/), [Weedo](http://www.weedo.fr/) and [Génération TV](http://www.generation-tv.com/) create a team to develop the opensource API of Marseille Provence 2013.
@@ -51,8 +56,3 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 
 ### Ohloh page project
  * https://www.ohloh.net/p/mp2013
-
-## In progress
-
-This API and documentation are in progress… for the moment you can read the specific wiki pages :
-* [RDF DOM Proposal](https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal)
