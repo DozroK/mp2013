@@ -1,6 +1,6 @@
 * La racine du serveur web doit pointer sur le dossier `web`
 * Le dossier `xml` doit être en accès en écriture pour l'utilisateur web (en pratique, mettre ce dossier avec droits 777)
-* Les paramètres d'accès à la bdd sont à chager dans `bootstrap.php` et dans `tools/cli-config.php`
+* Les paramètres d'accès à la bdd sont à charger dans `bootstrap.php` et dans `tools/cli-config.php`
 
 * Pour installer doctrine2 : 
 
