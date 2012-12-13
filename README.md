@@ -29,6 +29,7 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 
 This API and documentation are in progress… for the moment you can read the specific wiki pages :
 * [RDF DOM Proposal](https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal)
+* [[API MP2013 Events Proposal](https://github.com/DozroK/mp2013/wiki/API-Events-Proposal)
 
 ## About
 
