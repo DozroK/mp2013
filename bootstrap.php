@@ -35,14 +35,20 @@ $driver = new Doctrine\ORM\Mapping\Driver\AnnotationDriver(
 $config->setMetadataDriverImpl($driver);
 $config->setMetadataCacheImpl($cache);
  
+// Parameters
+$parameters = parse_ini_file(__DIR__.'/parameters.ini');
+
+//Request
+$get = $_GET;
+ 
 //getting the EntityManager
 $em = EntityManager::create(
     array(
     'driver'   => 'pdo_mysql',
-    'host'     => '127.0.0.1',
-    'dbname'   => 'mp',
-    'user'     => 'root',
-    'password' => 'root',
+    'host'     => $parameters["host"],
+    'dbname'   => $parameters["dbname"],
+    'user'     => $parameters["user"],
+    'password' => $parameters["password"],
     'charset' => 'utf8',
     'driverOptions' => array(
         1002=>'SET NAMES utf8'

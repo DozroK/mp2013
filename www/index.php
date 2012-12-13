@@ -2,7 +2,7 @@
 // Very Short MVC Sytème
 require __DIR__.'/../controller.php';
 $controller = new Controller();
-$function = trim($_SERVER["REQUEST_URI"],"/");
+$function = trim($_SERVER["REDIRECT_URL"],"/");
 if (!is_callable(array($controller,$function))) {
     $function = "index";
 }

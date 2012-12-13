@@ -8,6 +8,8 @@ class Controller
         if (!is_object($this->em)) {
             echo '$this->em est pas un objet';
         }
+        $this->parameters = $parameters;
+        $this->get = $get;
     }
 
     
@@ -16,6 +18,10 @@ class Controller
     }
     
     public function getfile() {
+    
+        if (!$this->checkKey()) {
+            return;
+        }
         $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
         if ($content == false) {
             echo "file_get_contents fail";
@@ -35,6 +41,11 @@ class Controller
     }
 
     public function truncate() {
+
+        if (!$this->checkKey()) {
+            return;
+        }
+
         $this->em->createQuery('delete from Entity\Offer')->execute();
         $this->em->createQuery('delete from Entity\Event')->execute();
         $this->em->createQuery('delete from Entity\OpeningHours')->execute();
@@ -44,11 +55,33 @@ class Controller
     }
     
     public function phpinfo() {
+
+        if (!$this->checkKey()) {
+            return;
+        }
+    }
+
+    public function checkKey() {
     
+        if (!isset($this->get["key"])) {
+            echo "This function needs a key";
+            return false;
+        }
+
+        if (!in_array($this->get["key"], $this->parameters['key.process'])) {
+            echo "This key is not valid";
+            return false;
+        }
+        return true;
+
     }
     public function load()
     {
         
+        if (!$this->checkKey()) {
+            return;
+        }
+
         $filename = __DIR__."/xml/cdt_Evenement.xml";
         $langs = array("en","fr");
         $content = file_get_contents($filename);
@@ -108,6 +141,11 @@ class Controller
     }
 
     public function process() {
+
+        if (!$this->checkKey()) {
+            return;
+        }
+
         $this->getfile();
         $this->truncate();    
         $this->load();
