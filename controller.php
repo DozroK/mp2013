@@ -208,12 +208,20 @@ class Controller
         • 500 - Internal Server Error
         */
 
-        if (!in_array($format, array('json', 'rdf'))) {
+        if (get_class($from) != "DateTime") {
             header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is json")));
+            $errors = array("errors" => array(array("code" => 4, "message" => "from must be a date (format : YYYY-MM-DD)")));
             echo json_encode($errors);
             return;
         }
+
+        if (get_class($to) != "DateTime") {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 5, "message" => "to must be a date (format : YYYY-MM-DD)")));
+            echo json_encode($errors);
+            return;
+        }
+
 
         if (!in_array($lang, array('fr', 'en', null))) {
             header("HTTP/1.1 400 Bad Request");
@@ -221,6 +229,22 @@ class Controller
             echo json_encode($errors);
             return;
         }
+
+        if (!in_array($format, array('json', 'rdf'))) {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is json")));
+            echo json_encode($errors);
+            return;
+        }
+
+
+        if ($format == 'json') {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 3, "message" => "At present time, we do not manage json. We are working on it")));
+            echo json_encode($errors);
+            return;
+        }
+
 
 
         $qb = $this->em->createQueryBuilder();
@@ -253,5 +277,12 @@ class Controller
         }
         return $this->output($id, $format);
     }
+    
+    public function page404 () {
+        header("HTTP/1.0 404 Not Found");
+        echo "404";
+        return;
+    }
+
     
 }

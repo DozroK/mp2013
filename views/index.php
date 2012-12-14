@@ -5,7 +5,7 @@
   <title>MP2013 API opendata - Accueil</title>
 </head>
 <body>
-<p>Bienvenue sur le MP2013 API opendata</p>
+<p>Bienvenue sur le MP2013 API opendata. Il est <?php echo time() ?></p>
 <hr>
 <h3>Liens internes</h3>
 <ul>
