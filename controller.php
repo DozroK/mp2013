@@ -238,12 +238,6 @@ class Controller
         }
 
 
-        if ($format == 'json') {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 3, "message" => "At present time, we do not manage json. We are working on it")));
-            echo json_encode($errors);
-            return;
-        }
 
 
 
