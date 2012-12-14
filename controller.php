@@ -152,15 +152,34 @@ class Controller
         echo __FUNCTION__ . "OK";
     }
 
-    public function rdf() {
+    public function output($ids = null, $format = 'json') {
+
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
-        $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
+        
+        if(empty($ids)){
+            $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
+        }else{
+            $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffersByIds($ids);            
+        }
+        
         foreach ($view["event_stupid_key"] as $key => $value) {
             $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
         }
            
         $this->em->getRepository('Entity\Place')->getPlacesWithOpeningHours();
         
+        //rendering rdf into a string
+        ob_start();
+        @include(__DIR__."/views/rdfContent.php");
+        $rdf = ob_get_clean();          
+        
+        $factory = new viewFactory($format,$rdf);
+        $view = $factory->build();
         return $view;
+    }
+    
+    public function rdf($ids = array(60,61,70)) {
+          $view = $this->output($ids,'json');
+          return $view;  
     }
 }
