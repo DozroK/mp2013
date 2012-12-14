@@ -152,13 +152,8 @@ class Controller
         echo __FUNCTION__ . "OK";
     }
 
-<<<<<<< HEAD
     public function output($ids = null, $format = 'json') {
 
-=======
-
-    public function rdf() {
->>>>>>> api improvment and views
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
         
         if(empty($ids)){
@@ -184,11 +179,10 @@ class Controller
     }
     
 
-    public function rdf($ids = array(60,61,70)) {
-          $view = $this->output($ids,'json');
+    public function rdf() {
+          $view = $this->output(null,'rdf');
           return $view;  
     }
-
     /**
      * events function.
      * 
@@ -258,15 +252,7 @@ class Controller
             return;
         }
             
-        $this->output($id, $format);
-        return;
+        return $this->output($id, $format);
     }
     
-<<<<<<< HEAD
-
-=======
-    public function __call($method, $attrs) {
-        var_dump($attrs);
-    }
->>>>>>> api improvment and views
 }
