@@ -15,12 +15,13 @@ class ViewJson implements viewInterface
         $simpleXml = simplexml_load_string($this->rdf);
         $json = json_encode($simpleXml);
         $json = str_replace("___",":",$json);
-        return $json;
-        
+        return $json;    
     }
+    
     public function getHeader() {
         return 'Content-Type: application/json';
     }    
+
 
 
 }
