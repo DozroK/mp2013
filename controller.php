@@ -198,7 +198,7 @@ class Controller
         $lang = isset($params["lang"])?$params["lang"]:null;
         $limit = (int)isset($params["limit"])?$params["limit"]:10000;
         $offset = (int)isset($params["offset"])?$params["offset"]:0;
-        $format = isset($params["format"])?$params["format"]:"json";
+        $format = isset($params["format"])?$params["format"]:"rdf";
         $function = (int)isset($params["function"])?$params["function"]:null;
 
         // step 2 : Filter
