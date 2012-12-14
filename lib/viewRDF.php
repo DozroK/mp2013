@@ -9,7 +9,7 @@ class ViewRDF implements viewInterface
     }
     
     public function get() {
-        return $this->rdf ;
+        return str_replace("___",":",$this->rdf) ;
     }
     public function getHeader() {
         return 'Content-type: text/xml';
