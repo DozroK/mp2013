@@ -163,4 +163,35 @@ class Controller
         
         return $view;
     }
+    
+    /**
+     * events function.
+     * 
+     * @access public
+     * @return void
+     */
+    public function events($params) {
+        $from = new \DateTime($params["from"]);
+        $to = $params["to"];
+        // Pour l'instant, on ne gère que le GET
+/*        $query = $this->em->createQuery('SELECT e FROM Entity\Event e WHERE e.start_date >= :from and e.end_date <= :to');
+        $query->setParameters(array(
+            'from' => $from,
+            'to' => $to
+            )
+        );
+*/
+
+        $query = $this->em->createQuery('SELECT e FROM Entity\Event e WHERE e.startDate >= :from and e.endDate >= :to');
+        $query->setParameters(array('from' => $from, 'to' => $to));
+
+        $events = $query->getResult();
+        $idpatio = array();
+        foreach ($events as $event) {
+            $idpatio[] = $event->getIdPatio();
+        }
+        echo json_encode($idpatio);
+        return $idpatio;
+    }
+    
 }
