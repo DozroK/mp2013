@@ -1,4 +1,4 @@
 <?php
-header('Content-type: text/xml');
-echo $view['rdf'];
-?>
+header($view->getHeader());
+echo $view->get();
+
