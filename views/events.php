@@ -1,4 +1,4 @@
 <?php
 header($view->getHeader());
-echo $view->get();
+echo $view->indent( $view->get() );
 

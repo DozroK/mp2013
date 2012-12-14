@@ -144,72 +144,70 @@
         </event___location>
         
         <!-- offers for this item -->
-        <event___offers>
-        <?php foreach (reset($event)->getOffers() as $offer) {?>        
-            <event___offer>
-                <?php
+        <event___offers><?php
+            foreach (reset($event)->getOffers() as $offer) {?>
+                <event___offer>
+<?php
                     $itemOfferedEn = $offer->getItemOfferedEn();
                     $itemOfferedFr = $offer->getItemOfferedFr();
                     if( !empty($itemOfferedEn) or !empty($itemOfferedFr) ){ ?>
                     <offer___itemOffered>
-                        <?php 
-                            if(!empty( $itemOfferedEn)){?> 
-                                <itemOffered___name xml___lang="en">
-                                    <?php echo $itemOfferedEn ?>
-                                </itemOffered___name>   
+<?php 
+                            if(!empty( $itemOfferedEn)){ ?>
+                                <itemOffered___name xml___lang="en"><?php
+                               echo $itemOfferedEn 
+                                ?></itemOffered___name>   
                             <?}
                             if(!empty( $itemOfferedFr)){?> 
-                                <itemOffered___name xml___lang="fr">
-                                    <?php echo $itemOfferedFr ?>
-                                </itemOffered___name>                                
+                                <itemOffered___name xml___lang="fr"><?php
+                                     echo $itemOfferedFr 
+                              ?></itemOffered___name>
                             <?}
                         ?>
                     </offer___itemOffered>
-                <?php } ?> 
+<?php           } ?> 
                                 
-                <?php if( $value = $offer->getDescriptionEn() and !empty($value) ){ ?>
-                        <offer___description xml___lang="en">
-                            <?php echo $value ?>
-                        </offer___description>
-                <?php } ?>                
+<?php                 if( $value = $offer->getDescriptionEn() and !empty($value) ){ ?>
+                        <offer___description xml___lang="en"><?php
+                            echo $value 
+                        ?></offer___description>
+<?php                 } ?>                
 
-                <?php if( $value = $offer->getDescriptionFr() and !empty($value) ){ ?>
-                        <offer___description xml___lang="fr">
-                            <?php echo $value ?>
-                        </offer___description>
-                <?php } ?>   
+<?php                 if( $value = $offer->getDescriptionFr() and !empty($value) ){ ?>
+                        <offer___description xml___lang="fr"><?php
+                            echo $value 
+                        ?></offer___description>
+<?php                 } ?>   
 
-                <?php if( $value = $offer->getEligibleCustomerType() and !empty($value) ){ ?>
-                        <offer___eligibleCustomerType>
-                            <?php echo $value ?>
-                        </offer___eligibleCustomerType>
-                <?php } ?>
-                
-                <?php
+<?php                 if( $value = $offer->getEligibleCustomerType() and !empty($value) ){ ?>
+                        <offer___eligibleCustomerType><?php 
+                            echo $value 
+                        ?></offer___eligibleCustomerType>
+<?php                 } ?>
+
+<?php
                     $maxPrice = $offer->getMaxPrice();
                     $minPrice = $offer->getMinPrice();
                     if( !empty($maxPrice) or !empty($minPrice) ){ ?>
                     <offer___priceSpecification>
-                        <?php 
+<?php
                             if(!empty($maxPrice)){?> 
-                                <priceSpecification___maxPrice>
-                                    <?php echo $maxPrice ?>
-                                </priceSpecification___maxPrice>   
+                                <priceSpecification___maxPrice><?php 
+                                    echo $maxPrice 
+                                ?></priceSpecification___maxPrice>   
                             <?}
                             if(!empty($minPrice)){?> 
-                                <priceSpecification___minPrice>
-                                    <?php echo $minPrice ?>
-                                </priceSpecification___minPrice>                                
-                            <?}
+                                <priceSpecification___minPrice><?php
+                                     echo $minPrice 
+                                ?></priceSpecification___minPrice>
+<?php                             }
                         ?>
-                        <priceSpecification___priceCurrency>
-                            EUR
-                        </priceSpecification___priceCurrency> 
+                        <priceSpecification___priceCurrency>EUR</priceSpecification___priceCurrency>
                     </offer___priceSpecification>
-                <?php } ?>                
+<?php                 } ?>
             </event___offer>
-        <?php }?>
-        </event___offers>
+<?php         }
+        ?></event___offers>
     </rdf___Description>
 <?php } ?>
 </rdf___RDF>
