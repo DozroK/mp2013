@@ -30,7 +30,8 @@ The code source is distributed under **Version: MPL 1.1/GPL 2.0/LGPL 2.1** :
 This API and documentation are in progress… for the moment you can read the specific wiki pages :
 * [RDF DOM Proposal](https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal)
 * [API MP2013 Events Proposal](https://github.com/DozroK/mp2013/wiki/API-Events-Proposal)
-
+* [Install the sources](https://github.com/DozroK/mp2013/wiki/Install-source-code)
+* 
 ## About
 
 [DozroK (Creative Assembly)](http://www.dozrok.com/), [Weedo](http://www.weedo.fr/) and [Génération TV](http://www.generation-tv.com/) create a team to develop the opensource API of Marseille Provence 2013.
