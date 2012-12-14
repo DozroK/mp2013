@@ -22,5 +22,8 @@
 </ul>
 <hr>
 
+Attention : bug sur l'installation api.mp2013.fr : pour forcer le rafraichissement d'une page, passer un paramètre token=&lt;chaine de caractère&gt; pour forcer le raffraichissement de la page
+
+
 </body>
 </html>
