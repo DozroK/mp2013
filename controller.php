@@ -170,9 +170,9 @@ class Controller
         
         //rendering rdf into a string
         ob_start();
-        @include(__DIR__."/views/rdfContent.php");
-        $rdf = ob_get_clean();          
-        
+        include(__DIR__."/views/rdfContent.php");
+        $rdf = ob_get_clean();
+        include_once(__DIR__."/lib/viewFactory.php");
         $factory = new viewFactory($format,$rdf);
         $view = $factory->build();
         return $view;
@@ -251,7 +251,6 @@ class Controller
             echo (count($id));
             return;
         }
-            
         return $this->output($id, $format);
     }
     

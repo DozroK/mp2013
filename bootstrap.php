@@ -16,7 +16,6 @@ $loader = new ClassLoader('EntityProxy', __DIR__ . '/entities');
 $loader->register();
 $loader = new ClassLoader('RDFHelper', __DIR__ . '/entities');
 $loader->register();
-
  
 //configuration
 $config = new Configuration();
