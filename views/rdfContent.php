@@ -82,19 +82,19 @@
 
     <!-- The episodes of MP2013 --> 
           
-    <rdf___Description rdf___ID="a509c46d-0c64-4cb4-89f2-8aa06ae5a53f" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#1" >
         <rdf___type rdf___resource="#Episode"/>
         <event___name xml___lang="fr">Episode 1 ___ Marseille Provence accueille le monde</event___name>
         <event___name xml___lang="en">Marseille Provence welcoming the world</event___name>
     </rdf___Description>
 
-    <rdf___Description rdf___ID="b2eb0aec-e755-4d1d-946f-c49d44fc35e6" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#2" >
         <rdf___type rdf___resource="#Episode"/>
         <event___name xml___lang="fr">Episode 2 ___ Marseille Provence à ciel ouvert</event___name>
         <event___name xml___lang="en">Marseille Provence open sky</event___name>
     </rdf___Description>
 
-    <rdf___Description rdf___ID="905b4dc6-3059-4daa-b64d-08c80cae12dd" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#3" >
         <rdf___type rdf___resource="#Episode"/>
         <event___name xml___lang="fr">Episode 3 ___ Marseille Provence aux milles visages</event___name>
         <event___name xml___lang="en">Marseille Provence land of diversity</event___name>

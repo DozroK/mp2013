@@ -151,8 +151,20 @@ class CdtXml extends SimpleXMLElement
     }
 
     public function getSuperEvent($index) {
+        $superEvents = array(
+            "a509c46d-0c64-4cb4-89f2-8aa06ae5a53f" => "http://data.mp2013.fr/episode/#1",
+            "b2eb0aec-e755-4d1d-946f-c49d44fc35e6" => "http://data.mp2013.fr/episode/#2",
+            "905b4dc6-3059-4daa-b64d-08c80cae12dd" => "http://data.mp2013.fr/episode/#3"
+        );
         $path = "/cdt:InformationsGestion[1]/cdt:InformationsSpecifiques[1]/cdt:Episode[1]/cdt:TypeEpisode[1]/@jcr:uuid";
-        return $this->getValue($index, $path);
+        $id = $this->getValue($index, $path);
+        $id = (string)$id;
+        if (!empty($id)) {
+            if (isset($superEvents[$id])) {
+                return $superEvents[$id];
+            }
+        }
+        return null;
     }
 
     public function getIdPatio($index) {
