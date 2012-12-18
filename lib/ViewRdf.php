@@ -1,5 +1,9 @@
 <?php
 
+namespace lib;
+
+use lib\ViewInterface;
+
 class ViewRDF implements viewInterface
 {
 

@@ -1,6 +1,7 @@
 <?php
+namespace lib;
 
-include_once(__DIR__."/viewInterface.php");
+use lib\ViewInterface;
 
 class ViewJson implements viewInterface
 {
@@ -15,7 +16,7 @@ class ViewJson implements viewInterface
         $simpleXml = simplexml_load_string($this->rdf);
         $json = json_encode($simpleXml);
         $json = str_replace("___",":",$json);
-        return $json;    
+        return $this->indent($json);    
     }
     
     public function getHeader() {

@@ -85,8 +85,7 @@ class Controller
         $filename = __DIR__."/xml/cdt_Evenement.xml";
         $langs = array("en","fr");
         $content = file_get_contents($filename);
-        include_once(__DIR__."/lib/cdtxml.php");
-        $xml = new CdtXml($content);
+        $xml = new lib\CdtXml($content);
         if (!is_object($xml)) {
             echo '$xml est pas un objet';
         }
@@ -172,8 +171,7 @@ class Controller
         ob_start();
         include(__DIR__."/views/rdfContent.php");
         $rdf = ob_get_clean();
-        include_once(__DIR__."/lib/viewFactory.php");
-        $factory = new viewFactory($format,$rdf);
+        $factory = new lib\ViewFactory($format,$rdf);
         $view = $factory->build();
         return $view;
     }
@@ -232,7 +230,7 @@ class Controller
 
         if (!in_array($format, array('json', 'rdf'))) {
             header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is json")));
+            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is rdf")));
             echo json_encode($errors);
             return;
         }

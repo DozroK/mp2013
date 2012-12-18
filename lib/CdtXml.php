@@ -1,4 +1,11 @@
 <?php
+namespace lib;
+
+use SimpleXMLElement;
+use DateTime;
+use Entity\Offer;
+use Entity\OpeningHours;
+
 class CdtXml extends SimpleXMLElement
 {
 
@@ -71,9 +78,9 @@ class CdtXml extends SimpleXMLElement
                 
                 if( isset($closes) and isset($opens) ){
                       
-                    $openingHours = new Entity\OpeningHours();
+                    $openingHours = new OpeningHours();
                     $openingHours->setCloses(new DateTime($closes));
-                    $openingHours->setDayOfWeek(Entity\OpeningHours::frDayOfWeekToRDFSpec( $day));
+                    $openingHours->setDayOfWeek(OpeningHours::frDayOfWeekToRDFSpec( $day));
                     $openingHours->setOpens(new DateTime($opens));
                     $return[]=$openingHours;  
                 }
@@ -103,7 +110,7 @@ class CdtXml extends SimpleXMLElement
             }
                         
             if( empty ($eligibleCustomerTypes) ){
-                $offer = new Entity\Offer();  
+                $offer = new Offer();  
                 $offer->set("maxPrice", $maxPrice === null ? null : (float)$maxPrice);
                 $offer->set("minPrice", $minPrice === null ? null : (float)$minPrice);
                 $offer->set("itemOfferedFr", $itemOfferedFr === null ? null : (string)$itemOfferedFr);
@@ -116,7 +123,7 @@ class CdtXml extends SimpleXMLElement
             }else{
                 
                 foreach($eligibleCustomerTypes as $type){
-                    $offer = new Entity\Offer();  
+                    $offer = new Offer();  
                     $offer->set("maxPrice", $maxPrice === null ? null : (float)$maxPrice);
                     $offer->set("minPrice", $minPrice === null ? null : (float)$minPrice);
                     $offer->set("itemOfferedFr", $itemOfferedFr === null ? null : (string)$itemOfferedFr);
