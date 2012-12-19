@@ -151,20 +151,27 @@ class Controller
         echo __FUNCTION__ . "OK";
     }
 
-    public function output($ids = null, $format = 'json') {
-
+    public function output($format,$events = false) {
+        
+        // checking if the given output format is supported
+        if (!in_array($format, array('json', 'rdf'))) {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is ".$this->parameters['defaultOutputFormat'])));
+            echo json_encode($errors);
+            exit;
+        }
+        
         $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
         
-        if(empty($ids)){
-            $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
-        }else{
-            $view["event_stupid_key"] = $this->em->getRepository('Entity\Event')->getEventsWithOffersByIds($ids);            
+        // if false load all events
+        if($events === false){
+            $events = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
         }
         
-        foreach ($view["event_stupid_key"] as $key => $value) {
+        foreach ($events as $key => $value) {
             $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
         }
-           
+            
         $this->em->getRepository('Entity\Place')->getPlacesWithOpeningHours();
         
         //rendering rdf into a string
@@ -178,70 +185,55 @@ class Controller
     
 
     public function rdf() {
-          $view = $this->output(null,'rdf');
+          $view = $this->output('rdf');
           return $view;  
     }
+
     /**
-     * events function.
+     * getEvents function.
      * 
-     * @access public
-     * @return void
+     * @access private
      */
-    public function events($params) {
+    private function getEvents($params) {
         // Pour l'instant, on ne gère que le GET
 
-        // step 1 : Sanitize
-        $from = isset($params["from"])?new \DateTime($params["from"]):null;
-        $to = isset($params["to"])?new \DateTime($params["to"]):null;
-        $lang = isset($params["lang"])?$params["lang"]:null;
-        $limit = (int)isset($params["limit"])?$params["limit"]:10000;
-        $offset = (int)isset($params["offset"])?$params["offset"]:0;
-        $format = isset($params["format"])?$params["format"]:"rdf";
-        $function = (int)isset($params["function"])?$params["function"]:null;
-
-        // step 2 : Filter
-        /*
-        • 200 - OK
-        • 400 - Bad Request
-        • 500 - Internal Server Error
-        */
-
-        if (get_class($from) != "DateTime") {
+        try{
+            $from = isset($params["from"])?new \DateTime($params["from"]):new \DateTime(date("Y-m-d"));
+        }catch(Exception $e){
+            
             header("HTTP/1.1 400 Bad Request");
             $errors = array("errors" => array(array("code" => 4, "message" => "from must be a date (format : YYYY-MM-DD)")));
             echo json_encode($errors);
-            return;
+            exit;          
         }
-
-        if (get_class($to) != "DateTime") {
+        
+        try{        
+            $to = isset($params["to"])?new \DateTime($params["to"]):null;
+        }catch(Exception $e){
+            
             header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 5, "message" => "to must be a date (format : YYYY-MM-DD)")));
+            $errors = array("errors" => array(array("code" => 4, "message" => "To must be a date (format : YYYY-MM-DD)")));
             echo json_encode($errors);
-            return;
-        }
-
-
+            exit;              
+        }  
+        
+        $lang = isset($params["lang"])?$params["lang"]:null;
+        $limit = (int)isset($params["limit"])?$params["limit"]:(int)$this->parameters['defaultLimit'];
+        $offset = (int)isset($params["offset"])?$params["offset"]:0;
+                
         if (!in_array($lang, array('fr', 'en', null))) {
             header("HTTP/1.1 400 Bad Request");
             $errors = array("errors" => array(array("code" => 2, "message" => "if specified, lang parameter can only be fr or en. Default is every languages")));
             echo json_encode($errors);
-            return;
+            exit;
         }
-
-        if (!in_array($format, array('json', 'rdf'))) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is rdf")));
-            echo json_encode($errors);
-            return;
-        }
-
-
-
-
 
         $qb = $this->em->createQueryBuilder();
         $qb->add('select', 'e')
-           ->add('from', 'Entity\Event e');
+           ->add('from', 'Entity\Event e')
+           ->leftJoin('e.offers', 'o')
+           ->addSelect('o');
+
         if (get_class($from) == "DateTime") {
            $qb->andWhere('e.startDate >= :from');
             $qbParams["from"] = $from;
@@ -253,27 +245,130 @@ class Controller
         if ($lang) {
            $qb->andWhere('e.lang = :lang');
             $qbParams["lang"] = $lang;
+        }        
+        
+        if(!empty($qbParams)){
+            $qb->setParameters($qbParams);
         }
-        $qb->setParameters($qbParams);
+        
         $qb->setFirstResult($offset);
         $qb->setMaxResults($limit);
 
         $events = $qb->getQuery()->getResult();
-        $id = array();
-        foreach ($events as $event) {
-            $id[] = $event->getId();
+
+        return $events;
+    }
+
+    /**
+     * events function.
+     * 
+     * @access public
+     * @return ViewInterface
+     */
+    public function events($params) {
+        
+        $events = $this->getEvents($params);
+                
+        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
+        
+        if ( isset($params["function"]) and $params["function"] == 'count'){
+            echo (count($events));
+            exit;   
+        } 
+        
+        return $this->output($format,$events);
+    }    
+    
+    /**
+     * near function.
+     * 
+     * @access public
+     * @return ViewInterface
+     */
+    public function near($params) {
+        
+        // step 1 : Sanitize
+        $latitude  = isset($params["latitude"])  ? (float)$params["latitude"]:null;
+        $longitude = isset($params["longitude"]) ? (float)$params["longitude"]:null;
+        $distance  = isset($params["distance"])  ? (float)$params["distance"]:(float)$this->parameters['defaultDistance'];
+        
+        // step 2 : Filter
+        /*
+        • 200 - OK
+        • 400 - Bad Request
+        • 500 - Internal Server Error
+        */       
+        if ( !is_float($latitude)  OR $latitude < -90.0 OR $latitude > 90.0 ) {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 4, "message" => "latitude must be inside the range -90.0 to +90.0 (North is positive) inclusive")));
+            echo json_encode($errors);
+            exit;
         }
-        if ($function == 'count') {
-            echo (count($id));
-            return;
+
+        if ( !is_float($longitude) OR $longitude < -180.0 OR $longitude > 180.0 ) {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 4, "message" => "longitude must be inside the range -180.0 to +180.0 (East is positive) inclusive")));
+            echo json_encode($errors);
+            exit;
+        }      
+
+        if ( $distance <= 0 ) {
+            header("HTTP/1.1 400 Bad Request");
+            $errors = array("errors" => array(array("code" => 4, "message" => "distance must be a positive number (in Km)")));
+            echo json_encode($errors);
+            exit;
+        }        
+        
+        if(isset($params["offset"])){
+            $offset = (int)$params["offset"];
+            unset($params["offset"]);
+        }else{
+            $offset = 0;
         }
-        return $this->output($id, $format);
+        
+        if(isset($params["limit"])){
+            $limit = (int)$params["limit"];
+            unset($params["limit"]);
+        }else{
+            $limit = (int)$this->parameters['defaultLimit'];
+        }        
+        
+        $eventsNear = array();
+        
+        $events = $this->getEvents($params);
+                
+        foreach($events as $event) {
+            
+            $eventLatitude =  (float)$event->getPlace()->getLatitude();
+            $eventLongitude = (float)$event->getPlace()->getLongitude();
+            
+            if(empty($eventLatitude) OR empty($eventLongitude)){
+                continue;
+            }
+            
+            $distanceBetween = $this->calculateDistance($latitude, $longitude, $eventLatitude, $eventLongitude);
+
+            if($distanceBetween <= $distance){
+                $eventsNear[] = $event;
+            }
+         }
+        
+        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
+        
+        $eventsNear = array_slice($eventsNear,$offset,$limit);
+
+        if ( isset($params["function"]) and $params["function"] == 'count'){
+            echo (count($eventsNear));
+            exit;           
+        } 
+        
+        return $this->output($format,$eventsNear);
     }
     
     public function page404 () {
         header("HTTP/1.0 404 Not Found");
         echo "404";
-        return;
+        exit;
     }
 
     public function refresh () {
@@ -285,6 +380,22 @@ class Controller
         echo '<br>';
         echo "rand : ".rand();
     }
-
     
+  private function calculateDistance($lat1, $lon1, $lat2, $lon2)
+  {
+    $R = 6371;
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLon = deg2rad($lon2 - $lon1);
+    
+    $lat1 = deg2rad($lat1);
+    $lat2 = deg2rad($lat2);
+    
+    $a = sin($dLat / 2) * sin($dLat/2) +
+      sin($dLon / 2) * sin($dLon / 2) * 
+      cos($lat1) * cos($lat2);
+    
+    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+    return $R * $c;
+  }        
+  
 }

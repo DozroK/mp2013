@@ -12,3 +12,8 @@ password = 'root'
 key.process[you] = '12345'
 key.process[partner] = '67890'
 ;you can make as many keys as you want
+
+
+defaultOutputFormat = 'json'
+defaultDistance = '30'
+defaultLimit = '10000'
