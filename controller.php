@@ -151,32 +151,33 @@ class Controller
         echo __FUNCTION__ . "OK";
     }
 
-    public function output($format,$events = false) {
+    public function output($format,$events = false, $template = "fullRdf",$loadOpeningHours = true) {
         
-        // checking if the given output format is supported
-        if (!in_array($format, array('json', 'rdf'))) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 1, "message" => "format parameter can only be json or rdf. Default is ".$this->parameters['defaultOutputFormat'])));
-            echo json_encode($errors);
-            exit;
-        }
+        $this->checkFormat($format);
         
-        $view["place"] = $this->em->getRepository('Entity\Place')->findAll();
+        if($loadOpeningHours === true){
+            $this->em->getRepository('Entity\Place')->getPlacesWithOpeningHours();
+        }        
         
         // if false load all events
         if($events === false){
             $events = $this->em->getRepository('Entity\Event')->getEventsWithOffers();
         }
         
-        foreach ($events as $key => $value) {
+        if(empty($events)){
+            header("HTTP/1.1 200 OK");
+            $errors = array("errors" => array(array("code" => 9, "message" => "No events matched your request")));
+            echo json_encode($errors);
+            exit;              
+        }
+        
+        foreach ($events as $value) {
             $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
         }
-            
-        $this->em->getRepository('Entity\Place')->getPlacesWithOpeningHours();
-        
+                    
         //rendering rdf into a string
         ob_start();
-        include(__DIR__."/views/rdfContent.php");
+        include(__DIR__."/views/$template.php");
         $rdf = ob_get_clean();
         $factory = new lib\ViewFactory($format,$rdf);
         $view = $factory->build();
@@ -200,21 +201,14 @@ class Controller
         try{
             $from = isset($params["from"])?new \DateTime($params["from"]):new \DateTime(date("Y-m-d"));
         }catch(Exception $e){
-            
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 4, "message" => "from must be a date (format : YYYY-MM-DD)")));
-            echo json_encode($errors);
-            exit;          
+            $this->badRequest(1, "from must be a date (format : YYYY-MM-DD)");
         }
         
         try{        
             $to = isset($params["to"])?new \DateTime($params["to"]):null;
         }catch(Exception $e){
             
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 4, "message" => "To must be a date (format : YYYY-MM-DD)")));
-            echo json_encode($errors);
-            exit;              
+            $this->badRequest(2, "to must be a date (format : YYYY-MM-DD)");
         }  
         
         $lang = isset($params["lang"])?$params["lang"]:null;
@@ -222,10 +216,7 @@ class Controller
         $offset = (int)isset($params["offset"])?$params["offset"]:0;
                 
         if (!in_array($lang, array('fr', 'en', null))) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 2, "message" => "if specified, lang parameter can only be fr or en. Default is every languages")));
-            echo json_encode($errors);
-            exit;
+            $this->badRequest(3, "if specified, lang parameter can only be fr or en. Default is every languages");            
         }
 
         $qb = $this->em->createQueryBuilder();
@@ -287,36 +278,21 @@ class Controller
      */
     public function near($params) {
         
-        // step 1 : Sanitize
         $latitude  = isset($params["latitude"])  ? (float)$params["latitude"]:null;
         $longitude = isset($params["longitude"]) ? (float)$params["longitude"]:null;
         $distance  = isset($params["distance"])  ? (float)$params["distance"]:(float)$this->parameters['defaultDistance'];
+        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
         
-        // step 2 : Filter
-        /*
-        • 200 - OK
-        • 400 - Bad Request
-        • 500 - Internal Server Error
-        */       
-        if ( !is_float($latitude)  OR $latitude < -90.0 OR $latitude > 90.0 ) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 4, "message" => "latitude must be inside the range -90.0 to +90.0 (North is positive) inclusive")));
-            echo json_encode($errors);
-            exit;
+        if ( !is_float($latitude)  OR $latitude < -90.0 OR $latitude > 90.0 ) {           
+            $this->badRequest(4, "latitude must be inside the range -90.0 to +90.0 (North is positive) inclusive");
         }
 
         if ( !is_float($longitude) OR $longitude < -180.0 OR $longitude > 180.0 ) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 4, "message" => "longitude must be inside the range -180.0 to +180.0 (East is positive) inclusive")));
-            echo json_encode($errors);
-            exit;
+            $this->badRequest(5, "longitude must be inside the range -180.0 to +180.0 (East is positive) inclusive");
         }      
 
-        if ( $distance <= 0 ) {
-            header("HTTP/1.1 400 Bad Request");
-            $errors = array("errors" => array(array("code" => 4, "message" => "distance must be a positive number (in Km)")));
-            echo json_encode($errors);
-            exit;
+        if ( $distance <= 0 ) {            
+            $this->badRequest(6, "distance must be a positive number (in Km)");
         }        
         
         if(isset($params["offset"])){
@@ -352,9 +328,7 @@ class Controller
                 $eventsNear[] = $event;
             }
          }
-        
-        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
-        
+                
         $eventsNear = array_slice($eventsNear,$offset,$limit);
 
         if ( isset($params["function"]) and $params["function"] == 'count'){
@@ -381,21 +355,61 @@ class Controller
         echo "rand : ".rand();
     }
     
-  private function calculateDistance($lat1, $lon1, $lat2, $lon2)
-  {
-    $R = 6371;
-    $dLat = deg2rad($lat2 - $lat1);
-    $dLon = deg2rad($lon2 - $lon1);
+    public function id($params) {
+        
+        $events = $this->em->getRepository('Entity\Event')->findAll();
+        
+        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
+        
+        return $this->output($format, $events, "onlyIdRdf",false) ;
+        
+    }
     
-    $lat1 = deg2rad($lat1);
-    $lat2 = deg2rad($lat2);
+    public function event($params) {
+        
+        if (!isset($params['id'])) {
+            $this->badRequest(7, "pleaseprovide an event identifier");
+        }
+               
+        $event = $this->em->getRepository('Entity\Event')->findByIdPatio($params['id']);
+        
+        $format = isset($params['format'])?$params['format']:$this->parameters['defaultOutputFormat'];
+        
+        return $this->output($format, $event);
+        
+    }
     
-    $a = sin($dLat / 2) * sin($dLat/2) +
-      sin($dLon / 2) * sin($dLon / 2) * 
-      cos($lat1) * cos($lat2);
+    private function badRequest($code,$message){
+        header("HTTP/1.1 400 Bad Request");
+        $errors = array("errors" => array(array("code" => $code, "message" => $message)));
+        echo json_encode($errors);
+        exit;        
+    }
+
+    public function checkFormat($format) {
+
+        // checking if the given output format is supported
+        if (!in_array($format, array('json', 'rdf'))) {            
+            $this->badRequest(8, "format parameter can only be json or rdf. Default is ".$this->parameters['defaultOutputFormat']);
+        }
+    }    
     
-    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-    return $R * $c;
-  }        
+    
+    private function calculateDistance($lat1, $lon1, $lat2, $lon2)
+    {
+      $R = 6371;
+      $dLat = deg2rad($lat2 - $lat1);
+      $dLon = deg2rad($lon2 - $lon1);
+
+      $lat1 = deg2rad($lat1);
+      $lat2 = deg2rad($lat2);
+
+      $a = sin($dLat / 2) * sin($dLat/2) +
+        sin($dLon / 2) * sin($dLon / 2) * 
+        cos($lat1) * cos($lat2);
+
+      $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+      return $R * $c;
+    }        
   
 }
