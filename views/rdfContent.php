@@ -103,7 +103,7 @@
     <!-- All main events of MP2013 -->
     
 <?php foreach ($view["event"] as $idPatio => $event) { ?>
-    <rdf___Description rdf___ID="<?php echo $idPatio ?>">
+    <rdf___Description rdf___about="http://data.mp2013.fr/event/#<?php echo $idPatio ?>">
         <?php echo reset($event)->getType(); ?>    
 <?php     foreach ($event as $lang => $localizedEvent) { ?>
         <?php echo $localizedEvent->getName(); ?>
