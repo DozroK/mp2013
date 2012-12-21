@@ -136,7 +136,11 @@ class Controller
             }
         }
         $this->em->flush();
-        return "load terminé";
+        
+        $eventCount = count($this->em->getRepository('Entity\Event')->findAll());
+
+        
+        return "load terminé. $eventCount events in DB";
     }
 
     public function process() {
