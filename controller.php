@@ -22,20 +22,54 @@ class Controller
         if (!$this->checkKey()) {
             return;
         }
-        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
+
+//        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
+        $content = file_get_contents(__DIR__."/xml/cdt_Evenement_extract.xml");
         if ($content == false) {
             echo "file_get_contents fail";
             exit;
         }
+        /** 
+         * On compare, si pas de différence, on pourra s'arrêter.
+         * Pour comparer, on utilise https://github.com/paulgb/simplediff
+         */
+        
+        include(__DIR__."/externals/simplediff/php/simplediff.php");
+
+        $contentLocal = file_get_contents(__DIR__."/xml/cdt_Evenement.xml");
+        
+        
+        
+        $content = array("b"=>"modifié nouveau", "d"=>"nouveau event", "e" => "inchangé");
+        $contentLocal = array("e" => "inchangé","b"=>"modifié ancien","a"=> "event supprimé");        
+        echo "// Les ajouts";
+        print_r(array_diff_key($content,$contentLocal));
+        echo "// Les suppressions";
+        print_r(array_diff_key($contentLocal,$content));        
+        echo "//Les ajouts et les nouveaux";
+        print_r(array_diff_assoc($content,$contentLocal));
+        echo "//Les suppressions et les modifs";
+        print_r(array_diff_assoc($contentLocal, $content));        
+        echo "//Les modifs seules";
+        print_r(array_intersect_key(array_diff_assoc($content,$contentLocal),array_diff_assoc($contentLocal, $content)));
+        echo "// Inchangé";
+        print_r(array_intersect_assoc($contentLocal,$content));        
+        exit;
+                
         $file = fopen(__DIR__."/xml/cdt_Evenement.xml", 'w');
         if ($file == false) {
             echo "fopen fail";
             exit;
         }
+        
+        
+
         if (fwrite($file, $content) == false) {
             echo "fwrite fail";
             exit;
         }
+        
+        copy (__DIR__."/xml/cdt_Evenement.xml", __DIR__."/xml/cdt_Evenement-".date("Y-m-d-His").".xml");
         echo "OK";
         return "récupération en local du xml distant OK. Vous pouvez maintenant <a href = 'load'>Charger le fichier en bdd</a>";
     }
@@ -75,6 +109,8 @@ class Controller
         return true;
 
     }
+
+
     public function load()
     {
         
