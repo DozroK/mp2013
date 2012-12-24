@@ -20,7 +20,7 @@
     
     <!-- Custom classes --> 
 
-    <rdfs___Class rdf___ID="Episode">
+    <rdfs___Class rdf___about="http://data.mp2013.fr/Episode">
        <rdfs___comment>A MP2013 specific period who contains events.</rdfs___comment>
        <rdfs___subClassOf rdf___resource="http://schema.org/Event"/>
     </rdfs___Class>
@@ -28,19 +28,19 @@
     <!-- The episodes of MP2013 --> 
           
     <rdf___Description rdf___about="http://data.mp2013.fr/episode/#1" >
-        <rdf___type rdf___resource="#Episode"/>
+        <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 1 ___ Marseille Provence accueille le monde</event___name>
         <event___name xml___lang="en">Marseille Provence welcoming the world</event___name>
     </rdf___Description>
 
     <rdf___Description rdf___about="http://data.mp2013.fr/episode/#2" >
-        <rdf___type rdf___resource="#Episode"/>
+        <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 2 ___ Marseille Provence à ciel ouvert</event___name>
         <event___name xml___lang="en">Marseille Provence open sky</event___name>
     </rdf___Description>
 
     <rdf___Description rdf___about="http://data.mp2013.fr/episode/#3" >
-        <rdf___type rdf___resource="#Episode"/>
+        <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 3 ___ Marseille Provence aux milles visages</event___name>
         <event___name xml___lang="en">Marseille Provence land of diversity</event___name>
     </rdf___Description>
