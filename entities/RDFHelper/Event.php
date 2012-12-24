@@ -69,7 +69,7 @@ class Event extends \Entity\Event
     }
     public function getSuperEvent() {
         if (strlen($this->event->getSuperEvent())>0) {
-            return '<event:superEvent rdf:ressource="'.$this->event->getSuperEvent().'" />';
+            return '<event:superEvent rdf:resource="'.$this->event->getSuperEvent().'" />';
         }
         return "";
     }
