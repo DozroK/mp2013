@@ -62,7 +62,7 @@
         <?php echo reset($event)->getSuperEvent(); ?>
 
         <!-- The location of the event or organization. -->
-        <event___location>
+        <event___location rdf___parseType='Literal'>
             <!-- Physical address of the item -->
             <place___address>
                 <address___addressLocality><?php echo reset($event)->getPlace()->getAddressLocality() ?></address___addressLocality>
@@ -89,7 +89,7 @@
         </event___location>
         
         <!-- offers for this item -->
-        <event___offers><?php
+        <event___offers  rdf___parseType='Literal'><?php
             foreach (reset($event)->getOffers() as $offer) {?>
                 <event___offer>
 <?php

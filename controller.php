@@ -18,28 +18,26 @@ class Controller
     }
     
     public function getfile() {
-    
+
+        $filename = __DIR__."/xml/cdt_Evenement.xml";
+        
         if (!$this->checkKey()) {
             return;
         }
 
-//        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
-        $content = file_get_contents(__DIR__."/xml/cdt_Evenement_extract.xml");
+        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
+//        $content = file_get_contents(__DIR__."/xml/cdt_Evenement_extract.xml");
         if ($content == false) {
             echo "file_get_contents fail";
             exit;
         }
-        /** 
-         * On compare, si pas de différence, on pourra s'arrêter.
-         * Pour comparer, on utilise https://github.com/paulgb/simplediff
-         */
-        
-        include(__DIR__."/externals/simplediff/php/simplediff.php");
 
-        $contentLocal = file_get_contents(__DIR__."/xml/cdt_Evenement.xml");
+        if (file_exists($filename)) {
+            $contentLocal = file_get_contents($filename);        
+        }
+
         
-        
-        
+/*
         $content = array("b"=>"modifié nouveau", "d"=>"nouveau event", "e" => "inchangé");
         $contentLocal = array("e" => "inchangé","b"=>"modifié ancien","a"=> "event supprimé");        
         echo "// Les ajouts";
@@ -54,9 +52,10 @@ class Controller
         print_r(array_intersect_key(array_diff_assoc($content,$contentLocal),array_diff_assoc($contentLocal, $content)));
         echo "// Inchangé";
         print_r(array_intersect_assoc($contentLocal,$content));        
-        exit;
+//        exit;
                 
-        $file = fopen(__DIR__."/xml/cdt_Evenement.xml", 'w');
+*/
+        $file = fopen($filename, 'w');
         if ($file == false) {
             echo "fopen fail";
             exit;
@@ -120,7 +119,11 @@ class Controller
 
         $filename = __DIR__."/xml/cdt_Evenement.xml";
         $langs = array("en","fr");
-        $content = file_get_contents($filename);
+        if (file_exists($filename)) {
+            $content = file_get_contents($filename);
+        } else {
+            $this->badRequest(8, "File to load ($filename) not found. Maybe you should call `getfile` before");
+        }
         $xml = new lib\CdtXml($content);
         if (!is_object($xml)) {
             echo '$xml est pas un objet';
