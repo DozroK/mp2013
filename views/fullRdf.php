@@ -50,11 +50,11 @@
        <rdfs:label xml:lang="fr">Festivals et Grands rassemblements</rdfs:label>
        <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
     </rdfs:Class>
-    <rdfs:Class rdf:about="http://schema.org/SocialEvent">
+    <rdfs:Class rdf:about="http://data.mp2013.fr/SocialEvent">
        <rdfs:label xml:lang="fr">Ouverture / Inauguration</rdfs:label>
-       <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
     </rdfs:Class>
-    <rdfs:Class rdf:ID="http://data.mp2013.fr/BusinessEvent">
+    <rdfs:Class rdf:about="http://data.mp2013.fr/BusinessEvent">
        <rdfs:label xml:lang="fr">Rencontres / Colloques</rdfs:label>
        <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
     </rdfs:Class>
