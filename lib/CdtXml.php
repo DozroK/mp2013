@@ -9,8 +9,51 @@ use Entity\OpeningHours;
 class CdtXml extends SimpleXMLElement
 {
 
+
+    /**
+     * getPlaceName function.
+     * 
+     * @access public
+     * @param mixed $index
+     * @return string
+     * history : 
+     * https://github.com/DozroK/mp2013/issues/28#issuecomment-11686718
+     */
+    public function getPlaceName($index) {
+        $path = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:NomAnnonce[1]/fr[1]";
+        return $this->getValue($index, $path);
+    }
+
+    public function getPlaceStreetAddress($index) {
+
+        $paths[] = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:LigneAdresse1[1]";
+        $paths[] = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:Numero[1]";
+        $paths[] = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:Voie[1]/cdt:TypeVoie[1]/fr[1]";
+        $paths[] = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:NomVoie[1]";
+
+        $values = $this->getValues($index, $paths);
+        $strlen = 0;
+        foreach ($values as $value) {
+            $strlen += strlen(trim($value));
+        }
+        if ($strlen == 0) {
+            return null;
+        }
+        
+        if ($values) {
+            return trim((empty($values[0]) ? "" : $values[0]. ", "). $values[1]. " ".$values[2]." ".$values[3]);
+        }
+        return null;
+    }
+
+
     public function getAddressLocality($index) {
         $path = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuAnnonce[1]/cdt:InformationsGenerales[1]/cdt:Adresse[1]/cdt:Ville[1]/cdt:Ville[1]/cdt:NomVille[1]/node()[1]";
+        if ($this->getValue($index, $path)) {
+            return $this->getValue($index, $path);
+        }
+
+        $path = "/cdt:InformationGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuLibre[1]/cdt:Ville[1]/cdt:Ville[1]/cdt:NomVille[1]" ;
         if ($this->getValue($index, $path)) {
             return $this->getValue($index, $path);
         }
@@ -46,8 +89,11 @@ class CdtXml extends SimpleXMLElement
     }
 
     public function getEventDescription($index, $lang) {
-        $path = "/cdt:ProgrammeDescriptif[1]/cdt:DescriptifValorisant[1]/".$lang."[1]/node()[1]";
-        return $this->getValue($index, $path);
+        $paths[] = "/cdt:ProgrammeDescriptif[1]/cdt:DescriptifValorisant[1]/".$lang."[1]/node()[1]";
+        $paths[] = "/cdt:InformationGenerales[1]/cdt:EvenementPere[1]/cdt:InformationsGenerales[1]/cdt:DescriptifValorisant[1]/".$lang."[1]/node()[1]";
+        
+        
+        return implode(PHP_EOL."===".PHP_EOL, $this->getValues($index, $paths));
     }
 
     public function getEventStartDate($index) {
@@ -89,6 +135,14 @@ class CdtXml extends SimpleXMLElement
         return $return;
     }
     
+    public function hasEventProducer($index, $i) {
+        if ($this->getValue($index,"/cdt:InformationGenerales[1]/cdt:Organisateur[$i]") instanceof CdtXml) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getEventOffers($index){
          
         $return = array();
@@ -181,6 +235,27 @@ class CdtXml extends SimpleXMLElement
 
 
 
+    public function getProducerUuid($index, $i) {
+        $path = "/cdt:InformationGenerales[1]/cdt:Organisateur[".$i."]/@jcr:uuid";
+        return (string)$this->getValue($index, $path);
+    }
+
+    public function getProducerName($index, $i) {
+        $path = "/cdt:InformationGenerales[1]/cdt:Organisateur[".$i."]/cdt:InformationsGenerales[1]/cdt:NomAnnonce[1]/fr[1]/node()[1]";
+        return (string)$this->getValue($index, $path);
+    }
+
+    public function getProducerTelephone($index, $i) {
+        $path = "/cdt:InformationGenerales[1]/cdt:Organisateur[".$i."]/cdt:InformationsGenerales[1]/cdt:Telephone[1]/node()[1]";
+        return (string)$this->getValue($index, $path);
+    }
+
+    public function getProducerUrl($index, $i) {
+        $path = "/cdt:InformationGenerales[1]/cdt:Organisateur[".$i."]/cdt:InformationsGenerales[1]/cdt:AdresseWeb[1]/node()[1]";
+        return (string)$this->getValue($index, $path);
+    }
+
+
     public function hasObject($index) {
         $array = $this->xpath("/cdt:export[1]/object[".$index."]");
         if (empty($array)) {
@@ -192,10 +267,17 @@ class CdtXml extends SimpleXMLElement
           
     private function getValue($index, $path) {
         $array = $this->xpath("/cdt:export[1]/object[".$index."]".$path);
+        
         if (isset($array[0])) { 
             return ($array[0]);
         }
         return null;
     }
     
+    private function getValues($index, $paths) {
+        foreach ($paths as $path) {
+            $values[] = $this->getValue($index, $path);
+        }
+        return $values;
+    }
 }

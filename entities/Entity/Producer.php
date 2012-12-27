@@ -5,12 +5,12 @@ namespace Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Place
+ * Producer
  *
- * @ORM\Table(name="place")
- * @ORM\Entity(repositoryClass="PlaceRepository")
+ * @ORM\Table(name="producer")
+ * @ORM\Entity
  */
-class Place
+class Producer
 {
     /**
      * @var integer
@@ -24,6 +24,13 @@ class Place
     /**
      * @var string
      *
+     * @ORM\Column(name="uuid", type="string", length= 36, nullable=false, unique=true)
+     */
+    private $uuid;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", nullable=true)
      */
     private $name;
@@ -31,58 +38,49 @@ class Place
     /**
      * @var string
      *
-     * @ORM\Column(name="street_address", type="string", nullable=true)
+     * @ORM\Column(name="telephone", type="string", nullable=true)
      */
-    private $streetAddress;
+    private $telephone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="postal_code", type="string", length=5, nullable=true)
+     * @ORM\Column(name="url", type="string", nullable=true)
      */
-    private $postalCode;
+    private $url;
 
     /**
-     * @var float
+     * @var \Place
      *
-     * @ORM\Column(name="latitude", type="decimal", nullable=true, precision=10, scale=8)
+     * @ORM\ManyToOne(targetEntity="Place")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="place_id", referencedColumnName="id")
+     * })
      */
-    private $latitude;
+    private $place;
+
 
     /**
-     * @var float
+     * @var \Event
      *
-     * @ORM\Column(name="longitude", type="decimal", nullable=true, precision=11, scale=8)
-     */
-    private $longitude;
-
-    /**
-     * @var string
+     * @ORM\ManyToMany(targetEntity="Event", mappedBy="producers")
      *
-     * @ORM\Column(name="address_locality", type="string", length=58, nullable=true)
      */
-    private $addressLocality;
+    private $events;
     
-    /**
-     * @ORM\OneToMany(targetEntity="OpeningHours", mappedBy="place", cascade="remove")
-     */
-    private $openingHours; 
+    static private $uuids = array() ;
     
-    public function __construct()
-    {
-        $this->openingHours = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    public function addOpeningHours(OpeningHours $openingHours)
-    {
-        $this->openingHours[] = $openingHours;
-        return $this;
+    static function getFromMemory($uuid) {
+        if (isset(self::$uuids[$uuid])) {
+            return self::$uuids[$uuid];
+        }
+        return false;
     }
 
-    public function removeOpeningHours(OpeningHours $openingHours)
-    {
-        $this->openingHours->removeElement($openingHours);
+    static function addToMemory(Producer $producer) {
+        self::$uuids[$producer->getUuid()] = $producer;
     }
+
     
     public function get($property) 
     { 

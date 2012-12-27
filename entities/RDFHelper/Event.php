@@ -1,17 +1,18 @@
 <?php
 namespace RDFHelper;
 use DateTime;
+use Normalizer;
 class Event extends \Entity\Event
 {
     private static $eventTypeResources = array(
-    "Expositions / Musées" => "http://schema.org/VisualArtsEvent",
-    "Festivals et Grands rassemblements" => "http://schema.org/Festival",
-    "Danse et Opéra" => "http://schema.org/DanceEvent",
-    "Concerts / Musique" => "http://schema.org/MusicEvent",
-    "Rencontres / Colloques" => "http://schema.org/UserInteraction",        
-    "Ouverture / Inauguration" => "http://schema.org/SocialEvent",
-    "Théatre et Cinéma" => "http://schema.org/TheaterEvent",
-    "Arts de la rue et du cirque" => "http://schema.org/ComedyEvent");
+    "Expositions / Musées" => "http://data.mp2013.fr/VisualArtsEvent",
+    "Festivals et Grands rassemblements" => "http://data.mp2013.fr/Festival",
+    "Danse et Opéra" => "http://data.mp2013.fr/DanceEvent",
+    "Concerts / Musique" => "http://data.mp2013.fr/MusicEvent",
+    "Rencontres / Colloques" => "http://data.mp2013.fr/UserInteraction",        
+    "Ouverture / Inauguration" => "http://data.mp2013.fr/SocialEvent",
+    "Théatre et Cinéma" => "http://data.mp2013.fr/TheaterEvent",
+    "Arts de la rue et du cirque" => "http://data.mp2013.fr/ComedyEvent");
 
     private $event;
 
@@ -31,15 +32,21 @@ class Event extends \Entity\Event
         if (isset(self::$eventTypeResources[$this->event->getType()])) {
             return (self::$eventTypeResources[$this->event->getType()]);
         }
-        return "http://schema.org/Event";
+        return "http://data.mp2013.fr/Event";
     }
 
-    private function getMarkup($key, $value, $lang = null) {
+    private function getMarkup($key, $value, $lang = null, $parseType = null) {
+ 
         $xmllang = "";
         if ($lang) {
             $xmllang = " xml:lang='".$this->event->getLang()."'";
         }
-        return "<event:".$key.$xmllang.">".$value."</event:".$key.">".PHP_EOL;
+        if ($parseType) {
+            $parseType = " rdf:parseType='".$parseType."'";
+        }
+        return "<event:".$key.$parseType.$xmllang.">".$value."</event:".$key.">".PHP_EOL;
+        
+        
     }
 
     public function getType() { 
@@ -54,8 +61,17 @@ class Event extends \Entity\Event
         }
     } 
     public function getDescription() {
+
         if ($this->event->getDescription()) {
-            return $this->getMarkup("description", htmlspecialchars($this->event->getDescription(), ENT_QUOTES), true);
+            $description = $this->event->getDescription();
+
+/*            $description = htmlentities($this->event->getDescription(), ENT_COMPAT, 'UTF-8');
+            $description = html_entity_decode($description,  ENT_COMPAT, 'UTF-8');
+*/
+
+            return $this->getMarkup("description", htmlspecialchars($description, ENT_QUOTES), true, 'Literal');
+
+//            return $this->getMarkup("description", htmlspecialchars(Normalizer::normalize($this->event->getDescription()), ENT_QUOTES), true, 'Literal');
         }
     }
 

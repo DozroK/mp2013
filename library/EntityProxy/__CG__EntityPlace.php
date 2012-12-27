@@ -75,7 +75,7 @@ class Place extends \Entity\Place implements \Doctrine\ORM\Proxy\Proxy
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'postalCode', 'latitude', 'longitude', 'addressLocality', 'openingHours');
+        return array('__isInitialized__', 'id', 'name', 'streetAddress', 'postalCode', 'latitude', 'longitude', 'addressLocality', 'openingHours');
     }
 
     public function __clone()

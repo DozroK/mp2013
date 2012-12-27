@@ -73,9 +73,7 @@ class Offer
      * @var \Event
      *
      * @ORM\ManyToOne(targetEntity="Event", inversedBy="offers")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="event_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="event_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $event;    
     

@@ -95,10 +95,23 @@ class Event
     private $place;
 
     /**
-     * @ORM\OneToMany(targetEntity="Offer", mappedBy="event")
+     * @ORM\OneToMany(targetEntity="Offer", mappedBy="event", cascade="remove")
      */
     private $offers; 
     
+
+    /**
+     * @var \Producer
+     *
+     * @ORM\ManyToMany(targetEntity="Producer", inversedBy="events")
+     * @ORM\JoinTable(name="events_producers",
+     *      joinColumns={@ORM\JoinColumn(name="event_id", referencedColumnName="id", onDelete="CASCADE")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="producer_id", referencedColumnName="id", onDelete="CASCADE")}
+     *      )
+     */
+    private $producers;
+
+
     public function __construct()
     {
         $this->offers = new \Doctrine\Common\Collections\ArrayCollection();
@@ -124,6 +137,23 @@ class Event
         $this->$property = $value; 
     } 
 
+    public function addProducer($producer) 
+    { 
+        $this->producers[$producer->getUuid()] = $producer; 
+    } 
+
+    public function removeProducers() 
+    { 
+        $this->producers = new \Doctrine\Common\Collections\ArrayCollection();
+    } 
+
+    public function hasProducer($uuid) {
+        if (isset($this->producers[$uuid])) {
+            return true;
+        }
+        return false;
+
+    }
  
   /* Notre fameuse fonction _call, appelée lorsque d'une fonction inexistante est demandée
     http://web-de-franck.com/blog/
@@ -139,6 +169,9 @@ class Event
       }
       if ($prefix == 'get' && $cattrs == 0) { // Un getter (sans attributs)
         return $this->get($suffix);
+      }
+      if ($prefix == 'add' && $cattrs == 1) { // Un setter (avec des attributs)
+        return $this->add($suffix, $attrs[0]);
       }
     }
     trigger_error("La méthode $method n’existe pas.");

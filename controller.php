@@ -1,4 +1,5 @@
 <?php
+use \Entity;
 class Controller
 {
 
@@ -79,9 +80,9 @@ class Controller
             return;
         }
 
-        $this->em->createQuery('delete from Entity\Offer')->execute();
+
         $this->em->createQuery('delete from Entity\Event')->execute();
-        $this->em->createQuery('delete from Entity\OpeningHours')->execute();
+        $this->em->createQuery('delete from Entity\Producer')->execute();
         $this->em->createQuery('delete from Entity\Place')->execute();
         return "truncate OK";
 
@@ -130,11 +131,15 @@ class Controller
         }
         // Il faut commencer par Place
         
+        $producerUuids = array();
+        
         for ($i = 1; $xml->hasObject($i);$i++) {
             $place[$i] = new Entity\Place();
             $this->em->persist($place[$i]);
         
             // Ville
+            $place[$i]->setName($xml->getPlaceName($i));
+            $place[$i]->setStreetAddress($xml->getPlaceStreetAddress($i));
             $place[$i]->setAddressLocality($xml->getAddressLocality($i));
             $place[$i]->setPostalCode($xml->getPostalCode($i));
                 
@@ -143,7 +148,14 @@ class Controller
         
             //Maintenant event
             foreach ($langs as $lang) {
-                $events[$i][$lang] = new Entity\Event();
+
+                $events[$i][$lang] = $this->em->getRepository('Entity\Event')->findOneBy(array("lang" => $lang, "idPatio" => $xml->getIdPatio($i)));
+                if (empty($events[$i][$lang])) {
+                    $events[$i][$lang] = new Entity\Event();  
+                } else {
+                    $events[$i][$lang]->removeProducers();
+                }
+                
                 $this->em->persist($events[$i][$lang]);
                             
                 $events[$i][$lang]->setPlace($place[$i]);
@@ -163,6 +175,24 @@ class Controller
                 foreach( $xml->getEventOffers($i) as $offer ){
                     $this->em->persist($offer);
                     $offer->setEvent($events[$i][$lang]);
+                }
+                
+                for ($producerIndex = 1; $xml->hasEventProducer($i, $producerIndex) ;$producerIndex++) {
+                    $uuid = $xml->getProducerUuid($i, $producerIndex);
+                    $producer = Entity\Producer::getFromMemory($xml->getProducerUuid($i, $producerIndex));
+                    if (empty($producer)) {
+                        $producer = $this->em->getRepository('Entity\Producer')->findOneBy(array("uuid" => $uuid));
+                        if (empty($producer)) {
+                            $producer = new Entity\Producer();  
+                        }
+                        $producer->setUuid($uuid);
+                        $producer->setName($xml->getProducerName($i, $producerIndex));
+                        $producer->setTelephone($xml->getProducerTelephone($i, $producerIndex));
+                        $producer->setUrl($xml->getProducerUrl($i, $producerIndex));
+                        Entity\Producer::addToMemory($producer);
+                        $this->em->persist($producer);
+                    }
+                    $events[$i][$lang]->addProducer($producer);
                 }
             }
             
@@ -214,9 +244,15 @@ class Controller
             exit;              
         }
         
-        foreach ($events as $value) {
-            $view["event"][$value->getIdPatio()][$value->getLang()] = new RDFHelper\Event($value);
+        foreach ($events as $event) {
+            $view["event"][$event->getIdPatio()][$event->getLang()] = new RDFHelper\Event($event);
         }
+
+        $producers = $this->em->getRepository('Entity\Producer')->findAll();
+        foreach ($producers as $producer) {
+            $view["producer"][$producer->getUuid()] = $producer;
+        }
+
                     
         //rendering rdf into a string
         ob_start();

@@ -25,6 +25,44 @@
        <rdfs___subClassOf rdf___resource="http://schema.org/Event"/>
     </rdfs___Class>
 
+    <rdfs:Class rdf:about="http://data.mp2013.fr/Event">
+       <rdfs:comment>An event happening at a certain time at a certain location.</rdfs:comment>
+       <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:about="http://data.mp2013.fr/ComedyEvent">
+       <rdfs:label xml:lang="fr">Arts de la rue et du cirque</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://data.mp2013.fr/MusicEvent">
+       <rdfs:label xml:lang="fr">Concerts / Musique</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://data.mp2013.fr/DanceEvent">
+       <rdfs:label xml:lang="fr">Danse et Opéra</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://data.mp2013.fr/VisualArtsEvent">
+       <rdfs:label xml:lang="fr">Expositions / Musées</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://data.mp2013.fr/Festival">
+       <rdfs:label xml:lang="fr">Festivals et Grands rassemblements</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://schema.org/SocialEvent">
+       <rdfs:label xml:lang="fr">Ouverture / Inauguration</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:ID="http://data.mp2013.fr/BusinessEvent">
+       <rdfs:label xml:lang="fr">Rencontres / Colloques</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="http://data.mp2013.fr/TheaterEvent">
+       <rdfs:label xml:lang="fr">Théatre et Cinéma</rdfs:label>
+       <rdfs:subClassOf rdf:resource="http://data.mp2013.fr/Event"/>
+    </rdfs:Class>
+
     <!-- The episodes of MP2013 --> 
           
     <rdf___Description rdf___about="http://data.mp2013.fr/episode/#1" >
@@ -45,6 +83,17 @@
         <event___name xml___lang="en">Marseille Provence land of diversity</event___name>
     </rdf___Description>
 
+    <!-- All producers of MP2013 -->
+
+<?php foreach ($view["producer"] as $uuid => $producer) { ?>
+    <rdf:Description rdf:about="http://data.mp2013.fr/producer/#<?php echo $producer->getUuid() ?> ">
+        <rdf:type rdf:resource="http://schema.org/Organization"/>
+        <organization:name><?php echo $producer->getName() ?></organization:name>
+        <organization:telephone><?php echo $producer->getTelephone() ?></organization:telephone>
+        <organization:url><?php echo $producer->getUrl() ?></organization:url>
+    </rdf:Description>
+<?php } ?>
+
     <!-- All main events of MP2013 -->
     
 <?php foreach ($view["event"] as $idPatio => $event) { ?>
@@ -61,12 +110,19 @@
         <?php echo reset($event)->getImage(); ?>
         <?php echo reset($event)->getSuperEvent(); ?>
 
+        <!-- The producers of the event -->
+<?php     foreach (reset($event)->getProducers() as $producer) { ?>
+        <event:producer rdf:resource="http://data.mp2013.fr/producer/#<?php echo $producer->getUuid() ?>" />
+<?php     } ?>
+
         <!-- The location of the event or organization. -->
         <event___location rdf___parseType='Literal'>
             <!-- Physical address of the item -->
             <place___address>
+                <address___name><?php echo reset($event)->getPlace()->getName() ?></address___name>
                 <address___addressLocality><?php echo reset($event)->getPlace()->getAddressLocality() ?></address___addressLocality>
                 <address___postalCode><?php echo reset($event)->getPlace()->getPostalCode() ?></address___postalCode>
+                <address___streetAddress><?php echo reset($event)->getPlace()->getStreetAddress() ?></address___streetAddress>
             </place___address>
             <place___geo>
                 <geo___latitude><?php echo reset($event)->getPlace()->getLatitude() ?></geo___latitude>

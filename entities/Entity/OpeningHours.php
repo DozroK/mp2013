@@ -59,9 +59,7 @@ class OpeningHours
      * @var \Place
      *
      * @ORM\ManyToOne(targetEntity="Place", inversedBy="openingHours")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="place_id", referencedColumnName="id")
-     * })
+     * @ORM\JoinColumn(name="place_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $place;
         
