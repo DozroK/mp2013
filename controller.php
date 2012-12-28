@@ -170,6 +170,11 @@ class Controller
                 $events[$i][$lang]->setEndDate($xml->getEventEndDate($i));
                 $events[$i][$lang]->setSuperEvent($xml->getSuperEvent($i));
 
+                $events[$i][$lang]->setDisability($xml->getDisability($i));
+                $events[$i][$lang]->setCanceled($xml->getCanceled($i));
+                $events[$i][$lang]->setFree($xml->getFree($i));
+
+
                 /*  désactivé temporairement car trop couteux  $events[$i][$lang]->setImage($xml->getImage($i));      */
                 //Offers 
                 foreach( $xml->getEventOffers($i) as $offer ){

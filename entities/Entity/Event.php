@@ -83,6 +83,26 @@ class Event
      */
     private $superEvent;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="disability", type="boolean")
+     */
+    private $disability;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="canceled", type="boolean")
+     */
+    private $canceled;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="free", type="boolean")
+     */
+    private $free;
 
     /**
      * @var \Place

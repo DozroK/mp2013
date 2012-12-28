@@ -9,7 +9,7 @@ class Event extends \Entity\Event
     "Festivals et Grands rassemblements" => "http://data.mp2013.fr/Festival",
     "Danse et Opéra" => "http://data.mp2013.fr/DanceEvent",
     "Concerts / Musique" => "http://data.mp2013.fr/MusicEvent",
-    "Rencontres / Colloques" => "http://data.mp2013.fr/UserInteraction",        
+    "Rencontres / Colloques" => "http://data.mp2013.fr/BusinessEvent",        
     "Ouverture / Inauguration" => "http://data.mp2013.fr/SocialEvent",
     "Théatre et Cinéma" => "http://data.mp2013.fr/TheaterEvent",
     "Arts de la rue et du cirque" => "http://data.mp2013.fr/ComedyEvent");
@@ -94,6 +94,23 @@ class Event extends \Entity\Event
     public function getImage() {
         return $this->getMarkup("image", $this->event->getImage());
     }
+
+    public function getDisability() {
+        return $this->getMarkup("disability", ($this->event->getDisability() ? 'True' : 'False'));
+    }
+
+    public function getCanceled() {
+        return $this->getMarkup("canceled", ($this->event->getCanceled() ? 'True' : 'False'));
+    }
+
+    public function getFree() {
+        if ($this->event->getFree()) {
+            return $this->getMarkup("free", ($this->event->getFree() ? 'True' : 'False'));
+        }
+        return "";
+    }
+
+
     public function getTag($switch, $key) {
         $switchTags = array("open" => "<", "close" => "</");
         return $switchTags[$switch]."event:".$key.">".PHP_EOL;

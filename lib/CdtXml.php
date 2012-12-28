@@ -57,9 +57,6 @@ class CdtXml extends SimpleXMLElement
         if ($this->getValue($index, $path)) {
             return $this->getValue($index, $path);
         }
-
-        $path = "/cdt:InformationGenerales[1]/cdt:EvenementPere[1]/cdt:InformationsGenerales[1]/cdt:LieuEvenement[1]/cdt:LieuLibre[1]/cdt:Ville[1]/cdt:Ville[1]/cdt:NomVille[1]/node()[1]";
-        return $this->getValue($index, $path);
     }
 
     public function getPostalCode($index) {
@@ -233,6 +230,39 @@ class CdtXml extends SimpleXMLElement
         return $array[0]->attributes()->name;
     }
 
+
+    public function getDisability($index) {
+
+        for ($i = 1; ; $i++) {
+
+            $condition = $this->getValue($index,"/cdt:AccueilClientele[1]/cdt:ConditionAccueil[1]/cdt:TypeCondition[1]/cdt:TypeConditionAccueil[$i]/@jcr:uuid") ;
+
+            if (!($condition instanceof CdtXml)) {
+                break;
+            }
+            
+            if ((string)$condition == "a958bee0-70df-4ecf-80da-710028565e12") {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public function getCanceled ($index) {
+        $path = "/cdt:InformationsGestion[1]/cdt:Audit[1]/@cdt:IndicateurAnnonceSupprimee" ;
+        if ((string)$this->getValue($index, $path) == "true") {
+            return true;
+        }
+        return false;
+    }
+
+    public function getFree ($index) {
+        $path = "/cdt:Tarification[1]/cdt:Gratuit[1]/node()[1]" ;
+        if ((string)$this->getValue($index, $path) == "true") {
+            return true;
+        }
+        return false;
+    }
 
 
     public function getProducerUuid($index, $i) {
