@@ -15,9 +15,15 @@ class Event extends \Entity\Event
     "Arts de la rue et du cirque" => "http://data.mp2013.fr/ComedyEvent");
 
     private $event;
-
+    private $place;
+    
     public function __construct(\Entity\Event $event) {
         $this->event = $event;
+        $this->place = new Place($this->event->getPlace());
+    }
+
+    public function getPlace() {
+        return $this->place;
     }
 
     public function getParent() {

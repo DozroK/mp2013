@@ -121,16 +121,15 @@
         <!-- The location of the event or organization. -->
         <event___location rdf___parseType='Literal'>
             <!-- Physical address of the item -->
+
+            
             <place___address>
                 <address___name><?php echo reset($event)->getPlace()->getName() ?></address___name>
                 <address___addressLocality><?php echo reset($event)->getPlace()->getAddressLocality() ?></address___addressLocality>
                 <address___postalCode><?php echo reset($event)->getPlace()->getPostalCode() ?></address___postalCode>
                 <address___streetAddress><?php echo reset($event)->getPlace()->getStreetAddress() ?></address___streetAddress>
             </place___address>
-            <place___geo>
-                <geo___latitude><?php echo reset($event)->getPlace()->getLatitude() ?></geo___latitude>
-                <geo___longitude><?php echo reset($event)->getPlace()->getLongitude() ?></geo___longitude>
-            </place___geo>
+            <?php echo reset($event)->getPlace()->getGeo(); ?>
             
             <!-- opening hours -->
             
