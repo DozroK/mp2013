@@ -65,19 +65,19 @@
 
     <!-- The episodes of MP2013 --> 
           
-    <rdf___Description rdf___about="http://data.mp2013.fr/Episode/#1" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#1" >
         <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 1 ___ Marseille Provence accueille le monde</event___name>
         <event___name xml___lang="en">Marseille Provence welcoming the world</event___name>
     </rdf___Description>
 
-    <rdf___Description rdf___about="http://data.mp2013.fr/Episode/#2" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#2" >
         <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 2 ___ Marseille Provence à ciel ouvert</event___name>
         <event___name xml___lang="en">Marseille Provence open sky</event___name>
     </rdf___Description>
 
-    <rdf___Description rdf___about="http://data.mp2013.fr/Episode/#3" >
+    <rdf___Description rdf___about="http://data.mp2013.fr/episode/#3" >
         <rdf___type rdf___resource="http://data.mp2013.fr/Episode"/>
         <event___name xml___lang="fr">Episode 3 ___ Marseille Provence aux milles visages</event___name>
         <event___name xml___lang="en">Marseille Provence land of diversity</event___name>
@@ -86,7 +86,7 @@
     <!-- All producers of MP2013 -->
 
 <?php foreach ($view["producer"] as $uuid => $producer) { ?>
-    <rdf:Description rdf:about="http://data.mp2013.fr/Producer/#<?php echo $producer->getUuid() ?>">
+    <rdf:Description rdf:about="http://data.mp2013.fr/producer/#<?php echo $producer->getUuid() ?>">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
         <organization:name><?php echo $producer->getName() ?></organization:name>
         <organization:telephone><?php echo $producer->getTelephone() ?></organization:telephone>
