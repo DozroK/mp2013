@@ -86,7 +86,7 @@
     <!-- All producers of MP2013 -->
 
 <?php foreach ($view["producer"] as $uuid => $producer) { ?>
-    <rdf:Description rdf:about="http://data.mp2013.fr/Producer/#<?php echo $producer->getUuid() ?> ">
+    <rdf:Description rdf:about="http://data.mp2013.fr/Producer/#<?php echo $producer->getUuid() ?>">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
         <organization:name><?php echo $producer->getName() ?></organization:name>
         <organization:telephone><?php echo $producer->getTelephone() ?></organization:telephone>
