@@ -14,6 +14,6 @@ key.process[partner] = '67890'
 ;you can make as many keys as you want
 
 
-defaultOutputFormat = 'json'
+defaultOutputFormat = 'rdf'
 defaultDistance = '30'
 defaultLimit = '10000'
