@@ -20,59 +20,83 @@ class Controller
     
     public function getfile() {
 
-        $filename = __DIR__."/xml/cdt_Evenement.xml";
+        $compared = $this->history();
+        if (count(array_merge($compared["added"], $compared["modified"], $compared["removed"])) == 0) {
+            echo "fichier non modifié";
+            return;
+        }
+
+        $baseFilename = __DIR__."/xml/cdt_Evenement.xml";
+        $newFilename = 'http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml';
+//        $newFilename = __DIR__."/xml/cdt_Evenement_extract.xml";
         
         if (!$this->checkKey()) {
             return;
         }
 
-        $content = file_get_contents('http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml');
-//        $content = file_get_contents(__DIR__."/xml/cdt_Evenement_extract.xml");
-        if ($content == false) {
+        $newContent = file_get_contents($newFilename);
+        if ($newContent == false) {
             echo "file_get_contents fail";
             exit;
         }
-
-        if (file_exists($filename)) {
-            $contentLocal = file_get_contents($filename);        
-        }
-
-        
-/*
-        $content = array("b"=>"modifié nouveau", "d"=>"nouveau event", "e" => "inchangé");
-        $contentLocal = array("e" => "inchangé","b"=>"modifié ancien","a"=> "event supprimé");        
-        echo "// Les ajouts";
-        print_r(array_diff_key($content,$contentLocal));
-        echo "// Les suppressions";
-        print_r(array_diff_key($contentLocal,$content));        
-        echo "//Les ajouts et les nouveaux";
-        print_r(array_diff_assoc($content,$contentLocal));
-        echo "//Les suppressions et les modifs";
-        print_r(array_diff_assoc($contentLocal, $content));        
-        echo "//Les modifs seules";
-        print_r(array_intersect_key(array_diff_assoc($content,$contentLocal),array_diff_assoc($contentLocal, $content)));
-        echo "// Inchangé";
-        print_r(array_intersect_assoc($contentLocal,$content));        
-//        exit;
                 
-*/
-        $file = fopen($filename, 'w');
+        $file = fopen($baseFilename, 'w');
         if ($file == false) {
             echo "fopen fail";
             exit;
         }
         
-        
-
-        if (fwrite($file, $content) == false) {
+        if (fwrite($file, $newContent) == false) {
             echo "fwrite fail";
             exit;
         }
         
-        copy (__DIR__."/xml/cdt_Evenement.xml", __DIR__."/xml/cdt_Evenement-".date("Y-m-d-His").".xml");
+        copy ($baseFilename, $baseFilename.date("Y-m-d-His").".xml");
         echo "OK";
         return "récupération en local du xml distant OK. Vous pouvez maintenant <a href = 'load'>Charger le fichier en bdd</a>";
     }
+
+    public function historize() {
+
+        $history = new Entity\History();
+        $this->em->persist($history);
+        $history->setDate(new \DateTime(date("Y-m-d H:i:s")));
+        $history->setContent(json_encode($this->history()));
+        $this->em->flush();
+
+    }
+
+    public function history() {
+
+        $baseFilename = __DIR__."/xml/cdt_Evenement.xml";
+        $newFilename = 'http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml';
+//        $newFilename = __DIR__."/xml/cdt_Evenement_extract.xml";
+        
+
+        $newContent = file_get_contents($newFilename);
+        if ($newContent == false) {
+            echo "file_get_contents fail";
+            exit;
+        }
+
+        if (file_exists($baseFilename)) {
+            $baseContent = file_get_contents($baseFilename);        
+        } else {
+            $baseContent = file_get_contents($newFilename);        
+        }
+        
+        $newArray = $this->toCompare($newContent);
+        $baseArray = $this->toCompare($baseContent);
+        
+        $history = array();
+                
+        $history["added"] = array_keys(array_diff_key($newArray, $baseArray));
+        $history["removed"] = array_keys(array_diff_key($baseArray, $newArray));
+        $history["modified"] = array_keys(array_intersect_key(array_diff_assoc($newArray, $baseArray),array_diff_assoc($baseArray, $newArray)));
+//        $history["untouched"] = array_keys(array_intersect_assoc($baseArray, $newArray));
+        return $history;
+    }
+
 
     public function truncate() {
 
@@ -495,5 +519,20 @@ class Controller
       $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
       return $R * $c;
     }        
+
+    private function toCompare($content){
+        $separator = "<object jcr:uuid=";
+        $array = explode($separator, $content);
+        array_shift($array);
+
+        $arrayToCompare = array();
+        foreach ($array as $element) {
+  //          echo $newElement;
+            $t = array_pop(explode('name="', $element, 2));
+            $t = explode('">', $t, 2);
+            $arrayToCompare[$t[0]] = $t[1];
+        }
+        return $arrayToCompare;
+    }
   
 }
