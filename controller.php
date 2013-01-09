@@ -1,5 +1,7 @@
 <?php
 use \Entity;
+use \Doctrine\ORM\Query ;
+
 class Controller
 {
 
@@ -18,16 +20,28 @@ class Controller
     
     }
     
+
+    public function history() {
+    
+        $query = $this->em->createQuery('SELECT h FROM Entity\History h');
+        $history = $query->getResult(Query::HYDRATE_ARRAY);
+        return $history;
+
+
+    }
     public function getfile() {
 
-        $compared = $this->history();
-        if (count(array_merge($compared["added"], $compared["modified"], $compared["removed"])) == 0) {
+        $baseFilename = __DIR__."/xml/cdt_Evenement.xml";
+        $newFilename = 'http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml';
+
+        $history = $this->getHistory($baseFilename, $newFilename);
+        if (count(array_merge($history["added"], $history["modified"], $history["removed"])) == 0) {
             echo "fichier non modifié";
             return;
         }
 
-        $baseFilename = __DIR__."/xml/cdt_Evenement.xml";
-        $newFilename = 'http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml';
+        $this->historize($history);
+
 //        $newFilename = __DIR__."/xml/cdt_Evenement_extract.xml";
         
         if (!$this->checkKey()) {
@@ -56,22 +70,17 @@ class Controller
         return "récupération en local du xml distant OK. Vous pouvez maintenant <a href = 'load'>Charger le fichier en bdd</a>";
     }
 
-    public function historize() {
+    public function historize($content) {
 
         $history = new Entity\History();
         $this->em->persist($history);
         $history->setDate(new \DateTime(date("Y-m-d H:i:s")));
-        $history->setContent(json_encode($this->history()));
+        $history->setContent(json_encode($content));
         $this->em->flush();
 
     }
 
-    public function history() {
-
-        $baseFilename = __DIR__."/xml/cdt_Evenement.xml";
-        $newFilename = 'http://www.mp2013.fr/ext/patio2013/cdt_Evenement.xml';
-//        $newFilename = __DIR__."/xml/cdt_Evenement_extract.xml";
-        
+    public function getHistory($baseFilename, $newFilename) {
 
         $newContent = file_get_contents($newFilename);
         if ($newContent == false) {

@@ -16,7 +16,7 @@ class ViewJson implements viewInterface
         $simpleXml = simplexml_load_string($this->rdf);
         $json = json_encode($simpleXml);
         $json = str_replace("___",":",$json);
-        return $this->indent($json);    
+        return self::indent($json);    
     }
     
     public function getHeader() {
@@ -24,7 +24,8 @@ class ViewJson implements viewInterface
     }    
     
 
-    public function indent($json) {
+    // TODO : en php 5.4, passer par JSON_PRETTY_PRINT au lieu de lib\ViewJson::indent
+    public static function indent($json) {
 
         $result      = '';
         $pos         = 0;
