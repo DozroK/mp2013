@@ -148,7 +148,7 @@
         
         <!-- offers for this item -->
         <event___offers  rdf___parseType='Literal'><?php
-            foreach (reset($event)->getOffers() as $offer) {?>
+            foreach (reset($event)->getOffers() as $offer) { ?>
                 <event___offer>
 <?php
                     $itemOfferedEn = $offer->getItemOfferedEn();
@@ -160,12 +160,12 @@
                                 <itemOffered___name xml___lang="en"><?php
                                echo $itemOfferedEn 
                                 ?></itemOffered___name>   
-                            <?}
-                            if(!empty( $itemOfferedFr)){?> 
+                            <?php }
+                            if(!empty( $itemOfferedFr)){ ?> 
                                 <itemOffered___name xml___lang="fr"><?php
                                      echo $itemOfferedFr 
                               ?></itemOffered___name>
-                            <?}
+                            <?php }
                         ?>
                     </offer___itemOffered>
 <?php           } ?> 
@@ -194,12 +194,12 @@
                     if( !empty($maxPrice) or !empty($minPrice) ){ ?>
                     <offer___priceSpecification>
 <?php
-                            if(!empty($maxPrice)){?> 
+                            if(!empty($maxPrice)){ ?> 
                                 <priceSpecification___maxPrice><?php 
                                     echo $maxPrice 
                                 ?></priceSpecification___maxPrice>   
-                            <?}
-                            if(!empty($minPrice)){?> 
+                            <?php }
+                            if(!empty($minPrice)){ ?> 
                                 <priceSpecification___minPrice><?php
                                      echo $minPrice 
                                 ?></priceSpecification___minPrice>

@@ -6,6 +6,9 @@ use Doctrine\ORM\Tools\Setup,
     Doctrine\Common\Cache\ArrayCache as Cache,
     Doctrine\Common\Annotations\AnnotationRegistry,
     Doctrine\Common\ClassLoader;
+
+// Sets the default timezone used by all date/time functions in a script
+date_default_timezone_set("Europe/Paris");
  
 //autoloading
 require_once __DIR__ . '/externals/doctrine2/lib/Doctrine/ORM/Tools/Setup.php';
@@ -24,7 +27,7 @@ $loader->register();
 $config = new Configuration();
 $cache = new Cache();
 $config->setQueryCacheImpl($cache);
-$config->setProxyDir(__DIR__ . '/library/EntityProxy');
+$config->setProxyDir(__DIR__ . '/lib/EntityProxy');
 $config->setProxyNamespace('EntityProxy');
 $config->setAutoGenerateProxyClasses(true);
  

@@ -16,6 +16,11 @@ class Controller
     }
 
     
+    public function temp() {
+    session_start(); 
+    print_r(session_id());
+    }
+
     public function index() {
     
     }
@@ -48,12 +53,13 @@ class Controller
             return;
         }
 
-        $newContent = file_get_contents($newFilename);
+        $newContent = $this->file_get_contents($newFilename);
         if ($newContent == false) {
-            echo "file_get_contents fail";
+            echo "file_get_contents fail..".__LINE__;
             exit;
         }
                 
+        unlink($baseFilename);
         $file = fopen($baseFilename, 'w');
         if ($file == false) {
             echo "fopen fail";
@@ -82,7 +88,7 @@ class Controller
 
     public function getHistory($baseFilename, $newFilename) {
 
-        $newContent = file_get_contents($newFilename);
+        $newContent = $this->file_get_contents($newFilename);
         if ($newContent == false) {
             echo "file_get_contents fail";
             exit;
@@ -91,7 +97,7 @@ class Controller
         if (file_exists($baseFilename)) {
             $baseContent = file_get_contents($baseFilename);        
         } else {
-            $baseContent = file_get_contents($newFilename);        
+            $baseContent = $this->file_get_contents($newFilename);        
         }
         
         $newArray = $this->toCompare($newContent);
@@ -251,11 +257,11 @@ class Controller
     }
 
     public function process() {
-
+        
         if (!$this->checkKey()) {
             return;
         }
-
+        set_time_limit(3600);
         $this->getfile();
         $this->truncate();    
         $this->load();
@@ -532,6 +538,7 @@ class Controller
     private function toCompare($content){
         $separator = "<object jcr:uuid=";
         $array = explode($separator, $content);
+        unset($content);
         array_shift($array);
 
         $arrayToCompare = array();
@@ -542,6 +549,21 @@ class Controller
             $arrayToCompare[$t[0]] = $t[1];
         }
         return $arrayToCompare;
+    }
+  
+    private function file_get_contents($filename) {
+
+      	$options = array(
+    	    CURLOPT_RETURNTRANSFER => true, // return web page
+    	    CURLOPT_HEADER         => false,// don't return headers
+    	    CURLOPT_CONNECTTIMEOUT => 5     // timeout on connect
+    	);
+    
+    	$ch = curl_init($filename);
+    	curl_setopt_array( $ch, $options );
+    	$result = curl_exec( $ch ); //let's fetch the result using cURL
+    	curl_close( $ch );
+    	return $result;
     }
   
 }
