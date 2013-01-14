@@ -17,7 +17,7 @@ You can download the current version of the RDF document :
 
 ## Users
 
-If you use our api, please let us know, we will put a link to you here and we will get you informed
+If you use one api, please let us know, we will put a link to your product here and we will get you informed
 
 ## Licence
 
