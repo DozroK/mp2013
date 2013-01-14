@@ -15,6 +15,10 @@ You can download the current version of the RDF document :
 
 ><a href="http://api.mp2013.fr/rdf" title="RDF - MP2013 events"> <img border="0" src="http://www.w3.org/RDF/icons/rdf_w3c_button.32" alt="RDF - MP2013 events / Download"/></a>
 
+## Users
+
+If you use our api, please let us know, we will put a link to you here and we will get you informed
+
 ## Licence
 
 The datas are distributed under [Open Licence](http://www.data.gouv.fr/Licence-Ouverte-Open-Licence). You can reuse the information provided by [Marseille-Provence 2013](http://www.mp2013.fr) and freedoms as provided by the license.
