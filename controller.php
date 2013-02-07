@@ -348,13 +348,13 @@ class Controller
            ->leftJoin('e.offers', 'o')
            ->addSelect('o');
 
-        if (get_class($from) == "DateTime") {
-           $qb->andWhere('e.startDate >= :from');
-            $qbParams["from"] = $from;
-        }
         if (get_class($to) == "DateTime") {
-           $qb->andWhere('e.endDate <= :to');
+           $qb->andWhere('e.startDate <= :to');
             $qbParams["to"] = $to;
+        }
+        if (get_class($from) == "DateTime") {
+           $qb->andWhere('e.endDate >= :from');
+            $qbParams["from"] = $from;
         }
         if ($lang) {
            $qb->andWhere('e.lang = :lang');
