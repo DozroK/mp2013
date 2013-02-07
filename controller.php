@@ -468,15 +468,6 @@ class Controller
         exit;
     }
 
-    public function refresh () {
-        echo "cette fonction fait : <br>";
-        echo 'echo "date : ".date("Y-m-d H:i:s")<br>';
-        echo 'echo "rand : ".rand();<br>';
-        echo 'Resultat : <br>';
-        echo "date : ".date("Y-m-d H:i:s");
-        echo '<br>';
-        echo "rand : ".rand();
-    }
     
     public function id($params) {
         

@@ -69,15 +69,11 @@ class Event extends \Entity\Event
     public function getDescription() {
 
         if ($this->event->getDescription()) {
-            $description = $this->event->getDescription();
-
-/*            $description = htmlentities($this->event->getDescription(), ENT_COMPAT, 'UTF-8');
-            $description = html_entity_decode($description,  ENT_COMPAT, 'UTF-8');
+/*            $description = $this->event->getDescription();
+            return $this->getMarkup("description", htmlspecialchars($description, ENT_QUOTES), true, 'Literal');
 */
 
-            return $this->getMarkup("description", htmlspecialchars($description, ENT_QUOTES), true, 'Literal');
-
-//            return $this->getMarkup("description", htmlspecialchars(Normalizer::normalize($this->event->getDescription()), ENT_QUOTES), true, 'Literal');
+            return $this->getMarkup("description", htmlspecialchars(Normalizer::normalize($this->event->getDescription()), ENT_QUOTES), true, 'Literal');
         }
     }
 
