@@ -88,7 +88,7 @@
 <?php foreach ($view["producer"] as $uuid => $producer) { ?>
     <rdf:Description rdf:about="http://data.mp2013.fr/producer/#<?php echo $producer->getUuid() ?>">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
-        <organization:name><?php echo $producer->getName() ?></organization:name>
+        <organization:name><?php echo htmlspecialchars($producer->getName(), ENT_QUOTES) ?></organization:name>
         <organization:telephone><?php echo $producer->getTelephone() ?></organization:telephone>
         <organization:url><?php echo $producer->getUrl() ?></organization:url>
     </rdf:Description>
@@ -124,7 +124,7 @@
 
             
             <place___address>
-                <address___name><?php echo reset($event)->getPlace()->getName() ?></address___name>
+                <address___name><?php echo htmlspecialchars(reset($event)->getPlace()->getName()) ?></address___name>
                 <address___addressLocality><?php echo reset($event)->getPlace()->getAddressLocality() ?></address___addressLocality>
                 <address___postalCode><?php echo reset($event)->getPlace()->getPostalCode() ?></address___postalCode>
                 <address___streetAddress><?php echo reset($event)->getPlace()->getStreetAddress() ?></address___streetAddress>
