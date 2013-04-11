@@ -35,6 +35,7 @@ This API and documentation are in progress… for the moment you can read the sp
 * [RDF DOM Proposal](https://github.com/DozroK/mp2013/wiki/RDF---DOM-Proposal)
 * [API MP2013 Events Proposal](https://github.com/DozroK/mp2013/wiki/API-Events-Proposal)
 * [Install the sources](https://github.com/DozroK/mp2013/wiki/Install-source-code)
+* [Target the MP2013 event page with a specific identifier](https://github.com/DozroK/mp2013/wiki/Target-event-page)
 
 ## About
 
